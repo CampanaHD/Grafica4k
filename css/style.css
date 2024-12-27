@@ -1,0 +1,240 @@
+*{
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0;
+  font-family: "Montserrat", serif;
+}
+body {
+  background-image: url('../imagens/Fundo.png'); /* Caminho da imagem */
+  background-size: cover; /* Faz a imagem cobrir todo o fundo */
+  background-repeat: no-repeat; /* Evita repetição da imagem */
+  background-position: center; /* Centraliza a imagem */
+}
+#logo{
+  width: 165px;
+  height: 88px;
+}
+
+ul{
+  padding: 0px;
+}
+li{
+  justify-items: center;
+}
+p{
+  margin: 0px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.navbar{
+  height: 134px;
+}
+#navbarNav{
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+.navbar1{
+list-style: none;
+margin: 0;
+}
+.navbar1 li{
+  margin-right: 11.45px;
+  align-content: center;
+}
+#graficaLi{
+  width: 325px;
+  height: 24px;
+}
+#xpLi{
+width: 183px;
+height: 15px;
+}
+#bagulinhoLi{
+  width: 1.75px;
+  height: 14.21px;
+}
+#quemsomosLi{
+  width: 109px;
+  height: 13px;
+}
+#duvidasfrequentesLi{
+  width: 156px;
+  height: 15px;
+}
+
+
+
+
+
+
+
+#grafica{
+   background: linear-gradient(to right, blue, #0035ff, #007fff, #e500b5, #f27100, #fff200);
+   border-radius: 5px;
+   padding-left: 30px;
+   padding-right: 30px;
+   
+}
+#xp{
+  background: linear-gradient(to right, blue, #0035ff, #007fff, #e500b5, #f27100, #fff200);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#exampleDataList{
+    border-radius: 40px;
+    border-width: 3px;
+    background-color: black;
+    height: 50px;
+    font-size: 30px;
+    color: cyan;
+}
+.form-control::placeholder {
+    color: cyan; /* Placeholder claro para contraste */
+    padding-left: 10px;
+  }
+  #search{
+    width: 100%;
+    text-align: center;
+    position: relative;
+  }
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    right: 20px; /* Ajusta o ícone para o final do campo */
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: white;
+    pointer-events: none; /* Impede que o ícone interfira na interação do usuário */
+    font-weight: bolder;
+}
+.separator {
+  position: absolute;
+  top: 50%;
+  right: 63px; /* Posição da linha vertical */
+  transform: translateY(-50%);
+  height: 90%; /* Ajuste a altura da linha */
+  width: 3px; /* Espessura da linha */
+  background-color: #ccc; /* Cor da linha */
+  pointer-events: none;
+}
+
+
+  #whatsapp{
+    padding-right: 10px;
+    width: 27.69px;
+    height: 27.85px;
+  }
+  #instagram{
+    
+    width: 27.85px;
+    height: 27.85px;
+  }
+  #facebook{
+    width: 27.85px;
+    height: 27.85px;
+    position: relative;
+    left: 10px;
+    
+  }
+
+  #icons{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    bottom: 14px;
+    position: relative;
+  }
+
+  #linksuteis{
+    background: linear-gradient(to right, blue, #0035ff, #007fff, #e500b5, #f27100, #fff200);
+    height: 48px;
+    justify-content: center;
+    align-content: center;
+  }
+  #containerItens{
+    margin: 0;
+  }
+  #hamburger{
+    margin-right: 6px;
+  }
+  .links{
+    display: flex;
+    list-style: none;
+    align-content: center;
+  }
+  .links li{
+    align-items: center;
+    justify-content: center;
+    margin-right: 13.50px;
+   
+    font-weight: 500;
+  }
+  a{
+    color: #fff;
+    text-decoration: none;
+  }
+  a:hover{
+    opacity: 0.7;
+  }
+  #orcamento{
+    color: black;
+    font-weight: bolder;
+    font-size: 16.21px;
+  }
+  #bagulinho{
+  font-size: 16.21px;
+}
+  #Categorias{
+    background: linear-gradient(to right, blue, #0035ff, #007fff, #e500b5, #f27100, #fff200);
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 30px;
+    
+  }
+
+
+  .carousel-item{
+    width: 100%;
+    height: auto;
+}
+#cardsCarouselMain {
+  display: flex; /* Ativa o layout Flexbox */
+  margin-top: 30px;
+  align-items: center; /* Centraliza os itens verticalmente */
+  list-style: none; /* Remove os marcadores padrão da lista */
+}
+
+#cardsCarouselMain li {
+  text-align: center; /* Centraliza o conteúdo dentro de cada item */
+  padding-right: 30px;
+  
+}
+#cardsCarousel1{
+  padding-left: 30px;
+}
+#cardsCarousel{
+  padding-top: 5px;
+}
+
+#cardsCarouselMain img {
+  max-width: 100%; /* Ajusta as imagens para não ultrapassarem os limites do item */
+  height: auto; /* Mantém a proporção das imagens */
+}
+.carousel-control-prev{
+  padding-left: 0px;
+  right: 1000px;
+}
+
+
+#maisvendidos{
+  background: linear-gradient(to right, blue, #0035ff, #007fff, #e500b5, #f27100, #fff200);
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 30px;
+}
+
