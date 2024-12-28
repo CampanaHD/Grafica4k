@@ -88,11 +88,11 @@ height: 15px;
     border-width: 3px;
     background-color: black;
     height: 50px;
-    font-size: 30px;
-    color: cyan;
+    font-size: 20px;
+    color: white;
 }
 .form-control::placeholder {
-    color: cyan; /* Placeholder claro para contraste */
+    color: white; /* Placeholder claro para contraste */
     padding-left: 10px;
   }
   #search{
@@ -137,7 +137,7 @@ height: 15px;
     height: 27.85px;
     position: relative;
     left: 10px;
-    
+    top: 7.3px;
   }
 
   #icons{
@@ -197,37 +197,55 @@ height: 15px;
   }
 
 
+
   .carousel-item{
     width: 100%;
     height: auto;
 }
+
+.swiper-button-prev{
+  overflow: visible;
+  position: absolute;
+  
+}
+.swiper-button-next{
+  overflow: visible;
+  position: absolute;
+  
+}
+
+
+
+.swiper{
+  position: relative;
+  overflow: hidden;
+}
+
+
 #cardsCarouselMain {
-  display: flex; /* Ativa o layout Flexbox */
+  display: flex;  
   margin-top: 30px;
-  align-items: center; /* Centraliza os itens verticalmente */
+  align-items: center;  
   list-style: none; /* Remove os marcadores padrão da lista */
+
 }
 
 #cardsCarouselMain li {
   text-align: center; /* Centraliza o conteúdo dentro de cada item */
-  padding-right: 30px;
+  
   
 }
-#cardsCarousel1{
-  padding-left: 30px;
-}
+
 #cardsCarousel{
   padding-top: 5px;
+  font-size: 16.21px;
+  
 }
 
 #cardsCarouselMain img {
-  max-width: 100%; /* Ajusta as imagens para não ultrapassarem os limites do item */
-  height: auto; /* Mantém a proporção das imagens */
-}
-.carousel-control-prev{
-  padding-left: 0px;
-  right: 1000px;
-}
+  height: 154px; /* Mantém a proporção das imagens */
+} 
+
 
 
 #maisvendidos{
@@ -236,5 +254,41 @@ height: 15px;
   text-align: center;
   margin-top: 30px;
   font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+  height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+#barrafooter{
+  background: linear-gradient(to right, blue, #0035ff, #007fff, #e500b5, #f27100, #fff200);
+  height: 30px;
+  margin-top: 30px;
+}
+#containerFooter{
+
+}
+#INSTITUCIONAL{
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  display: block;
 }
 
