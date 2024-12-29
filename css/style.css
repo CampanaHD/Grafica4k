@@ -190,10 +190,13 @@ height: 15px;
   #Categorias{
     background: linear-gradient(to right, blue, #0035ff, #007fff, #e500b5, #f27100, #fff200);
     border-radius: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 30px;
-    font-size: 30px;
-    
+    font-size: 25px;
+    font-weight: 600;
+    height: 40px;
   }
 
 
@@ -203,22 +206,44 @@ height: 15px;
     height: auto;
 }
 
-.swiper-button-prev{
-  overflow: visible;
+.btn-prev-1{
+  top: 810px;
+  left: 350px;
   position: absolute;
   
 }
-.swiper-button-next{
-  overflow: visible;
+.btn-next-1{
+  top: 810px;
+  right: 350px;
   position: absolute;
   
+}
+#btn-pagination-1{
+  top: 930px;
+  position: absolute;
+}
+
+.btn-prev-2{
+  top: 1160px;
+  left: 350px;
+  position: absolute;
+  
+}
+.btn-next-2{
+  top: 1160px;
+  right: 350px;
+  position: absolute;
+  
+}
+#btn-pagination-2{
+  top: 1430px;
+  position: absolute;
 }
 
 
 
-.swiper{
+.mySwiper1{
   position: relative;
-  overflow: hidden;
 }
 
 
@@ -235,9 +260,11 @@ height: 15px;
   
   
 }
-
+#cardsCarousel1{
+  overflow: visible;
+}
 #cardsCarousel{
-  padding-top: 5px;
+  padding-top: 15px;
   font-size: 16.21px;
   
 }
@@ -251,13 +278,30 @@ height: 15px;
 #maisvendidos{
   background: linear-gradient(to right, blue, #0035ff, #007fff, #e500b5, #f27100, #fff200);
   border-radius: 20px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 30px;
-  font-size: 30px;
+  margin-bottom: 12px;
+  font-size: 25px;
+  height: 40px;
 }
+#cardsCarouselMain2 img{
+  height: 274px;
 
-
-
+}
+#cardsCarouselMain2 h5{
+  font-weight: bolder;
+}
+#cardsCarousel2{
+  margin-top: 15px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+}
+#cardsCarousel3{
+  margin-top: 2px;
+}
 
 
 
@@ -274,18 +318,98 @@ height: 15px;
 footer{
   height: 400px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden; /* Garante que o pseudo-elemento não "vaze" */
+  color: black;
+  
+}
+footer::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../imagens/Fundo.png'); /* Caminho da imagem */
+  background-size: cover; /* Faz a imagem cobrir todo o fundo */
+  background-repeat: no-repeat; /* Evita repetição da imagem */
+  background-position: center; /* Centraliza a imagem */
+  filter: invert(1);
+  z-index: -1;
+}
+footer p{
+  color: black;
+  font-size: 15px;
+  font-weight: 600;
+}
+footer h6{
+  font-size: 20px;
+  font-weight: 600;
 }
 
 #barrafooter{
   background: linear-gradient(to right, blue, #0035ff, #007fff, #e500b5, #f27100, #fff200);
   height: 30px;
   margin-top: 30px;
+  width: 100%;
+}
+#containerFooter{
+ display: flex;
+ padding-top: 30px;
+ font-weight: bolder;
 }
 #INSTITUCIONAL{
-  text-align: left;
+  
   padding: 0;
   margin: 0;
-  display: block;
+  margin-bottom: 30px;
 }
+#footerUl{
+  margin-left: 16px;
+}
+#formas_de_pagamento{
+  margin-left: 70px;
+  list-style: none;
+  justify-items: center;
+}
+#formas_de_pagamento h6{
+  margin-bottom: 30px;
+}
+#formas_de_pagamento img{
+  width: 150px;
+  height: auto;
+}
+#ajuda{
+  margin-left: 70px;
+}
+#ajuda_h6{
+  margin-bottom: 30px;
+  text-align: center;
+  list-style: none;
+}
+#direitos{
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+#direitosUl{
+  align-items: center;
+}
+#direitosUl .no-style{
+  list-style: none;
+  margin-right: 20px;
+}
+#direitosUl li {
 
+  padding-left: 20px; /* Espaçamento entre o marcador e o conteúdo */
+}
+#direitosUl li::marker {
+  padding-left: 20px;
+  margin-left: 100px;
+  font-size: 20px; /* Tamanho do marcador */
+}
+#grafica2{
+  margin-left: 10px;
+  list-style: disc;
+}
