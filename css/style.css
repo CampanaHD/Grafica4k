@@ -211,9 +211,10 @@ height: 15px;
 .swiper-button-next {
   width: 40px;
   height: 40px;
-  background-color: grey; /* Cor cinza */
+  color: gray;
   border-radius: 50%; /* Torna os botões circulares */
   cursor: pointer;
+  
 }
 
 /* Remove o estilo padrão das setas */
@@ -221,26 +222,18 @@ height: 15px;
 .swiper-button-next::after {
   font-size: 0; /* Remove as setas padrão */
   content: '';
-  width: 18px;
-  height: 18px;
-  border: solid white; /* Cor branca para a seta */
-  border-width: 0 4px 4px 0;
+  width: 25px;
+  height: 25px;
+  background-image: url('../imagens/seta\ .png');
+  background-size: cover; /* Faz a imagem cobrir todo o fundo */
+  background-repeat: no-repeat; /* Evita repetição da imagem */
+  background-position: center; /* Centraliza a imagem */
    /* Forma a seta */
   
 }
-
-/* Personaliza a seta do botão "prev" */
-.swiper-button-prev::after {
-  transform: rotate(135deg); /* Ajusta a rotação */
-   /* Ajusta as extremidades */
-}
-
-/* Personaliza a seta do botão "next" */
 .swiper-button-next::after {
-  transform: rotate(-45deg); /* Ajusta a rotação */
-   /* Ajusta as extremidades */
+  transform: rotate(-180deg); /* Ajusta a rotação da seta para "avançar" */
 }
-
 
 
 .btn-prev-1{
@@ -256,24 +249,24 @@ height: 15px;
   
 }
 #btn-pagination-1{
-  top: 930px;
+  top: 885px;
   position: absolute;
 }
 
 .btn-prev-2{
-  top: 1160px;
+  top: 1115px;
   left: 350px;
   position: absolute;
   
 }
 .btn-next-2{
-  top: 1160px;
+  top: 1115px;
   right: 350px;
   position: absolute;
   
 }
 #btn-pagination-2{
-  top: 1430px;
+  top: 1380px;
   position: absolute;
 }
 
