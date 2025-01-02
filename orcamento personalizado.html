@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link para o CSS do Bootstrap local -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    
+    <link rel="stylesheet" href="css/bootstrap-icons-1.11.3/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <title>Gráfica 4k</title>
+</head>
+<body style="min-width: 372px;" class="text-white">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black shadow-sm ">
+        <div class="container-xxl text-center d-flex" id="containernav">
+            <a class="navbar-brand" href="index.html">
+                <img src="imagens/Logo.png" class="rounded float-start" id="logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar1 d-flex text-nowrap">
+                    <li id="graficaLi"><p id="grafica">GRÁFICA & COMUNICAÇÃO VISUAL</p></li>
+                    <li id="xpLi"><p id="xp">Sua Experiência em 4k</p></li>
+                    <li id="bagulinhoLi"><p>|</p></li>
+                    <li id="quemsomosLi"><a href="#"><p>Quem Somos!</p></a></li>
+                    <li id="bagulinhoLi"><p>|</p></li>
+                    <li id="duvidasfrequentesLi"><a href="#"><p>Dúvidas frequentes</p></a></li>
+                    <li>
+                        <div id="icons">
+                            <a href="#"><i class="bi bi-whatsapp fs-3" id="whatsapp"></i></a>
+                            <a href="#"><i class="bi bi-instagram fs-3" id="instagram"></i></a>
+                            <a href="#"><img src="imagens/Facebook.svg" id="facebook"></a>
+
+                        </div>
+                    </li>
+                </ul>
+                <!-- Barra de pesquisa abaixo dos links -->
+                <div id="search" style="position: relative;">
+                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="O que você está procurando?">
+                    <i class="bi bi-search search-icon fs-3"></i>
+                    <span class="separator"></span>
+                    <datalist id="datalistOptions">
+                        <option value="...">
+                        <option value="...">
+                        <option value="...">
+                        <option value="...">
+                        <option value="...">
+                    </datalist>
+                </div>
+            </div>    
+        </div>    
+    </nav>
+
+    <div id="linksuteis">
+        <div class="container-xxl">
+            <ul class="links d-flex text-nowrap" id="containerItens">
+                <li><a href="#"><i class="bi bi-list" id="hamburger"></i>Todos os produtos</a></li>
+                <li><p id="bagulinho">|</p></li>
+                <li><a href="#">Cartões de Visita</a></li>
+                <li><p id="bagulinho">|</p></li>
+                <li><a href="#">Panfletos e Folders</a></li>
+                <li><p id="bagulinho">|</p></li>
+                <li><a href="#">Adesivos e Rótulos</a></li>
+                <li><p id="bagulinho">|</p></li>
+                <li><a href="#">Banners e Faixas</a></li>
+                <li><p id="bagulinho">|</p></li>
+                <li><a href="#"><p id="orcamento">Orçamento Personalizado</p></a></li>
+            </ul>
+        </div>
+    </div>
+    <main>
+        <div class="container-xxl containerOrcamento">
+            <div class="orcamentoLogo">
+                <img src="imagens/Mais Vendidos/Banner.png" alt="">
+            </div>
+            <div class="orcamentoPersonalizado">
+                <h2>Cartões de Visita Premium</h2>
+            
+                <div class="campo">
+                    <label for="material">Material:</label>
+                    <select id="material" onchange="atualizarDroplist()">
+                        <option value="">Escolha uma opção</option>
+                        <option value="Papel Couchê">Papel Couchê</option>
+                        <option value="Reciclado">Reciclado</option>
+                    </select>
+                </div>
+            
+                <div class="campo">
+                    <label for="quantidade">Quantidade:</label>
+                    <select id="quantidade" onchange="atualizarDroplist()">
+                        <option value="">Escolha uma opção</option>
+                        <option value="100">100 unidades</option>
+                        <option value="500">500 unidades</option>
+                        <option value="1000">1000 unidades</option>
+                    </select>
+                </div>
+            
+                <div class="campo">
+                    <label for="medida">Medida:</label>
+                    <select id="medida" onchange="atualizarDroplist()">
+                        <option value="">Escolha uma opção</option>
+                        <option value="8.5 x 5 cm">8.5 x 5 cm</option>
+                        <option value="9 x 5.5 cm">9 x 5.5 cm</option>
+                    </select>
+                </div>
+            
+                <div class="campo">
+                    <label for="cores">Cores:</label>
+                    <select id="cores" onchange="atualizarDroplist()">
+                        <option value="">Escolha uma opção</option>
+                        <option value="4x0 (Frente colorida)">4x0 (Frente colorida)</option>
+                        <option value="4x4 (Frente e verso coloridos)">4x4 (Frente e verso coloridos)</option>
+                    </select>
+                </div>
+            
+                <div class="campo">
+                    <label for="enobrecimento">Enobrecimento:</label>
+                    <select id="enobrecimento" disabled>
+                        <option value="">Escolha uma opção</option>
+                        <option value="Laminação">Laminação</option>
+                        <option value="Verniz">Verniz</option>
+                        <option value="Hot Stamping">Hot Stamping</option>
+                    </select>
+                </div>
+            
+                <div class="campo">
+                    <label for="acabamento">Acabamento:</label>
+                    <select id="acabamento" onchange="atualizarDroplist()">
+                        <option value="">Escolha uma opção</option>
+                        <option value="Corte reto">Corte reto</option>
+                        <option value="Cantoneira arredondada">Cantoneira arredondada</option>
+                    </select>
+                </div>
+            
+                <button id="enviarWhatsApp" onclick="enviarWhatsApp()">Enviar para WhatsApp</button>
+                <p id="resultado">Por favor, selecione as opções acima.</p>
+            </div>
+            
+                <script>
+                    function atualizarDroplist() {
+                        const quantidade = parseInt(document.getElementById("quantidade").value);
+                        const enobrecimento = document.getElementById("enobrecimento");
+                        const resultado = document.getElementById("resultado");
+                        
+                        // Habilitar ou desabilitar o droplist de enobrecimento
+                        if (quantidade > 100) {
+                            enobrecimento.disabled = false;
+                            resultado.innerText = "Você pode escolher um enobrecimento.";
+                        } else {
+                            enobrecimento.disabled = true;
+                            enobrecimento.value = ""; // Reseta o valor selecionado
+                            resultado.innerText = "Enobrecimento indisponível para 100 unidades.";
+                        }
+                    }
+                    function enviarWhatsApp() {
+        const material = document.getElementById("material").value;
+        const quantidade = document.getElementById("quantidade").value;
+        const medida = document.getElementById("medida").value;
+        const cores = document.getElementById("cores").value;
+        const enobrecimento = document.getElementById("enobrecimento").value || "Nenhum";
+        const acabamento = document.getElementById("acabamento").value;
+
+        if (!material || !quantidade || !medida || !cores || !acabamento) {
+            alert("Por favor, preencha todas as opções antes de enviar.");
+            return;
+        }
+
+        const mensagem = `
+            Olá, gostaria de um orçamento para cartões de visita:
+            - Material: ${material}
+            - Quantidade: ${quantidade}
+            - Medida: ${medida}
+            - Cores: ${cores}
+            - Enobrecimento: ${enobrecimento}
+            - Acabamento: ${acabamento}
+        `.trim();
+
+        const telefone = "5514996953220"; // Substitua pelo número do WhatsApp desejado
+        const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+
+        window.open(url, "_blank");
+    }
+                </script>
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+    <div id="barrafooter"></div>
+    <footer>
+      
+      
+        <div class="container-xxl" id="containerFooter">
+          <div>
+          <h6 id="INSTITUCIONAL">INSTITUCIONAL</h6>
+            <ul id="footerUl">
+              <li><a href="#"><P>Inicio</P></a></li>
+              <li><a href="#"><p>Quem Somos</p></a></li>
+              <li><a href="#"><p>Trabalhe Conosco</p></a></li>
+              <li><a href="#"><p>Todos os Produtos</p></a></li>
+              <li><a href="#"><p>Orçamento Personalizado</p></a></li>
+              <li><a href="#"><p>Suporte</p></a></li>
+            </ul>
+          </div>
+          <div>
+            <ul id="formas_de_pagamento">
+              <li><h6>FORMAS DE PAGAMENTO</h6></li>
+              <li><img src="imagens/logo-pix.png" alt=""></li>
+              <li><img src="imagens/visa.png" alt=""></li>
+            </ul>
+        </div>
+        <div>
+          <h6 id="ajuda_h6">AJUDA</h6>
+          <ul id="ajuda">
+            <li><a href="#"><p>Politica e privacidade</p></a></li>
+            <li><a href="#"><p>Politica de Devolução ou cancelamento</p></a></li>
+            <li><a href="#"><p>Regulamento</p></a></li>
+            <li><a href="#"><p>FAQ Perguntas Frequentes</p></a></li>
+            <li><a href="#"><p>Prazos</p></li>
+          </ul>
+        </div>
+      </div>
+        <div id="direitos">
+            <ul class="d-flex" id="direitosUl">
+              <li class="no-style"><p>Todos os direitos reservados @ 2021 - 4k</p></li>
+              <li><p>Gráfica e Comunicação Visual</p></li>
+            </ul>
+        </div>
+      
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Inclusão do JS do Bootstrap local -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

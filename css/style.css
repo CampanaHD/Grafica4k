@@ -206,14 +206,51 @@ height: 15px;
     height: auto;
 }
 
+/* Estilos para os botões */
+.swiper-button-prev,
+.swiper-button-next {
+  width: 40px;
+  height: 40px;
+  background-color: grey; /* Cor cinza */
+  border-radius: 50%; /* Torna os botões circulares */
+  cursor: pointer;
+}
+
+/* Remove o estilo padrão das setas */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 0; /* Remove as setas padrão */
+  content: '';
+  width: 18px;
+  height: 18px;
+  border: solid white; /* Cor branca para a seta */
+  border-width: 0 4px 4px 0;
+   /* Forma a seta */
+  
+}
+
+/* Personaliza a seta do botão "prev" */
+.swiper-button-prev::after {
+  transform: rotate(135deg); /* Ajusta a rotação */
+   /* Ajusta as extremidades */
+}
+
+/* Personaliza a seta do botão "next" */
+.swiper-button-next::after {
+  transform: rotate(-45deg); /* Ajusta a rotação */
+   /* Ajusta as extremidades */
+}
+
+
+
 .btn-prev-1{
-  top: 810px;
+  top: 770px;
   left: 350px;
   position: absolute;
   
 }
 .btn-next-1{
-  top: 810px;
+  top: 770px;
   right: 350px;
   position: absolute;
   
@@ -412,4 +449,45 @@ footer h6{
 #grafica2{
   margin-left: 10px;
   list-style: disc;
+}
+
+
+
+
+
+.containerOrcamento{
+  margin-top: 50px;
+  display: flex;
+}
+.orcamentoPersonalizado h2{
+  margin-bottom: 20px;
+}
+.orcamentoLogo{
+  margin-right: 50px;
+}
+.orcamentoLogo img{
+  width: 500px;
+  height: 500px;
+  border-radius: 30px;
+}
+.campo {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.campo label {
+  width: 150px; /* Define uma largura fixa para alinhar as labels */ /* Alinha o texto das labels à direita */
+}
+
+.campo select {
+  width: 200px;
+  border-radius: 5px;
+}
+#enviarWhatsApp{
+  width: 350px;
+  border-radius: 5px;
+  background: linear-gradient(to right, blue, #0035ff, #007fff, #e500b5, #f27100, #fff200);
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
