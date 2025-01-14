@@ -189,7 +189,7 @@ height: 15px;
 }
   #Categorias{
     background: linear-gradient(to right, blue, #0035ff, #007fff, #e500b5, #f27100, #fff200);
-    border-radius: 20px;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -266,7 +266,7 @@ height: 15px;
   
 }
 #btn-pagination-2{
-  top: 1380px;
+  top: 1530px;
   position: absolute;
 }
 
@@ -303,25 +303,48 @@ height: 15px;
   height: 154px; /* Mantém a proporção das imagens */
 } 
 
-
-
 #maisvendidos{
   background: linear-gradient(to right, blue, #0035ff, #007fff, #e500b5, #f27100, #fff200);
-  border-radius: 20px;
+  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   font-size: 25px;
   height: 40px;
 }
+.Maisvendidos_premium{
+  /* font-size: larger; */
+}
+#cardsCarouselMain2 li{
+width: 264px;
+/* box-shadow: 2px 2px 8px rgba(0, 0, 0, 1); Example value */
+word-break: keep-all;
+white-space: normal; /* Permite quebra de linha automática */
+height: 540px;
+}
 #cardsCarouselMain2 img{
-  height: 274px;
+  height: 270px;
+  border-radius: 10px;
 
 }
 #cardsCarouselMain2 h5{
   font-weight: bolder;
+}
+#cardsCarouselMain2 p{
+  font-size: 13px;
+  display: inline-block;
+  margin-right: 5px;
+}
+.Maisvendidos_size{
+  height: 430px;
+}
+#apartir{
+  margin-top: 20px;
+}
+.cardsCarouselUnidades{
+  margin-top: 5px;
 }
 #cardsCarousel2{
   margin-top: 15px;
@@ -331,6 +354,7 @@ height: 15px;
 }
 #cardsCarousel3{
   margin-top: 2px;
+  margin-bottom: 20px;
 }
 
 
@@ -346,7 +370,7 @@ height: 15px;
 
 
 footer{
-  height: 400px;
+  height: 430px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -370,12 +394,12 @@ footer::before{
 }
 footer p{
   color: black;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
 }
 footer h6{
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 #barrafooter{
@@ -390,28 +414,35 @@ footer h6{
  font-weight: bolder;
 }
 #INSTITUCIONAL{
-  
+  font-size: 17px;
   padding: 0;
   margin: 0;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 #footerUl{
   margin-left: 16px;
 }
+#formas_de_pagamentoP{
+  font-size: 17px; 
+}
 #formas_de_pagamento{
-  margin-left: 70px;
   list-style: none;
-  justify-items: center;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+ 
 }
 #formas_de_pagamento h6{
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 #formas_de_pagamento img{
-  width: 150px;
+  width: 54px;
   height: auto;
+  margin-right: 5px;
 }
 #ajuda{
   margin-left: 70px;
+  margin-top: 42px;
 }
 #ajuda_h6{
   margin-bottom: 30px;
@@ -419,9 +450,13 @@ footer h6{
   list-style: none;
 }
 #direitos{
-  margin-top: 100px;
+  margin-top: 40px;
   display: flex;
   justify-content: center;
+}
+#direitos p{
+  font-size: 19px;
+  font-weight: 700;
 }
 #direitosUl{
   align-items: center;
@@ -443,14 +478,20 @@ footer h6{
   margin-left: 10px;
   list-style: disc;
 }
-
-
+#maps{
+  margin-left: 70px;
+}
+#maps img{
+  width: 259px;
+  height: 259px;
+}
 
 
 
 .containerOrcamento{
   margin-top: 50px;
   display: flex;
+  font-size: 23px;
 }
 .orcamentoPersonalizado h2{
   margin-bottom: 20px;
@@ -459,25 +500,26 @@ footer h6{
   margin-right: 50px;
 }
 .orcamentoLogo img{
-  width: 500px;
-  height: 500px;
+  width: 565px;
+  height: 565px;
   border-radius: 30px;
 }
 .campo {
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 16.5px;
 }
 
 .campo label {
-  width: 150px; /* Define uma largura fixa para alinhar as labels */ /* Alinha o texto das labels à direita */
+  width: 255px; /* Define uma largura fixa para alinhar as labels */ /* Alinha o texto das labels à direita */
 }
 
 .campo select {
-  width: 200px;
+  width: 257px;
+  height: 40px;
   border-radius: 5px;
 }
 #enviarWhatsApp{
-  width: 350px;
+  width: 514px;
   border-radius: 5px;
   background: linear-gradient(to right, blue, #0035ff, #007fff, #e500b5, #f27100, #fff200);
   color: white;
