@@ -74,7 +74,7 @@
                 <li><p id="bagulinho">|</p></li>
                 <li><a href="#">Banners e Faixas</a></li>
                 <li><p id="bagulinho">|</p></li>
-                <li><a href="#"><p id="orcamento">Orçamento Personalizado</p></a></li>
+                <li><a href="orcamento personalizado.html?titulo=Orçamento Personalizado"><p id="orcamento">Orçamento Personalizado</p></a></li>
             </ul>
         </div>
     </div>
@@ -84,14 +84,17 @@
                 <img src="imagens/Mais Vendidos/Banner.png" alt="">
             </div>
             <div class="orcamentoPersonalizado">
-                <h2>Cartões de Visita Premium</h2>
+                <h2 id="orcamentoH2"></h2>
             
+                
                 <div class="campo">
                     <label for="material">Material:</label>
                     <select id="material" onchange="atualizarDroplist()">
                         <option value="">Escolha uma opção</option>
                         <option value="Papel Couchê">Papel Couchê</option>
                         <option value="Reciclado">Reciclado</option>
+                        <option value="Vinil Branco">Vinil Branco</option>
+                        <option value="Lona 440g">Lona 440g</option>
                     </select>
                 </div>
             
@@ -99,7 +102,14 @@
                     <label for="quantidade">Quantidade:</label>
                     <select id="quantidade" onchange="atualizarDroplist()">
                         <option value="">Escolha uma opção</option>
+                        <option value="1">1 unidade</option>
+                        <option value="5">5 unidades</option>
+                        <option value="10">10 unidades</option>
+                        <option value="25">25 unidades</option>
+                        <option value="50">50 unidades</option>
                         <option value="100">100 unidades</option>
+                        <option value="250">250 unidades</option>
+                        <option value="300">300 unidades</option>
                         <option value="500">500 unidades</option>
                         <option value="1000">1000 unidades</option>
                     </select>
@@ -109,8 +119,14 @@
                     <label for="medida">Medida:</label>
                     <select id="medida" onchange="atualizarDroplist()">
                         <option value="">Escolha uma opção</option>
-                        <option value="8.5 x 5 cm">8.5 x 5 cm</option>
-                        <option value="9 x 5.5 cm">9 x 5.5 cm</option>
+                        <option value="30x30mm">30x30mm</option>
+                        <option value="40x40mm">40x40mm</option>
+                        <option value="50x50mm">50x50mm</option>
+                        <option value="600x900mm">600x900mm</option>
+                        <option value="800x1000mm">800x1000mm</option>
+                        <option value="700x1200mm">700x1200mm</option>
+                        <option value="900x1200mm">900x1200mm</option>
+                        <option value="900x1600mm">900x1600mm</option>
                     </select>
                 </div>
             
@@ -144,24 +160,67 @@
             
                 <button id="enviarWhatsApp" onclick="enviarWhatsApp()">Enviar para WhatsApp</button>
                 <p id="resultado">Por favor, selecione as opções acima.</p>
+                <h4>Prazo de produção de 2 à 3 dias úteis</h4>
+                <p>*Considerar prazo, apenas após aprovação do layout</p>
+
+                
+
             </div>
+        </div>
+        <div class="container-xxl pedidoUrgente">    
+        <a id="pedidoUrgente" onclick="pedidoUrgente()"><h2>Pedido Urgente?</h2><h4>Entre em contato conosco, iremos verificar sua necessidade!</h4></a>
+    </div>
             
                 <script>
-                    function atualizarDroplist() {
-                        const quantidade = parseInt(document.getElementById("quantidade").value);
-                        const enobrecimento = document.getElementById("enobrecimento");
-                        const resultado = document.getElementById("resultado");
-                        
-                        // Habilitar ou desabilitar o droplist de enobrecimento
-                        if (quantidade > 100) {
-                            enobrecimento.disabled = false;
-                            resultado.innerText = "Você pode escolher um enobrecimento.";
-                        } else {
-                            enobrecimento.disabled = true;
-                            enobrecimento.value = ""; // Reseta o valor selecionado
-                            resultado.innerText = "Enobrecimento indisponível para 100 unidades.";
+                  
+
+                function atualizarDroplist() {
+                    const quantidade = parseInt(document.getElementById("quantidade").value);
+                    const enobrecimento = document.getElementById("enobrecimento");
+                    const resultado = document.getElementById("resultado");
+
+                    // Habilitar ou desabilitar o droplist de enobrecimento
+                    if (quantidade > 100) {
+                        enobrecimento.disabled = false;
+                        resultado.innerText = "Você pode escolher um enobrecimento.";
+                    } else {
+                        enobrecimento.disabled = true;
+                        enobrecimento.value = ""; // Reseta o valor selecionado
+                        resultado.innerText = "Enobrecimento indisponível para 100 unidades.";
+                    }
+
+                    // Verificar o texto do H2 e modificar o droplist de "material"
+                    const h2 = document.getElementById("orcamentoH2")?.textContent.trim(); // Garantindo que h2 esteja disponível
+                    const select = document.getElementById("material");
+                    const options = select?.options;
+
+                    // Verifique o texto do H2 e modifique as opções do droplist
+                    if (h2 === "Banner Personalizado" && options) {
+                        for (let i = 0; i < options.length; i++) {
+                            if (options[i].value === "Lona 440g") {
+                                options[i].style.display = "none"; // Oculta a opção
+                            } else {
+                                options[i].style.display = "block"; // Mostra as outras opções
+                            }
+                        }
+                    } else {
+                        // Mostre todas as opções caso o H2 não seja igual ou se não existirem opções
+                        if (options) {
+                            for (let i = 0; i < options.length; i++) {
+                                options[i].style.display = "block";
+                            }
                         }
                     }
+                }
+                window.onload = function() {
+                        atualizarDroplist();
+                    };
+
+                    // Chama a função ao carregar a página
+                    
+
+
+
                     function enviarWhatsApp() {
         const material = document.getElementById("material").value;
         const quantidade = document.getElementById("quantidade").value;
@@ -169,29 +228,56 @@
         const cores = document.getElementById("cores").value;
         const enobrecimento = document.getElementById("enobrecimento").value || "Nenhum";
         const acabamento = document.getElementById("acabamento").value;
+        const h2Element = document.getElementById("orcamentoH2").textContent;
 
         if (!material || !quantidade || !medida || !cores || !acabamento) {
             alert("Por favor, preencha todas as opções antes de enviar.");
             return;
         }
-
+        
         const mensagem = `
-            Olá, gostaria de um orçamento para cartões de visita:
-            - Material: ${material}
-            - Quantidade: ${quantidade}
-            - Medida: ${medida}
-            - Cores: ${cores}
-            - Enobrecimento: ${enobrecimento}
-            - Acabamento: ${acabamento}
+            Olá, gostaria de finalizar o pedido para ${h2Element} 
+- Material: ${material} 
+- Quantidade: ${quantidade} 
+- Medida: ${medida} 
+- Cores: ${cores} 
+- Enobrecimento: ${enobrecimento} 
+- Acabamento: ${acabamento} 
         `.trim();
 
-        const telefone = "5514981685959"; // Substitua pelo número do WhatsApp desejado
+        const telefone = "5514981520127"; // Substitua pelo número do WhatsApp desejado
         const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
-
+        
         window.open(url, "_blank");
     }
+
+    function pedidoUrgente() {
+        const telefone = "5514981520127"; // Substitua pelo número do WhatsApp desejado
+        const pedidoUrgente = `https://wa.me/${telefone}?text=Olá, tenho um pedido urgente, gostaria de saber se conseguem me atender?.`;
+        
+        window.open(pedidoUrgente, "_blank");
+    }
+
+    // atualizar h2
+    window.onload = function() {
+            // Captura o parâmetro "titulo" da URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const titulo = urlParams.get('titulo');
+
+            // Atualiza o conteúdo do h2 pelo id
+            const h2Element = document.getElementById('orcamentoH2');
+            if (titulo) {
+                h2Element.textContent = titulo; // Altera o texto do h2
+            } else {
+                h2Element.textContent = 'Orçamento Personalizado'; // Texto padrão se nenhum parâmetro for passado
+            }
+        };
+
+       
+
+
                 </script>
-        </div>
+        
     </main>
 
 
@@ -211,7 +297,7 @@
 
 
    
-    <div id="barrafooter"></div>
+    <div id="Orcamento_barrafooter"></div>
     <footer>
       
       
@@ -220,7 +306,7 @@
           <h6 id="INSTITUCIONAL">INSTITUCIONAL</h6>
             <ul id="footerUl">
               <li><a href="#"><P>Inicio</P></a></li>
-              <li><a href="orcamento personalizado.html"><p>Orçamento Personalizado</p></a></li>
+              <li><a href="orcamento personalizado.html?titulo=Orçamento Personalizado"><p>Orçamento Personalizado</p></a></li>
               <li><a href="#"><p>Politica de Cancelamento</p></a></li>
               <li><a href="#"><p>Prazos</p></a></li>
             </ul>
