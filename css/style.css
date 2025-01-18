@@ -29,6 +29,10 @@ p{
 
 .navbar{
   height: 134px;
+  background-image: url('../imagens/Fundo.png'); 
+  background-size: cover;
+  background-position: top;
+  background-position-x: 55px;
 }
 #navbarNav{
   flex-direction: column;
