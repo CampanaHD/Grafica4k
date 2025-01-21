@@ -46,4 +46,26 @@ const swiper1 = new Swiper('.mySwiper1', {
 
   });
 
+  const swiper3 = new Swiper('.mySwiper3', {
+    loop: true,
+  
+    // If we need pagination
+    pagination: {
+      el: '.btn-pagination-3',
+      clickable: true,
+      
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.btn-next-3',
+      prevEl: '.btn-prev-3',
+    },
+
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+    slidesPerView: 5,
+
+  });
  

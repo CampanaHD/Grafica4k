@@ -273,6 +273,31 @@ height: 15px;
   position: absolute;
 }
 
+.btn-prev-3{
+  top: 1730px;
+  left: 350px;
+  position: absolute;
+  
+}
+.btn-next-3{
+  top: 1730px;
+  right: 350px;
+  position: absolute;
+  
+}
+#btn-pagination-3{
+  top: 1855px;
+  position: absolute;
+}
+.swiper-pagination.btn-pagination-3 .swiper-pagination-bullet {
+  width: 7px; /* Largura do botão */
+  height: 7px; /* Altura do botão */ /* Cor do botão (personalize como quiser) */
+  background-color: #0035ff;
+  margin: 5px; /* Espaçamento entre os botões */
+  border-radius: 50%; /* Forma arredondada */
+  transform: scale(1.5); /* Aumentar proporcionalmente */
+}
+
 
 
 .mySwiper1{
@@ -323,7 +348,6 @@ height: 15px;
 }
 #cardsCarouselMain2 li{
 width: 264px;
-/* box-shadow: 2px 2px 8px rgba(0, 0, 0, 1); Example value */
 word-break: keep-all;
 white-space: normal; /* Permite quebra de linha automática */
 height: 540px;
@@ -360,6 +384,21 @@ height: 540px;
   margin-top: 2px;
   margin-bottom: 20px;
 }
+
+#containerMainParceiros{
+  height: 200px;
+  background-color: white;
+  border-radius: 20px;
+  margin-bottom: 60px;
+}
+#cardsCarouselMainParceiros img{
+  height: 200px;
+}
+
+
+
+
+
 
 
 
