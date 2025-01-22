@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link para o CSS do Bootstrap local -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    
+    <link rel="stylesheet" href="css/bootstrap-icons-1.11.3/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <title>Gráfica 4k</title>
+</head>
+<body style="min-width: 372px;" class="text-white">
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm ">
+        <div class="container-xxl text-center d-flex" id="containernav">
+            <a class="navbar-brand" href="index.html">
+                <img src="imagens/Logo.png" class="rounded float-start" id="logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar1 d-flex text-nowrap">
+                    <li id="graficaLi"><p id="grafica">GRÁFICA & COMUNICAÇÃO VISUAL</p></li>
+                    <li id="xpLi"><p id="xp">Sua Experiência em 4k</p></li>
+                    <li id="bagulinhoLi"><p>|</p></li>
+                    <li id="quemsomosLi"><a href="#"><p>Quem Somos!</p></a></li>
+                    <li id="bagulinhoLi"><p>|</p></li>
+                    <li id="duvidasfrequentesLi"><a href="#"><p>Dúvidas frequentes</p></a></li>
+                    <li>
+                        <div id="icons">
+                            <a onclick="enviarWhatsAppIcone()"><i class="bi bi-whatsapp fs-3" id="whatsapp"></i></a>
+                            <a href="#"><i class="bi bi-instagram fs-3" id="instagram"></i></a>
+                            <a href="#"><img src="imagens/Facebook.svg" id="facebook"></a>
+
+                        </div>
+                    </li>
+                </ul>
+                <!-- Barra de pesquisa abaixo dos links -->
+                <div id="search" style="position: relative;">
+                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="O que você está procurando?">
+                    <i class="bi bi-search search-icon fs-3"></i>
+                    <span class="separator"></span>
+                    <datalist id="datalistOptions">
+                        <option value="...">
+                        <option value="...">
+                        <option value="...">
+                        <option value="...">
+                        <option value="...">
+                    </datalist>
+                </div>
+            </div>    
+        </div>    
+    </nav>
+
+    <div id="linksuteis">
+        <div class="container-xxl">
+            <ul class="links d-flex text-nowrap" id="containerItens">
+                <li><a href="#"><i class="bi bi-list" id="hamburger"></i>Todos os produtos</a></li>
+                <li><p id="bagulinho">|</p></li>
+                <li><a href="#">Cartões de Visita</a></li>
+                <li><p id="bagulinho">|</p></li>
+                <li><a href="#">Panfletos e Folders</a></li>
+                <li><p id="bagulinho">|</p></li>
+                <li><a href="#">Adesivos e Rótulos</a></li>
+                <li><p id="bagulinho">|</p></li>
+                <li><a href="#">Banners e Faixas</a></li>
+                <li><p id="bagulinho">|</p></li>
+                <li><a href="orcamento personalizado.html?titulo=Orçamento Personalizado"><p id="orcamento">Orçamento Personalizado</p></a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="container-xxl containerDuvidas">
+        <H2>DÚVIDAS FREQUENTES</H2>
+        <div class="faq-section">
+            <button class="faq-button" onclick="toggleFAQ('faq-content-1')">RGB OU CMYK?</button>
+            <div id="faq-content-1" class="faq-content">
+                <p class="negrito">RGB (Red, Green, Blue): É usado para dispositivos eletrônicos como monitores, TVs e celulares. Ele combina luzes nas cores vermelho, verde e azul para criar outras cores.</p>
+                <p class="negrito">CMYK (Cyan, Magenta, Yellow, Black): É utilizado em Impressões físicas. Ele mistura pigmentos nas cores ciano, magenta, amarelo e preto para formar outras cores.</p>
+                <p>Por que usar CMYK para impressão? Impressoras trabalham com pigmentos, não com luz. O RGB é baseado em luz, e sua conversão direta para CMYK pode alterar as cores, resultando em diferenças visuais. Para garantir fidelidade de cor no produto final impresso, é essencial salvar os arquivos no formato CMYK.</p>
+            </div>
+        </div>
+    
+        <!-- Seção 2 -->
+        <div class="faq-section">
+            <button class="faq-button" onclick="toggleFAQ('faq-content-2')">Orçamento Personalizado</button>
+            <div id="faq-content-2" class="faq-content">
+                <h6>Como fazer um orçamento</h6>
+                <p>Para clicar em "orçamento personalizado", na barra superior de produtos, e será direcionado para um vendedor no Whatsapp, onde poderá descrever o item que precisa, caso não tenha todas as especificações pelo site!</p>
+            </div>
+        </div>
+    
+        <!-- Seção 3 -->
+        <div class="faq-section">
+            <button class="faq-button" onclick="toggleFAQ('faq-content-3')">Arte Final</button>
+            <div id="faq-content-3" class="faq-content">
+                <h6>Não possuo a arte final para impressão. A 4K oferece esse serviço?</h6>
+                <p>Atualmente a 4K oferece até 120 minutos gratuito para produções de arte finais, mas só é disponibilizado esse beneficio, com garantia do fechamento do orçamento solicitado ou escolhido, caso seja analisado, e o desenvolvimento da arte, possa ultrapassar o tempo disponibilizado, estaremos enviando os valores por horas excedentes !</p>
+            </div>
+        </div>
+    
+        <!-- Seção 4 -->
+        <div class="faq-section">
+            <button class="faq-button" onclick="toggleFAQ('faq-content-4')">Horário de Funcionamento</button>
+            <div id="faq-content-4" class="faq-content">
+                <h6>Qual é o horário de atendimento da 4K?</h6>
+                <p>Horário de Atendimento: <br> Segunda a Sexta: 09h00 às 18h00 - (intervalo de almoço das 11h às 13h) <br>Sábado: 09h00 às 13h00 <br>Caso esteja nos contatando durante o intervalo de almoço ou fora do horário de expediente, retornaremos logo seu contato!</p>
+            </div>
+        </div>
+    
+        <!-- Seção 5 -->
+        <div class="faq-section">
+            <button class="faq-button" onclick="toggleFAQ('faq-content-5')">Nota Fiscal</button>
+            <div id="faq-content-5" class="faq-content">
+                <h6>Preciso de Nota Fiscal, como solicitar?</h6>
+                <p>Na solicitação do seu pedido ou orçamento personalizado, já informe a necessidade de Nota Fiscal, possivelmente o vendedor estará perguntando a necessidade de tal, mas confirme se for de extrema necessidade de sua empresa!</p>
+            </div>
+        </div>
+    
+        <!-- Seção 6 -->
+        <div class="faq-section">
+            <button class="faq-button" onclick="toggleFAQ('faq-content-6')">Prazos</button>
+            <div id="faq-content-6" class="faq-content">
+                <h6>Como funciona os prazos?</h6>
+                <p>Cada produto/ serviço terá seu prazo padrão, independente da qualidade, por questões de segurança, mas o prazo funciona como uma margem de segurança de imprevistos que possam ocorrer, nossos materiais tem uma previsão máximo estipulada, onde fazemos o possível para não passar dessa data, mas os materiais podem ficar pronto antes do prazo previsto.</p>
+            </div>
+        </div>
+    
+        <script>
+            function toggleFAQ(contentId) {
+                const content = document.getElementById(contentId);
+                content.classList.toggle('visible');
+            }
+        </script>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="barrafooter"></div>
+    <footer>
+      
+      
+        <div class="container-xxl" id="containerFooter">
+          <div>
+          <p id="INSTITUCIONAL">INSTITUCIONAL</p>
+            <ul id="footerUl">
+              <li><a href="#"><P>Inicio</P></a></li>
+              <li><a href="orcamento personalizado.html"><p>Orçamento Personalizado</p></a></li>
+              <li><a href="#"><p>Politica de Cancelamento</p></a></li>
+              <li><a href="#"><p>Prazos</p></a></li>
+            </ul>
+          
+          <div>
+            <p id="formas_de_pagamentoP">FORMAS DE PAGAMENTO</p>
+            <ul id="formas_de_pagamento">
+              
+              <li><img src="imagens/Formas de pagamento/PIX.svg" alt=""></li>
+              <li><img src="imagens/Formas de pagamento/Mastercard.svg" alt=""></li>
+              <li><img src="imagens/Formas de pagamento/Visa.svg" alt=""></li>
+              <li><img src="imagens/Formas de pagamento/Boleto.svg" alt=""></li>
+              
+              
+              
+            </ul>
+          </div>
+        </div>
+        <div>
+          <ul id="ajuda">
+            <li><a href="#"><p>Quem Somos</p></a></li>
+            <li><a href="#"><p>Politica e privacidade</p></a></li>
+            <li><a href="#"><p>Regulamento</p></a></li>
+            <li><a href="#"><p>Suporte</p></a></li>
+          </ul>
+        </div>
+        <div>
+          <ul id="ajuda">
+            <li><a href="#"><p>Trabalhe Conosco</p></a></li>
+            <li><a href="#"><p>Politica de Devolução</p></a></li>
+            <li><a href="#"><p>FAQ Perguntas Frequentes</p></a></li>
+          </ul>
+        </div>
+        <div id="maps">
+          <a href="https://maps.app.goo.gl/dH4vpYswEiNbhkhUA"><img src="imagens/Maps.png" alt=""></a>
+        </div>
+      </div>
+        <div id="direitos">
+            <ul id="direitosUl">
+              <li class="no-style"><p>Todos os direitos reservados © 2021 | 4K - Gráfica e Comunicação Visual</p></li>
+              <li class="no-style"><p>CNPJ: 42.915.741/0001-42 - R. São Carlos, 792 - Alto Cafezal - Marília/SP - CEP: 17.504-010</p></li>
+            </ul>
+        </div>
+      
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Inclusão do JS do Bootstrap local -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+      // Opcional: Adicione lógica caso precise modificar algo antes de redirecionar
+      document.querySelectorAll("a[data-item]").forEach(link => {
+          link.addEventListener("click", event => {
+              const itemKey = link.getAttribute("data-item");
+              console.log(`Link clicado: ${itemKey}`);
+          });
+      });
+  </script>
+</body>
+</html>

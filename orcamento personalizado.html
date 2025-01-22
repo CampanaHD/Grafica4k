@@ -34,10 +34,10 @@
                     <li id="bagulinhoLi"><p>|</p></li>
                     <li id="quemsomosLi"><a href="#"><p>Quem Somos!</p></a></li>
                     <li id="bagulinhoLi"><p>|</p></li>
-                    <li id="duvidasfrequentesLi"><a href="#"><p>Dúvidas frequentes</p></a></li>
+                    <li id="duvidasfrequentesLi"><a href="Duvidas Frequentes.html"><p>Dúvidas frequentes</p></a></li>
                     <li>
                         <div id="icons">
-                            <a href="#"><i class="bi bi-whatsapp fs-3" id="whatsapp"></i></a>
+                            <a onclick="enviarWhatsAppIcone()"><i class="bi bi-whatsapp fs-3" id="whatsapp"></i></a>
                             <a href="#"><i class="bi bi-instagram fs-3" id="instagram"></i></a>
                             <a href="#"><img src="imagens/Facebook.svg" id="facebook"></a>
 
@@ -514,6 +514,7 @@ window.onload = function () {
     const urlParams = new URLSearchParams(window.location.search);
     const titulo = urlParams.get("titulo");
     const h2Element = document.getElementById("orcamentoH2");
+    const id = urlParams.get("id");
 
     // Atualiza o título do H2
     h2Element.textContent = titulo || "Orçamento Personalizado";
@@ -528,7 +529,7 @@ window.onload = function () {
 
     // Limpa e aplica as seleções específicas de cada categoria
     
-    if (titulo === "Banner Personalizado") {
+    if (titulo === "Banner Personalizado" && id === "preenchido") {
         materialSelect.value = "Lona 440g";
         quantidadeSelect.value = "1"; // Definindo a quantidade para "1"
         medidaSelect.value = "600x900mm";
@@ -541,7 +542,21 @@ window.onload = function () {
         exibirOpcoesSelect(coresSelect, itemsData.banner.cores);
         exibirOpcoesSelect(enobrecimentoSelect, itemsData.banner.enobrecimento);
         exibirOpcoesSelect(acabamentoSelect, itemsData.banner.acabamento);
-    }else if (titulo === "Blocos e Talões") {
+    }else if (titulo === "Banner Personalizado") {
+        materialSelect.value = "Escolha uma opção";
+        quantidadeSelect.value = "Escolha uma opção"; // Definindo a quantidade para "1"
+        medidaSelect.value = "Escolha uma opção";
+        coresSelect.value = "Escolha uma opção";
+        enobrecimentoSelect.value = "Escolha uma opção";
+        acabamentoSelect.value = "Escolha uma opção";
+        exibirOpcoesSelect(materialSelect, itemsData.banner.material);
+        exibirOpcoesSelect(quantidadeSelect, itemsData.banner.quantidade);
+        exibirOpcoesSelect(medidaSelect, itemsData.banner.medida);
+        exibirOpcoesSelect(coresSelect, itemsData.banner.cores);
+        exibirOpcoesSelect(enobrecimentoSelect, itemsData.banner.enobrecimento);
+        exibirOpcoesSelect(acabamentoSelect, itemsData.banner.acabamento);
+    }
+    else if (titulo === "Blocos e Talões" && id === "preenchido") {
         materialSelect.value = "Sulfite 75g";
         quantidadeSelect.value = "10";
         medidaSelect.value = "140x200mm";
@@ -555,6 +570,21 @@ window.onload = function () {
         exibirOpcoesSelect(enobrecimentoSelect, itemsData.blocosetaloes.enobrecimento);
         exibirOpcoesSelect(acabamentoSelect, itemsData.blocosetaloes.acabamento);
     }
+    else if (titulo === "Blocos e Talões") {
+    // Limpar todas as seleções se o ID não for "preenchido"
+    materialSelect.value = "Escolha uma opção";
+    quantidadeSelect.value = "Escolha uma opção";
+    medidaSelect.value = "Escolha uma opção";
+    coresSelect.value = "Escolha uma opção";
+    enobrecimentoSelect.value = "Escolha uma opção";
+    acabamentoSelect.value = "Escolha uma opção";
+    exibirOpcoesSelect(materialSelect, itemsData.blocosetaloes.material);
+    exibirOpcoesSelect(quantidadeSelect, itemsData.blocosetaloes.quantidade);
+    exibirOpcoesSelect(medidaSelect, itemsData.blocosetaloes.medida);
+    exibirOpcoesSelect(coresSelect, itemsData.blocosetaloes.cores);
+    exibirOpcoesSelect(enobrecimentoSelect, itemsData.blocosetaloes.enobrecimento);
+    exibirOpcoesSelect(acabamentoSelect, itemsData.blocosetaloes.acabamento);
+}
     else if (titulo === "Cardápios") {
         materialSelect.value = "Escolha uma opção";
         quantidadeSelect.value = "Escolha uma opção"; 
@@ -624,13 +654,41 @@ window.onload = function () {
         exibirOpcoesSelect(enobrecimentoSelect, itemsData.convites.enobrecimento);
         exibirOpcoesSelect(acabamentoSelect, itemsData.convites.acabamento);
     }
-     else if (titulo === "Adesivos") {
+     else if (titulo === "Adesivos" && id === "preenchido") {
         materialSelect.value = "Vinil Branco";
         quantidadeSelect.value = "10"; // Exemplo de quantidade padrão para Adesivos
         medidaSelect.value = "40x40mm";
         coresSelect.value = "4x0 (Frente colorida)";
         enobrecimentoSelect.value = "Sem Enobrecimento";
         acabamentoSelect.value = "Meio-Corte Personalizado";
+        exibirOpcoesSelect(materialSelect, itemsData.adesivos.material);
+        exibirOpcoesSelect(quantidadeSelect, itemsData.adesivos.quantidade);
+        exibirOpcoesSelect(medidaSelect, itemsData.adesivos.medida);
+        exibirOpcoesSelect(coresSelect, itemsData.adesivos.cores);
+        exibirOpcoesSelect(enobrecimentoSelect, itemsData.adesivos.enobrecimento);
+        exibirOpcoesSelect(acabamentoSelect, itemsData.adesivos.acabamento);
+    }
+    else if (titulo === "Vinil 5x5" && id === "preenchido") {
+        materialSelect.value = "Vinil Branco";
+        quantidadeSelect.value = "10"; // Exemplo de quantidade padrão para Adesivos
+        medidaSelect.value = "50x50mm";
+        coresSelect.value = "4x0 (Frente colorida)";
+        enobrecimentoSelect.value = "Sem Enobrecimento";
+        acabamentoSelect.value = "Meio-Corte Personalizado";
+        exibirOpcoesSelect(materialSelect, itemsData.adesivos.material);
+        exibirOpcoesSelect(quantidadeSelect, itemsData.adesivos.quantidade);
+        exibirOpcoesSelect(medidaSelect, itemsData.adesivos.medida);
+        exibirOpcoesSelect(coresSelect, itemsData.adesivos.cores);
+        exibirOpcoesSelect(enobrecimentoSelect, itemsData.adesivos.enobrecimento);
+        exibirOpcoesSelect(acabamentoSelect, itemsData.adesivos.acabamento);
+    }
+    else if (titulo === "Adesivos") {
+        materialSelect.value = "Escolha uma opção";
+        quantidadeSelect.value = "Escolha uma opção"; // Exemplo de quantidade padrão para Adesivos
+        medidaSelect.value = "Escolha uma opção";
+        coresSelect.value = "Escolha uma opção";
+        enobrecimentoSelect.value = "Escolha uma opção";
+        acabamentoSelect.value = "Escolha uma opção";
         exibirOpcoesSelect(materialSelect, itemsData.adesivos.material);
         exibirOpcoesSelect(quantidadeSelect, itemsData.adesivos.quantidade);
         exibirOpcoesSelect(medidaSelect, itemsData.adesivos.medida);
@@ -736,7 +794,7 @@ window.onload = function () {
         exibirOpcoesSelect(enobrecimentoSelect, itemsData.lona.enobrecimento);
         exibirOpcoesSelect(acabamentoSelect, itemsData.lona.acabamento);
     }
-    else if (titulo === "Panfletos") {
+    else if (titulo === "Panfletos" && id === "preenchido") {
         materialSelect.value = "Couchê 90g";
         quantidadeSelect.value = "1000"; // Exemplo de quantidade padrão para Adesivos
         medidaSelect.value = "100x140mm";
@@ -750,6 +808,20 @@ window.onload = function () {
         exibirOpcoesSelect(enobrecimentoSelect, itemsData.panfletoseflyers.enobrecimento);
         exibirOpcoesSelect(acabamentoSelect, itemsData.panfletoseflyers.acabamento);
         atualizarDroplist();
+    }
+    else if (titulo === "Panfletos") {
+        materialSelect.value = "Escolha uma opção";
+        quantidadeSelect.value = "Escolha uma opção"; // Exemplo de quantidade padrão para Adesivos
+        medidaSelect.value = "Escolha uma opção";
+        coresSelect.value = "Escolha uma opção";
+        enobrecimentoSelect.value = "Escolha uma opção";
+        acabamentoSelect.value = "Escolha uma opção";
+        exibirOpcoesSelect(materialSelect, itemsData.panfletoseflyers.material);
+        exibirOpcoesSelect(quantidadeSelect, itemsData.panfletoseflyers.quantidade);
+        exibirOpcoesSelect(medidaSelect, itemsData.panfletoseflyers.medida);
+        exibirOpcoesSelect(coresSelect, itemsData.panfletoseflyers.cores);
+        exibirOpcoesSelect(enobrecimentoSelect, itemsData.panfletoseflyers.enobrecimento);
+        exibirOpcoesSelect(acabamentoSelect, itemsData.panfletoseflyers.acabamento);
     }
     else if (titulo === "Pastas") {
         materialSelect.value = "Escolha uma opção";
@@ -1103,6 +1175,7 @@ function atualizarDroplist() {
             const url = `https://wa.me/${telefone}?text=Olá, tenho um pedido urgente, gostaria de saber se conseguem me atender?.`;
             window.open(url, "_blank");
         }
+        
     </script>
     
         

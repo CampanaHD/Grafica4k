@@ -130,6 +130,7 @@ height: 15px;
     padding-right: 10px;
     width: 27.69px;
     height: 27.85px;
+    cursor: pointer;
   }
   #instagram{
     
@@ -611,4 +612,67 @@ footer h6{
   align-items: center;
   justify-content: center;
   border-radius: 20px 20px 0 0;
+}
+.containerDuvidas{
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.containerDuvidas h6{
+  font-weight: 600;
+}
+.negrito{
+  font-weight: 600;
+}
+.faq-section {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Estilo do botão com gradiente */
+.faq-button {
+  padding: 10px 20px;
+  background: linear-gradient(to right, blue, #0035ff, #007fff, #e500b5, #f27100, #fff200);
+  color: white;
+  border: none;
+  border-radius: 10px 10px 0 0; /* Bordas arredondadas apenas no topo */
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  width: 100%;
+}
+
+/* Estilo da seção oculta */
+.faq-content {
+  display: none;
+  padding: 10px;
+  background-color: #f9f9f9;
+  color: black;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 10px 10px; /* Bordas arredondadas para a parte inferior */
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Adicionando transições suaves */
+  max-height: 0;
+  overflow: hidden; /* Garante que o conteúdo fique escondido quando o max-height for 0 */
+}
+
+/* Estilo para texto visível */
+.faq-content.visible {
+  display: block;
+  max-height: 500px; /* Define um valor máximo para o conteúdo expandido */
+  padding: 10px;
+}
+
+/* Responsividade */
+@media screen and (max-width: 600px) {
+  .faq-button {
+      font-size: 16px;
+      padding: 8px 16px;
+  }
+
+  .faq-content {
+      font-size: 14px;
+  }
 }
