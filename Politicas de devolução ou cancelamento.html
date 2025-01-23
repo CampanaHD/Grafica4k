@@ -1,1 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link para o CSS do Bootstrap local -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    
+    <link rel="stylesheet" href="css/bootstrap-icons-1.11.3/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <title>Gráfica 4k</title>
+</head>
+<body style="min-width: 372px;" class="text-white">
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm ">
+        <div class="container-xxl text-center d-flex" id="containernav">
+            <a class="navbar-brand" href="index.html">
+                <img src="imagens/Logo.png" class="rounded float-start" id="logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar1 d-flex text-nowrap">
+                    <li id="graficaLi"><p id="grafica">GRÁFICA & COMUNICAÇÃO VISUAL</p></li>
+                    <li id="xpLi"><p id="xp">Sua Experiência em 4k</p></li>
+                    <li id="bagulinhoLi"><p>|</p></li>
+                    <li id="quemsomosLi"><a href="#"><p>Quem Somos!</p></a></li>
+                    <li id="bagulinhoLi"><p>|</p></li>
+                    <li id="duvidasfrequentesLi"><a href="#"><p>Dúvidas frequentes</p></a></li>
+                    <li>
+                        <div id="icons">
+                            <a onclick="enviarWhatsAppIcone()"><i class="bi bi-whatsapp fs-3" id="whatsapp"></i></a>
+                            <a href="https://www.instagram.com/grafica4k.cv/"><i class="bi bi-instagram fs-3" id="instagram"></i></a>
+                            <a href="https://www.facebook.com/grafica4k21/"><img src="imagens/Facebook.svg" id="facebook"></a>
+
+                        </div>
+                    </li>
+                </ul>
+                <!-- Barra de pesquisa abaixo dos links -->
+                <div id="search" style="position: relative;">
+                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="O que você está procurando?">
+                    <i class="bi bi-search search-icon fs-3"></i>
+                    <span class="separator"></span>
+                    <datalist id="datalistOptions">
+                        <option value="...">
+                        <option value="...">
+                        <option value="...">
+                        <option value="...">
+                        <option value="...">
+                    </datalist>
+                </div>
+            </div>    
+        </div>    
+    </nav>
+
+    
+    <div id="linksuteis">
+        <div class="container-xxl">
+            <ul class="links d-flex text-nowrap" id="containerItens">
+                <li><a href="#"><i class="bi bi-list" id="hamburger"></i>Todos os produtos</a></li>
+                <li><p id="bagulinho">|</p></li>
+                <li><a href="#">Cartões de Visita</a></li>
+                <li><p id="bagulinho">|</p></li>
+                <li><a href="#">Panfletos e Folders</a></li>
+                <li><p id="bagulinho">|</p></li>
+                <li><a href="#">Adesivos e Rótulos</a></li>
+                <li><p id="bagulinho">|</p></li>
+                <li><a href="#">Banners e Faixas</a></li>
+                <li><p id="bagulinho">|</p></li>
+                <li><a href="orcamento personalizado.html?titulo=Orçamento Personalizado"><p id="orcamento">Orçamento Personalizado</p></a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="container-xxl containerDuvidas">
+        <H2>Politicas de Devolução ou Cancelamento</H2>
+        <p>A 4k está comprometida em garantir a satisfação dos seus clientes. Está política de devolução descreve os procedimentos para devolução de produtos adquiridos em nosso site.</p>  
+        <p>1. Condições para Devolução</p>
+        <p>1.1. Aceitamos devoluções de produtos apenas em casos de defeito de fabricação, erro por parte da empresa</p>
+        <p>1.2. Os produtos devem estar em sua embalagem original, sem sinais de uso ou danos causados pelo cliente.</p>
+        <p>1.3. Os clientes têm até 7 dias corridos, a partir da data de recebimento do pedido, para solicitar a devolução ou troca de produtos.</p>
+        <p>2. Procedimento de Devolução</p>
+        <p>2.1. Para solicitar a devolução de um produto, os clientes devem entrar em contato conosco através dos nossos canais de atendimento ao cliente,, informando o motivo da devolução e o número do pedido.</p>
+        <p>2.2. Após analisar a solicitação, forneceremos instruções sobre o procedimento de devolução e o endereço para envio do produto.</p>
+        <p>3. Avaliação e Reembolso</p>
+        <p>3.1. Após recebermos o produto devolvido, realizaremos uma avaliação para verificar se ele está de acordo com as condições de devolução descritas nesta política.</p>
+        <p>3.2. Caso a devolução seja aceita, procederemos com o reembolso do valor pago pelo cliente. Retemos 55% do valor para cobrir os custos associados à produção.</p>
+        <p>3.3. O reembolso será realizado através do mesmo método de pagamento utilizado na compra. O prazo para o reembolso pode variar dependendo do método de pagamento e das políticas das instituições financeiras.</p>
+        <p>4. Excessões</p>
+        <p>4.1. Não aceitamos devoluções de produtos personalizado ou sob medida, a menos que apresentem defeito de fabricação ou erro por parte da empresa.</p>
+        <p>4.2. Em casos de devolução de produtos com defeito, oferecemos a opção de troca por um produto similar ou o reembolso do valor pago.</p>
+        <h2>Política de Cancelamento</h2>
+        <p>1. Condições para Cancelamento</p>
+        <p>1.1. Os clientes podem solicitar o cancelamento de pedidos antes do início do processo de produção.</p>
+        <p>1.2 O cancelamento de pedidos de produtos personalizados ou sob medida só é permitido se o processo de produção ainda não tiver sido iniciado.</p>
+        <p>2. Procedimento de Cancelamento</p>
+        <p>2.1. Para solicitar o cancelamento de um pedido, os clientes devem entrar em contato conosco através dos nossos canais de atendimento ao cliente, informando o número do pedido e o motivo do cancelamento.</p>
+        <p>2.2. Faremos o possível para atender aos pedidos de cancelamento o mais rápido possível. No entanto, não podemos garantir que o cancelamento será possível se o processo de produção já tiver sido iniciado.</p>      
+        <p>3. Reembolso</p>
+        <p>3.1. Caso o cancelamento seja possível, procederemos com o reembolso do valor pago pelo cliente.</p>
+        <p>3.2. Retemos 55% do valor para cobrir os custos associados ao cancelamento do pedido caso se tenha iniciado a produtção.</p>
+        <p>3.3. O reembolso será realizado através do mesmo método de pagamento utilizado na compra. O prazo para o reembolso pode variar dependendo do método de pagamento e das políticas das instituições financeiras.</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="barrafooter"></div>
+    <footer>
+      
+      
+        <div class="container-xxl" id="containerFooter">
+          <div>
+          <p id="INSTITUCIONAL">INSTITUCIONAL</p>
+            <ul id="footerUl">
+              <li><a href="#"><P>Inicio</P></a></li>
+              <li><a href="orcamento personalizado.html"><p>Orçamento Personalizado</p></a></li>
+              <li><a href="#"><p>Politica de Cancelamento</p></a></li>
+              <li><a href="#"><p>Prazos</p></a></li>
+            </ul>
+          
+          <div>
+            <p id="formas_de_pagamentoP">FORMAS DE PAGAMENTO</p>
+            <ul id="formas_de_pagamento">
+              
+              <li><img src="imagens/Formas de pagamento/PIX.svg" alt=""></li>
+              <li><img src="imagens/Formas de pagamento/Mastercard.svg" alt=""></li>
+              <li><img src="imagens/Formas de pagamento/Visa.svg" alt=""></li>
+              <li><img src="imagens/Formas de pagamento/Boleto.svg" alt=""></li>
+              
+              
+              
+            </ul>
+          </div>
+        </div>
+        <div>
+          <ul id="ajuda">
+            <li><a href="#"><p>Quem Somos</p></a></li>
+            <li><a href="#"><p>Politica e privacidade</p></a></li>
+            <li><a href="#"><p>Regulamento</p></a></li>
+            <li><a href="#"><p>Suporte</p></a></li>
+          </ul>
+        </div>
+        <div>
+          <ul id="ajuda">
+            <li><a href="#"><p>Trabalhe Conosco</p></a></li>
+            <li><a href="#"><p>Politica de Devolução</p></a></li>
+            <li><a href="#"><p>FAQ Perguntas Frequentes</p></a></li>
+          </ul>
+        </div>
+        <div id="maps">
+          <a href="https://maps.app.goo.gl/dH4vpYswEiNbhkhUA"><img src="imagens/Maps.png" alt=""></a>
+        </div>
+      </div>
+        <div id="direitos">
+            <ul id="direitosUl">
+              <li class="no-style"><p>Todos os direitos reservados © 2021 | 4K - Gráfica e Comunicação Visual</p></li>
+              <li class="no-style"><p>CNPJ: 42.915.741/0001-42 - R. São Carlos, 792 - Alto Cafezal - Marília/SP - CEP: 17.504-010</p></li>
+            </ul>
+        </div>
+      
+    </footer>
+
+</body>
+</html>
