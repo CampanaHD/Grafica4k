@@ -622,6 +622,10 @@ footer h6{
 .containerDuvidas h6{
   font-weight: 600;
 }
+.containerDuvidas p{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 .negrito{
   font-weight: 600;
 }
