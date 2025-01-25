@@ -66,7 +66,7 @@
             <ul class="links d-flex text-nowrap" id="containerItens">
                 <li><a href="#"><i class="bi bi-list" id="hamburger"></i>Todos os produtos</a></li>
                 <li><p id="bagulinho">|</p></li>
-                <li><a href="#">Cartões de Visita</a></li>
+                <li><a href="orcamento personalizado.html?titulo=Cartões de Visita">Cartões de Visita</a></li>
                 <li><p id="bagulinho">|</p></li>
                 <li><a href="#">Panfletos e Folders</a></li>
                 <li><p id="bagulinho">|</p></li>
@@ -86,7 +86,19 @@
             <div class="orcamentoPersonalizado">
                 <h2 id="orcamentoH2"></h2>
             
-                
+                <div class="campo">
+                    <label for="modelo">Modelo:</label>
+                    <select id="modelo" onchange="atualizarDroplist()">
+                        <option value="Escolha uma opção">Escolha uma opção</option>
+                        <option value="Linha Premium">Linha Premium</option>
+                        <option value="Linha Promocional">Linha Promocional</option>
+                        <option value="Primeira Linha">Primeira Linha</option>
+                        <option value="Saco">Saco</option>
+                        <option value="Oficio">Oficio</option>
+                        <option value="Comercial">Comercial</option>
+                        <option value="Vinil">Vinil</option>
+                    </select>
+                </div>
                 <div class="campo">
                     <label for="material">Material:</label>
                     <select id="material" onchange="atualizarDroplist()">
@@ -99,6 +111,7 @@
                         <option value="Couchê Brilho 250g">Couchê Brilho 250g</option>
                         <option value="Couchê Brilho 300g">Couchê Brilho 300g</option>
                         <option value="Couchê Fosco 250g">Couchê Fosco 250g</option>
+                        <option value="Couchê Fosco 300g">Couchê Fosco 300g</option>
                         <option value="Duplex 250g">Duplex 250g</option>
                         <option value="Monolucido 120g">Monolucido 120g</option>
                         <option value="Reciclado">Reciclado</option>
@@ -138,6 +151,7 @@
                         <option value="25">25 unidades</option>
                         <option value="50">50 unidades</option>
                         <option value="100" id="unidades100">100 unidades</option>
+                        <option value="200">200 unidades</option>
                         <option value="250">250 unidades</option>
                         <option value="300">300 unidades</option>
                         <option value="500">500 unidades</option>
@@ -152,7 +166,7 @@
                     <select id="medida" onchange="atualizarDroplist()">
                         <option value="Escolha uma opção">Escolha uma opção</option>
                         <option value="30x30mm">30x30mm</option>
-                        <option value="40x40mm">40x40mm</option>]
+                        <option value="40x40mm">40x40mm</option>
                         <option value="46x130mm">46x130mm</option>
                         <option value="48x88mm">48x88mm</option>
                         <option value="50x40mm">50x40mm</option>
@@ -209,6 +223,7 @@
                         <option value="Verniz Localizado">Verniz Localizado</option>
                         <option value="Impressão Ultra HD Sublimática">Impressão Ultra HD Sublimática</option>
                         <option value="Laminação Fosca">Laminação Fosca</option>
+                        <option value="Laminação Brilho">Laminação Brilho</option>
                     </select>
                 </div>
             
@@ -279,6 +294,7 @@
 
 const itemsData = {
     adesivos: {
+        modelo: ["Escolha uma opção", "Vinil"],
         material: ["Escolha uma opção", "Vinil Branco", "Vinil Transparente", "Vinil Perfurado"],
         quantidade: ["Escolha uma opção", "1", "100", "250", "500"],
         medida: ["Escolha uma opção", "30x30mm", "40x40mm", "50x50mm"],
@@ -287,14 +303,16 @@ const itemsData = {
         acabamento: ["Escolha uma opção", "Meio-Corte Personalizado", "Refile"],
     },
     banner: {
-        material: ["Escolha uma opção", "Lona 440g"],
+        modelo: ["Escolha uma opção", "Banner", "Faixa", "Lona"],
+        material: ["Escolha uma opção", "Lona Brilho 440g", "Lona Fosca 280g"],
         quantidade: ["Escolha uma opção", "1"], 
         medida: ["Escolha uma opção", "600x900mm", "800x1000mm", "700x1200mm", "900x1200mm", "900x1600mm"],
         cores: ["Escolha uma opção", "4x0 (Frente colorida)"],
         enobrecimento: ["Escolha uma opção", "Sem Enobrecimento"],
-        acabamento: ["Escolha uma opção", "Bastão e Cordão"],
+        acabamento: ["Escolha uma opção", "Bastão e Cordão", "Bastão e Ilhós", "Reforço e Ilhós", "Sem Acabamento"],
     },
     blocosetaloes: {
+        modelo: ["Escolha uma opção", "Banner", "Faixa", "Lona"],
         material: ["Escolha uma opção", "Sulfite 75g"],
         quantidade: ["Escolha uma opção", "1", "3", "5", "10"], 
         medida: ["Escolha uma opção", "100x140mm", "100x200mm", "140x200mm"],
@@ -303,29 +321,23 @@ const itemsData = {
         acabamento: ["Escolha uma opção", "Blocagem de 100 Folhas", "Blocagem de 100 Folhas + Numeração", "Blocagem de 100 Folhas + Serrilha e Grampo", "Blocagem de 100 Folhas + Serrilha e Grampo + Numeração", "Blocagem de 50x2 vias", "Blocagem de 50x2 vias + Numeração", "Blocagem de 50x2 vias + Serrilha e Grampo", "Blocagem de 50x2 vias + Serrilha e Grampo + Numeração"],
     },
     cardapios: {
+        modelo: ["Escolha uma opção", "Placa PS/PVC", "Plastificado"],
         material: ["Escolha uma opção", "PS/PVC 1mm", "PS/PVC 2mm", "Sulfite 180g"],
         quantidade: ["Escolha uma opção", "1", "5", "10"], 
         medida: ["Escolha uma opção", "200x280mm"],
         cores: ["Escolha uma opção", "4x4 (Frente e verso coloridos)"],
-        enobrecimento: ["Escolha uma opção", "Laminação Fosca"],
+        enobrecimento: ["Escolha uma opção", "Sem Enobrecimento", "Laminação Fosca", "Laminação Brilho"],
         acabamento: ["Escolha uma opção", "Vinil Branco + 4 Cantos Arredondados", "Plastificação 0.5 + 4 Cantos Arredondados"],
     },
-    cartoesdevisita4x0: {
-        material: ["Escolha uma opção", "Couchê Brilho 300g"],
+    cartoesdevisita: {
+        modelo: ["Escolha uma opção", "Linha Promocional", "Linha Premium"],
+        material: ["Escolha uma opção", "Couchê Brilho 300g", "Couchê Fosco 300g"],
         quantidade: ["Escolha uma opção", "100", "500", "1000"], 
         medida: ["Escolha uma opção", "48x88mm"],
         cores: ["Escolha uma opção", "4x0 (Frente colorida)", "4x4 (Frente e verso coloridos)"],
-        enobrecimento: ["Escolha uma opção", "Sem Enobrecimento"],
-        acabamento: ["Escolha uma opção", "Refile"],
-        preco: ["Escolha uma opção", "R$ 90,00", "R$ 100,00", "R$ 134,00", "R$ 148,00", "R$ 145,00", "R$ 160,00"],
-    },
-    cartoesdevisitapremium: {
-        material: ["Escolha uma opção", "Couchê Brilho 300g"],
-        quantidade: ["Escolha uma opção", "100", "500", "1000"], 
-        medida: ["Escolha uma opção", "48x88mm"],
-        cores: ["Escolha uma opção", "4x4 (Frente e verso coloridos)"],
-        enobrecimento: ["Escolha uma opção", "Verniz Localizado"],
+        enobrecimento: ["Escolha uma opção", "Sem Enobrecimento", "Verniz Total Frente", "Verniz Localizado"],
         acabamento: ["Escolha uma opção", "Refile", "2 Cantos Arredondados", "4 Cantos Arredondados"],
+        preco: ["Escolha uma opção", "R$ 90,00", "R$ 100,00", "R$ 134,00", "R$ 148,00", "R$ 145,00", "R$ 160,00"],
     },
     cavalete: {
         material: ["Escolha uma opção", "Metalon 20x20mm"],
@@ -359,6 +371,15 @@ const itemsData = {
         enobrecimento: ["Escolha uma opção", "Sem Enobrecimento"],
         acabamento: ["Escolha uma opção", "Instalação"],
     },
+    envelopes: {
+        modelo: ["Escolha uma opção", "Saco", "Oficio", "Comercial"],
+        material: ["Escolha uma opção", "Sulfite 80g", "Sulfite 90g"],
+        quantidade: ["Escolha uma opção", "100", "200", "250", "300", "500", "1000"], 
+        medida: ["Escolha uma opção", "240x340mm", "360x460mm", "115x230mm", "114x162mm"],
+        cores: ["Escolha uma opção", "1x0 (Impressão 1 cor)", "4x0 (Frente colorida)"],
+        enobrecimento: ["Escolha uma opção", "Sem Enobrecimento"],
+        acabamento: ["Escolha uma opção", "Modelo Padrão"],
+    },
     fachada: {
         material: ["Escolha uma opção", "Metalon 20x20mm", "Vinil Branco"],
         quantidade: ["Escolha uma opção", "1"], 
@@ -366,14 +387,6 @@ const itemsData = {
         cores: ["Escolha uma opção", "4x0 (Frente colorida)"],
         enobrecimento: ["Escolha uma opção", "Sem Enobrecimento"],
         acabamento: ["Escolha uma opção", "Lona 440g + Instalação Revestida", "Lona 440g + Instalação ilhós", "Instalação"],
-    },
-    faixas: {
-        material: ["Escolha uma opção", "Lona 440g"],
-        quantidade: ["Escolha uma opção", "1"], 
-        medida: ["Escolha uma opção", "600x900mm", "800x1000mm", "700x1200mm", "900x1200mm", "900x1600mm"],
-        cores: ["Escolha uma opção", "4x0 (Frente colorida)"],
-        enobrecimento: ["Escolha uma opção", "Sem Enobrecimento"],
-        acabamento: ["Escolha uma opção", "Meio-Corte Personalizado", "Bastão e Ilhós", "Reforço e Ilhós"],
     },
     fichas: {
         material: ["Escolha uma opção", "Sulfite 75g", "Sulfite 180g",],
@@ -520,6 +533,7 @@ window.onload = function () {
     h2Element.textContent = titulo || "Orçamento Personalizado";
 
     // Atualiza o droplist de material com base no título
+    const modeloSelect = document.getElementById("modelo");
     const materialSelect = document.getElementById("material");
     const quantidadeSelect = document.getElementById("quantidade");
     const medidaSelect = document.getElementById("medida");
@@ -572,12 +586,14 @@ window.onload = function () {
     }
     else if (titulo === "Blocos e Talões") {
     // Limpar todas as seleções se o ID não for "preenchido"
+    modeloSelect.value = "Escolha uma opção";
     materialSelect.value = "Escolha uma opção";
     quantidadeSelect.value = "Escolha uma opção";
     medidaSelect.value = "Escolha uma opção";
     coresSelect.value = "Escolha uma opção";
     enobrecimentoSelect.value = "Escolha uma opção";
     acabamentoSelect.value = "Escolha uma opção";
+    exibirOpcoesSelect(modeloSelect, itemsData.blocosetaloes.modelo);
     exibirOpcoesSelect(materialSelect, itemsData.blocosetaloes.material);
     exibirOpcoesSelect(quantidadeSelect, itemsData.blocosetaloes.quantidade);
     exibirOpcoesSelect(medidaSelect, itemsData.blocosetaloes.medida);
@@ -586,18 +602,35 @@ window.onload = function () {
     exibirOpcoesSelect(acabamentoSelect, itemsData.blocosetaloes.acabamento);
 }
     else if (titulo === "Cardápios") {
+        modeloSelect.value = "Escolha uma opção";
         materialSelect.value = "Escolha uma opção";
         quantidadeSelect.value = "Escolha uma opção"; 
         medidaSelect.value = "Escolha uma opção";
         coresSelect.value = "Escolha uma opção";
         enobrecimentoSelect.value = "Escolha uma opção";
         acabamentoSelect.value = "Escolha uma opção";
+        exibirOpcoesSelect(modeloSelect, itemsData.cardapios.modelo);
         exibirOpcoesSelect(materialSelect, itemsData.cardapios.material);
         exibirOpcoesSelect(quantidadeSelect, itemsData.cardapios.quantidade);
         exibirOpcoesSelect(medidaSelect, itemsData.cardapios.medida);
         exibirOpcoesSelect(coresSelect, itemsData.cardapios.cores);
         exibirOpcoesSelect(enobrecimentoSelect, itemsData.cardapios.enobrecimento);
         exibirOpcoesSelect(acabamentoSelect, itemsData.cardapios.acabamento);
+    }
+    else if (titulo === "Cartões de Visita") {
+        materialSelect.value = "Escolha uma opção";
+        quantidadeSelect.value = "Escolha uma opção"; // Definindo a quantidade para "1"
+        medidaSelect.value = "Escolha uma opção";
+        coresSelect.value = "Escolha uma opção";
+        enobrecimentoSelect.value = "Escolha uma opção";
+        acabamentoSelect.value = "Escolha uma opção";
+        exibirOpcoesSelect(modeloSelect, itemsData.cartoesdevisita.modelo);
+        exibirOpcoesSelect(materialSelect, itemsData.cartoesdevisita.material);
+        exibirOpcoesSelect(quantidadeSelect, itemsData.cartoesdevisita.quantidade);
+        exibirOpcoesSelect(medidaSelect, itemsData.cartoesdevisita.medida);
+        exibirOpcoesSelect(coresSelect, itemsData.cartoesdevisita.cores);
+        exibirOpcoesSelect(enobrecimentoSelect, itemsData.cartoesdevisita.enobrecimento);
+        exibirOpcoesSelect(acabamentoSelect, itemsData.cartoesdevisita.acabamento);
     }
     else if (titulo === "Cartões de Visita 4x0") {
         materialSelect.value = "Couchê Brilho 300g";
@@ -683,12 +716,14 @@ window.onload = function () {
         exibirOpcoesSelect(acabamentoSelect, itemsData.adesivos.acabamento);
     }
     else if (titulo === "Adesivos") {
+        modeloSelect.value = "Escolha uma opção";
         materialSelect.value = "Escolha uma opção";
         quantidadeSelect.value = "Escolha uma opção"; // Exemplo de quantidade padrão para Adesivos
         medidaSelect.value = "Escolha uma opção";
         coresSelect.value = "Escolha uma opção";
         enobrecimentoSelect.value = "Escolha uma opção";
         acabamentoSelect.value = "Escolha uma opção";
+        exibirOpcoesSelect(modeloSelect, itemsData.adesivos.modelo);
         exibirOpcoesSelect(materialSelect, itemsData.adesivos.material);
         exibirOpcoesSelect(quantidadeSelect, itemsData.adesivos.quantidade);
         exibirOpcoesSelect(medidaSelect, itemsData.adesivos.medida);
@@ -752,6 +787,20 @@ window.onload = function () {
         exibirOpcoesSelect(enobrecimentoSelect, itemsData.frotas.enobrecimento);
         exibirOpcoesSelect(acabamentoSelect, itemsData.frotas.acabamento);
     }
+    else if (titulo === "Folders") {
+        materialSelect.value = "Escolha uma opção";
+        quantidadeSelect.value = "Escolha uma opção"; // Exemplo de quantidade padrão para Adesivos
+        medidaSelect.value = "Escolha uma opção";
+        coresSelect.value = "Escolha uma opção";
+        enobrecimentoSelect.value = "Escolha uma opção";
+        acabamentoSelect.value = "Escolha uma opção";
+        exibirOpcoesSelect(materialSelect, itemsData.folders.material);
+        exibirOpcoesSelect(quantidadeSelect, itemsData.folders.quantidade);
+        exibirOpcoesSelect(medidaSelect, itemsData.folders.medida);
+        exibirOpcoesSelect(coresSelect, itemsData.folders.cores);
+        exibirOpcoesSelect(enobrecimentoSelect, itemsData.folders.enobrecimento);
+        exibirOpcoesSelect(acabamentoSelect, itemsData.folders.acabamento);
+    }
     else if (titulo === "Imã de Geladeira") {
         materialSelect.value = "Escolha uma opção";
         quantidadeSelect.value = "Escolha uma opção"; 
@@ -779,6 +828,22 @@ window.onload = function () {
         exibirOpcoesSelect(coresSelect, itemsData.envelopamento.cores);
         exibirOpcoesSelect(enobrecimentoSelect, itemsData.envelopamento.enobrecimento);
         exibirOpcoesSelect(acabamentoSelect, itemsData.envelopamento.acabamento);
+    }
+    else if (titulo === "Envelopes") {
+        modeloSelect.value = "Escolha uma opção";
+        materialSelect.value = "Escolha uma opção";
+        quantidadeSelect.value = "Escolha uma opção"; // Exemplo de quantidade padrão para Adesivos
+        medidaSelect.value = "Escolha uma opção";
+        coresSelect.value = "Escolha uma opção";
+        enobrecimentoSelect.value = "Escolha uma opção";
+        acabamentoSelect.value = "Escolha uma opção";
+        exibirOpcoesSelect(modeloSelect, itemsData.envelopes.modelo);
+        exibirOpcoesSelect(materialSelect, itemsData.envelopes.material);
+        exibirOpcoesSelect(quantidadeSelect, itemsData.envelopes.quantidade);
+        exibirOpcoesSelect(medidaSelect, itemsData.envelopes.medida);
+        exibirOpcoesSelect(coresSelect, itemsData.envelopes.cores);
+        exibirOpcoesSelect(enobrecimentoSelect, itemsData.envelopes.enobrecimento);
+        exibirOpcoesSelect(acabamentoSelect, itemsData.envelopes.acabamento);
     }
     else if (titulo === "lona") {
         materialSelect.value = "Escolha uma opção";
@@ -949,6 +1014,7 @@ window.onload = function () {
 // Função para exibir materiais conforme título (não repete a lógica)
 function exibirMateriaisConformeTitulo() {
     const h2Element = document.getElementById("orcamentoH2");
+    const modeloSelect = document.getElementById("modelo");
     const materialSelect = document.getElementById("material");
     const quantidadeSelect = document.getElementById("quantidade");
     const medidaSelect = document.getElementById("medida");
@@ -961,6 +1027,7 @@ function exibirMateriaisConformeTitulo() {
         console.log("Título no H2:", titulo); // Verificar o valor do título
         
         // Limpa todas as opções inicialmente
+        exibirOpcoesSelect(modeloSelect, itemsData[titulo.toLowerCase()]?.modelo || []);
         exibirOpcoesSelect(materialSelect, itemsData[titulo.toLowerCase()]?.material || []);
         exibirOpcoesSelect(quantidadeSelect, itemsData[titulo.toLowerCase()]?.quantidade || []);
         exibirOpcoesSelect(medidaSelect, itemsData[titulo.toLowerCase()]?.medida || []);
@@ -1000,7 +1067,12 @@ function exibirMateriaisConformeTitulo() {
 
 
 function atualizarDroplist() {
+    const modelo = document.getElementById("modelo").value;
     const material = document.getElementById("material").value;
+    const quantidade = document.getElementById("quantidade").value;
+
+    const modeloSelect = document.getElementById("modelo");
+    const materialSelect = document.getElementById("material");
     const quantidadeSelect = document.getElementById("quantidade");
     const medidaSelect = document.getElementById("medida");
     const coresSelect = document.getElementById("cores");
@@ -1019,6 +1091,7 @@ function atualizarDroplist() {
     };
 
     // Habilita todas as opções por padrão
+    ajustarOpcoes(materialSelect, Array.from(materialSelect.options).map(opt => opt.value), "Escolha uma opção");
     ajustarOpcoes(quantidadeSelect, Array.from(quantidadeSelect.options).map(opt => opt.value), "Escolha uma opção");
     ajustarOpcoes(medidaSelect, Array.from(medidaSelect.options).map(opt => opt.value), "Escolha uma opção");
     ajustarOpcoes(coresSelect, Array.from(coresSelect.options).map(opt => opt.value), "Escolha uma opção");
@@ -1026,7 +1099,60 @@ function atualizarDroplist() {
     ajustarOpcoes(acabamentoSelect, Array.from(acabamentoSelect.options).map(opt => opt.value), "Escolha uma opção");
 
     // Condições específicas para títulos e materiais
-    if (titulo === "Certificados") {
+    if (titulo === "Cartões de Visita") {
+    if (modelo === "Linha Promocional") {
+        ajustarOpcoes(materialSelect, ["Couchê Brilho 300g"], "Couchê Brilho 300g"); // Somente Couchê Brilho 300g
+
+        if (quantidade === "100") {
+            // Para quantidade 100
+            ajustarOpcoes(enobrecimentoSelect, ["Sem Enobrecimento"], "Sem Enobrecimento"); // Sem enobrecimento
+            ajustarOpcoes(acabamentoSelect, ["Refile"], "Refile"); // Apenas Refile
+        } else if (quantidade === "500" || quantidade === "1000") {
+            // Para quantidade 500 ou 1000
+            ajustarOpcoes(enobrecimentoSelect, ["Verniz Total Frente"], "Verniz Total Frente"); // Apenas Verniz Total Frente
+            ajustarOpcoes(acabamentoSelect, ["Refile"], "Refile"); // Apenas Refile
+        } else {
+            // Opções padrão se a quantidade for diferente
+            ajustarOpcoes(enobrecimentoSelect, ["Escolha uma opção"], "Escolha uma opção");
+            ajustarOpcoes(acabamentoSelect, ["Escolha uma opção"], "Escolha uma opção");
+        }
+    } else if (modelo === "Linha Premium") {
+        ajustarOpcoes(materialSelect, ["Couchê Fosco 300g"], "Couchê Fosco 300g"); // Apenas Couchê Fosco 300g
+        ajustarOpcoes(coresSelect, ["4x4 (Frente e verso coloridos)"], "4x4 (Frente e verso coloridos)"); // Apenas 4x4
+        ajustarOpcoes(enobrecimentoSelect, ["Verniz Localizado"], "Verniz Localizado"); // Apenas Verniz Localizado
+        ajustarOpcoes(acabamentoSelect, ["Refile", "2 Cantos Arredondados", "4 Cantos Arredondados", "Escolha uma opção"], "Escolha uma opção"); // Todas as opções liberadas
+    }
+}
+else if (titulo === "Envelopes") {
+    if (modelo === "Saco") {
+        ajustarOpcoes(materialSelect, ["Sulfite 80g", "Sulfite 90g", "Escolha uma opção"], "Escolha uma opção");
+
+        if (material === "Sulfite 80g") {
+            // Para quantidade 100
+            ajustarOpcoes(quantidadeSelect, ["100", "200", "300"], "Escolha uma opção"); 
+            ajustarOpcoes(medidaSelect, ["240x340mm"], "240x340mm"); 
+            ajustarOpcoes(coresSelect, ["1x0 (Impressão 1 cor)"], "1x0 (Impressão 1 cor)");
+        } else if (material === "Sulfite 90g") {
+            ajustarOpcoes(quantidadeSelect, ["500", "1000", "Escolha uma opção"], "Escolha uma opção");
+            ajustarOpcoes(medidaSelect, ["240x340mm", "360x460mm", "Escolha uma opção"], "Escolha uma opção"); 
+            ajustarOpcoes(coresSelect, ["4x0 (Frente colorida)"], "4x0 (Frente colorida)");
+        } 
+    }
+     else if (modelo === "Oficio") {
+        ajustarOpcoes(materialSelect, ["Sulfite 90g", "Escolha uma opção"], "Sulfite 90g");
+        ajustarOpcoes(quantidadeSelect, ["100", "250", "500", "1000", "Escolha uma opção"], "Escolha uma opção"); 
+        ajustarOpcoes(medidaSelect, ["115x230mm", "Escolha uma opção"], "Escolha uma opção");
+        ajustarOpcoes(coresSelect, ["4x0 (Frente colorida)"], "4x0 (Frente colorida)");
+    }
+    else if (modelo === "Comercial") {
+        ajustarOpcoes(materialSelect, ["Sulfite 90g", "Escolha uma opção"], "Sulfite 90g");
+        ajustarOpcoes(quantidadeSelect, ["100", "250", "500", "1000", "Escolha uma opção"], "Escolha uma opção"); 
+        ajustarOpcoes(medidaSelect, ["114x162mm", "Escolha uma opção"], "114x162mm");
+        ajustarOpcoes(coresSelect, ["4x0 (Frente colorida)"], "4x0 (Frente colorida)");
+    }
+}
+   
+   else if (titulo === "Certificados") {
         if (material === "Sulfite 240g") {
             ajustarOpcoes(medidaSelect, ["280x400mm", "Escolha uma opção"], "280x400mm");
         } else if (material === "Fotográfico Microporoso 260g") {
@@ -1110,6 +1236,7 @@ function atualizarDroplist() {
             ajustarOpcoes(acabamentoSelect, ["Refile", "Outros"], "Refile");
         }
     }
+
 }
 
 
