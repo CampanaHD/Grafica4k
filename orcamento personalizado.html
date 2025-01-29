@@ -115,6 +115,16 @@
                         <option value="Vitrine">Vitrine</option>
                         <option value="Frotas">Frotas</option>
                         <option value="Placas">Placas</option>
+                        <option value="Adesivos">Adesivos</option>
+                        <option value="Pastas">Pastas</option>
+                        <option value="Pastas c/ Bolsa Colada">Pastas c/ Bolsa Colada</option>
+                        <option value="Pastas c/ Bolsa de Encaixe">Pastas c/ Bolsa de Encaixe</option>
+                        <option value="Pasta c/ Orelha">Pasta c/ Orelha</option>
+                        <option value="Pasta c/ Orelha e Janela">Pasta c/ Orelha e Janela</option>
+                        <option value="Convites">Convites</option>
+                        <option value="Certificados">Certificados</option>
+                        <option value="Fichas">Fichas</option>
+                        <option value="Timbrados">Timbrados</option>
                     </select>
                 </div>
                 <div class="campo">
@@ -318,7 +328,7 @@
 
 const itemsData = {
     adesivos: {
-        modelo: ["Escolha uma opção", "Vinil"],
+        modelo: ["Escolha uma opção", "Adesivos"],
         material: ["Escolha uma opção", "Vinil Branco", "Vinil Transparente", "Vinil Perfurado"],
         quantidade: ["Escolha uma opção", "1", "100", "250", "500"],
         medida: ["Escolha uma opção", "30x30mm", "40x40mm", "50x50mm"],
@@ -372,6 +382,7 @@ const itemsData = {
         acabamento: ["Escolha uma opção", "Lona 440g + Instalação Revestida", "Lona 440g + Instalação c/ ilhós"],
     },
     certificados: {
+        modelo: ["Escolha uma opção", "Certificados"],
         material: ["Escolha uma opção", "Linho 180g", "Casca de Ovo 180g", "Fotográfico 180g", "Fotográfico Microporoso 260g", "Sulfite 180g", "Sulfite 240g"],
         quantidade: ["Escolha uma opção", "1"], 
         medida: ["Escolha uma opção", "200x280mm", "280x400mm"],
@@ -380,6 +391,7 @@ const itemsData = {
         acabamento: ["Escolha uma opção", "Refile"],
     },
     convites: {
+        modelo: ["Escolha uma opção", "Convites"],
         material: ["Escolha uma opção", "Linho 180g", "Casca de Ovo 180g", "Fotográfico 180g", "Fotográfico Microporoso 260g", "Sulfite 180g", "Sulfite 240g"],
         quantidade: ["Escolha uma opção", "1"], 
         medida: ["Escolha uma opção", "100x140mm", "140x200mm", "200x280mm"],
@@ -413,10 +425,11 @@ const itemsData = {
         acabamento: ["Escolha uma opção", "Lona 440g + Instalação Revestida", "Lona 440g + Instalação ilhós", "Instalação"],
     },
     fichas: {
-        material: ["Escolha uma opção", "Sulfite 75g", "Sulfite 180g",],
+        modelo: ["Escolha uma opção", "Fichas", "Timbrados"],
+        material: ["Escolha uma opção", "Sulfite 75g", "Sulfite 180g", "Sulfite 90g"],
         quantidade: ["Escolha uma opção", "100", "250", "500", "1000"], 
         medida: ["Escolha uma opção", "140x200mm", "200x280mm"],
-        cores: ["Escolha uma opção", "1x0 (Impressão 1 cor)", "1x1 (Preto Frente e Verso)"],
+        cores: ["Escolha uma opção", "1x0 (Impressão 1 cor)", "1x1 (Preto Frente e Verso)", "4x0 (Frente colorida)"],
         enobrecimento: ["Escolha uma opção", "Sem Enobrecimento"],
         acabamento: ["Escolha uma opção", "Refile"],
     },
@@ -454,6 +467,7 @@ const itemsData = {
         acabamento: ["Escolha uma opção", "Refile"],
     },
     pastas: {
+        modelo: ["Escolha uma opção", "Pastas", "Pastas c/ Bolsa Colada", "Pastas c/ Bolsa de Encaixe", "Pasta c/ Orelha", "Pasta c/ Orelha e Janela"],
         material: ["Escolha uma opção", "Couchê Brilho 250g"],
         quantidade: ["Escolha uma opção", "10", "25", "50", "100", "250", "500", "1000"], 
         medida: ["Escolha uma opção", "220x310mm"],
@@ -709,12 +723,14 @@ window.onload = function () {
         exibirOpcoesSelect(enobrecimentoSelect, itemsData.cavalete.enobrecimento);
         exibirOpcoesSelect(acabamentoSelect, itemsData.cavalete.acabamento);
     }else if (titulo === "Certificados") {
+        modeloSelect.value = "Escolha uma opção";
         materialSelect.value = "Escolha uma opção";
         quantidadeSelect.value = "Escolha uma opção"; 
         medidaSelect.value = "Escolha uma opção";
         coresSelect.value = "Escolha uma opção";
         enobrecimentoSelect.value = "Escolha uma opção";
         acabamentoSelect.value = "Escolha uma opção";
+        exibirOpcoesSelect(modeloSelect, itemsData.certificados.modelo);
         exibirOpcoesSelect(materialSelect, itemsData.certificados.material);
         exibirOpcoesSelect(quantidadeSelect, itemsData.certificados.quantidade);
         exibirOpcoesSelect(medidaSelect, itemsData.certificados.medida);
@@ -723,12 +739,14 @@ window.onload = function () {
         exibirOpcoesSelect(acabamentoSelect, itemsData.certificados.acabamento);
     }
     else if (titulo === "Convites") {
+        modeloSelect.value = "Escolha uma opção";
         materialSelect.value = "Escolha uma opção";
         quantidadeSelect.value = "Escolha uma opção"; 
         medidaSelect.value = "Escolha uma opção";
         coresSelect.value = "Escolha uma opção";
         enobrecimentoSelect.value = "Escolha uma opção";
         acabamentoSelect.value = "Escolha uma opção";
+        exibirOpcoesSelect(modeloSelect, itemsData.convites.modelo);
         exibirOpcoesSelect(materialSelect, itemsData.convites.material);
         exibirOpcoesSelect(quantidadeSelect, itemsData.convites.quantidade);
         exibirOpcoesSelect(medidaSelect, itemsData.convites.medida);
@@ -737,12 +755,14 @@ window.onload = function () {
         exibirOpcoesSelect(acabamentoSelect, itemsData.convites.acabamento);
     }
      else if (titulo === "Adesivos" && id === "preenchido") {
+        modeloSelect.value = "Escolha uma opção";
         materialSelect.value = "Vinil Branco";
         quantidadeSelect.value = "10"; // Exemplo de quantidade padrão para Adesivos
         medidaSelect.value = "40x40mm";
         coresSelect.value = "4x0 (Frente colorida)";
         enobrecimentoSelect.value = "Sem Enobrecimento";
         acabamentoSelect.value = "Meio-Corte Personalizado";
+        exibirOpcoesSelect(modeloSelect, itemsData.adesivos.modelo);
         exibirOpcoesSelect(materialSelect, itemsData.adesivos.material);
         exibirOpcoesSelect(quantidadeSelect, itemsData.adesivos.quantidade);
         exibirOpcoesSelect(medidaSelect, itemsData.adesivos.medida);
@@ -751,12 +771,14 @@ window.onload = function () {
         exibirOpcoesSelect(acabamentoSelect, itemsData.adesivos.acabamento);
     }
     else if (titulo === "Vinil 5x5" && id === "preenchido") {
+        modeloSelect.value = "Escolha uma opção";
         materialSelect.value = "Vinil Branco";
         quantidadeSelect.value = "10"; // Exemplo de quantidade padrão para Adesivos
         medidaSelect.value = "50x50mm";
         coresSelect.value = "4x0 (Frente colorida)";
         enobrecimentoSelect.value = "Sem Enobrecimento";
         acabamentoSelect.value = "Meio-Corte Personalizado";
+        exibirOpcoesSelect(modeloSelect, itemsData.adesivos.modelo);
         exibirOpcoesSelect(materialSelect, itemsData.adesivos.material);
         exibirOpcoesSelect(quantidadeSelect, itemsData.adesivos.quantidade);
         exibirOpcoesSelect(medidaSelect, itemsData.adesivos.medida);
@@ -795,13 +817,15 @@ window.onload = function () {
         exibirOpcoesSelect(enobrecimentoSelect, itemsData.fachada.enobrecimento);
         exibirOpcoesSelect(acabamentoSelect, itemsData.fachada.acabamento);
     }
-    else if (titulo === "Fichas") {
+    else if (titulo === "Fichas e Timbrados") {
+        modeloSelect.value = "Escolha uma opção";
         materialSelect.value = "Escolha uma opção";
         quantidadeSelect.value = "Escolha uma opção"; // Exemplo de quantidade padrão para Adesivos
         medidaSelect.value = "Escolha uma opção";
         coresSelect.value = "Escolha uma opção";
         enobrecimentoSelect.value = "Escolha uma opção";
         acabamentoSelect.value = "Escolha uma opção";
+        exibirOpcoesSelect(modeloSelect, itemsData.fichas.modelo);
         exibirOpcoesSelect(materialSelect, itemsData.fichas.material);
         exibirOpcoesSelect(quantidadeSelect, itemsData.fichas.quantidade);
         exibirOpcoesSelect(medidaSelect, itemsData.fichas.medida);
@@ -913,12 +937,14 @@ window.onload = function () {
         exibirOpcoesSelect(acabamentoSelect, itemsData.panfletoseflyers.acabamento);
     }
     else if (titulo === "Pastas") {
+        modeloSelect.value = "Escolha uma opção";
         materialSelect.value = "Escolha uma opção";
         quantidadeSelect.value = "Escolha uma opção"; // Exemplo de quantidade padrão para Adesivos
         medidaSelect.value = "Escolha uma opção";
         coresSelect.value = "Escolha uma opção";
         enobrecimentoSelect.value = "Escolha uma opção";
         acabamentoSelect.value = "Escolha uma opção";
+        exibirOpcoesSelect(modeloSelect, itemsData.pastas.modelo);
         exibirOpcoesSelect(materialSelect, itemsData.pastas.material);
         exibirOpcoesSelect(quantidadeSelect, itemsData.pastas.quantidade);
         exibirOpcoesSelect(medidaSelect, itemsData.pastas.medida);
@@ -1132,7 +1158,7 @@ function atualizarDroplist() {
     // Função para habilitar/desabilitar opções com base em valores permitidos
     const ajustarOpcoes = (select, valoresPermitidos, valorPadrao) => {
         Array.from(select.options).forEach(option => {
-            option.disabled = !valoresPermitidos.includes(option.value);
+            option.hidden = !valoresPermitidos.includes(option.value);
         });
         if (!valoresPermitidos.includes(select.value)) {
             select.value = valorPadrao; // Define valor padrão
@@ -1230,9 +1256,7 @@ else if (titulo === "Envelopes") {
         } else if (material === "Fotográfico Microporoso 260g") {
             // Libera todas as medidas
             ajustarOpcoes(medidaSelect, Array.from(medidaSelect.options).map(opt => opt.value), "Escolha uma opção");
-        } else {
-            ajustarOpcoes(medidaSelect, ["200x280mm", "Escolha uma opção"], "200x280mm");
-        }
+        } 
     }
     else if (titulo === "Cardápios") {
         if (material === "PS/PVC 1mm" || material === "PS/PVC 2mm") {
@@ -1248,15 +1272,25 @@ else if (titulo === "Envelopes") {
             ajustarOpcoes(acabamentoSelect, ["Instalação", "Escolha uma opção"], "Instalação");
         }
     }
-    else if (titulo === "Fichas") {
+    else if (titulo === "Fichas e Timbrados") {
+        if(modelo === "Fichas"){
+            ajustarOpcoes(materialSelect, ["Sulfite 75g", "Sulfite 180g", "Escolha uma opção"], "Escolha uma opção");
+            ajustarOpcoes(coresSelect, ["1x0 (Impressão 1 cor)", "1x1 (Preto Frente e Verso)", "Escolha uma opção"], "Escolha uma opção");
         if (material === "Sulfite 75g") {
             ajustarOpcoes(medidaSelect, ["140x200mm", "200x280mm", "Escolha uma opção"], "Escolha uma opção");
             ajustarOpcoes(coresSelect, ["1x0 (Impressão 1 cor)", "Escolha uma opção"], "1x0 (Impressão 1 cor)");
         } else if (material === "Sulfite 180g") {
             ajustarOpcoes(medidaSelect, ["140x200mm", "Escolha uma opção"], "140x200mm");
             ajustarOpcoes(coresSelect, ["1x0 (Impressão 1 cor)", "1x1 (Preto Frente e Verso)", "Escolha uma opção"], "Escolha uma opção");
+        }   
+    }
+        else if (modelo === "Timbrados") {
+            ajustarOpcoes(materialSelect, ["Sulfite 90g", "Escolha uma opção"], "Escolha uma opção");
+            ajustarOpcoes(coresSelect, ["4x0 (Frente colorida)", "Escolha uma opção"], "4x0 (Frente colorida)");
         }
-    } 
+
+
+} 
     else if (titulo === "Imã de Geladeira") {
     if (material === "Manta Magnética 0,3mm") {
         const quantidade = quantidadeSelect.value;
@@ -1385,13 +1419,40 @@ else if (titulo === "Envelopes") {
             ajustarOpcoes(coresSelect, ["4x0 (Frente colorida)"], "4x0 (Frente colorida)");
         }
     } else if (titulo === "Pastas") {
-        const quantidade = quantidadeSelect.value;
-        if (["500", "1000"].includes(quantidade)) {
-            ajustarOpcoes(enobrecimentoSelect, ["Verniz Total Frente"], "Verniz Total Frente");
-            ajustarOpcoes(acabamentoSelect, ["Bolsa Encaixe + Vinco", "Orelha + Vinco", "Janela + Orelha + Vinco"], "Bolsa Encaixe + Vinco");
-        } else {
-            ajustarOpcoes(enobrecimentoSelect, ["Sem Enobrecimento"], "Sem Enobrecimento");
-            ajustarOpcoes(acabamentoSelect, ["Refile", "Outros"], "Refile");
+        if(modelo === "Pastas"){
+            ajustarOpcoes(quantidadeSelect, ["10", "25", "50", "100", "250", "Escolha uma opção"], "Escolha uma opção");
+            ajustarOpcoes(enobrecimentoSelect, ["Sem Enobrecimento", "Escolha uma opção"], "Escolha uma opção");
+            ajustarOpcoes(acabamentoSelect, ["Vinco", "Escolha uma opção"], "Escolha uma opção");
+        }
+        else if(modelo === "Pastas c/ Bolsa Colada"){
+            ajustarOpcoes(quantidadeSelect, ["10", "25", "50", "100", "250", "Escolha uma opção"], "Escolha uma opção");
+            ajustarOpcoes(enobrecimentoSelect, ["Sem Enobrecimento", "Escolha uma opção"], "Escolha uma opção");
+            ajustarOpcoes(acabamentoSelect, ["Bolsa Colada Branca + Vinco", "Escolha uma opção"], "Escolha uma opção");
+        }
+        else if(modelo === "Pastas c/ Bolsa de Encaixe"){
+            ajustarOpcoes(quantidadeSelect, ["500", "1000", "Escolha uma opção"], "Escolha uma opção");
+            ajustarOpcoes(enobrecimentoSelect, ["Verniz Total Frente", "Escolha uma opção"], "Escolha uma opção");
+            ajustarOpcoes(acabamentoSelect, ["Bolsa Encaixe + Vinco", "Escolha uma opção"], "Escolha uma opção");
+        }
+        else if(modelo === "Pasta c/ Orelha"){
+            ajustarOpcoes(acabamentoSelect, ["Orelha + Vinco", "Escolha uma opção"], "Orelha + Vinco");
+            
+            if(quantidade === "500" || quantidade === "1000"){
+                ajustarOpcoes(enobrecimentoSelect, ["Verniz Total Frente", "Escolha uma opção"], "Verniz Total Frente");
+            }
+            else{
+                ajustarOpcoes(enobrecimentoSelect, ["Sem Enobrecimento", "Escolha uma opção"], "Sem Enobrecimento");
+            }
+        }
+        else if(modelo === "Pasta c/ Orelha e Janela"){
+            ajustarOpcoes(acabamentoSelect, ["Janela + Orelha + Vinco", "Escolha uma opção"], "Janela + Orelha + Vinco");
+            
+            if(quantidade === "500" || quantidade === "1000"){
+                ajustarOpcoes(enobrecimentoSelect, ["Verniz Total Frente", "Escolha uma opção"], "Verniz Total Frente");
+            }
+            else{
+                ajustarOpcoes(enobrecimentoSelect, ["Sem Enobrecimento", "Escolha uma opção"], "Sem Enobrecimento");
+            }
         }
     }
 
