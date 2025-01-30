@@ -68,11 +68,11 @@
                 <li><p id="bagulinho">|</p></li>
                 <li><a href="orcamento personalizado.html?titulo=Cartões de Visita">Cartões de Visita</a></li>
                 <li><p id="bagulinho">|</p></li>
-                <li><a href="#">Panfletos e Folders</a></li>
+                <li><a href="orcamento personalizado.html?titulo=Panfletos e Folders">Panfletos e Folders</a></li>
                 <li><p id="bagulinho">|</p></li>
-                <li><a href="#">Adesivos e Rótulos</a></li>
+                <li><a href="orcamento personalizado.html?titulo=Adesivos e Rótulos">Adesivos e Rótulos</a></li>
                 <li><p id="bagulinho">|</p></li>
-                <li><a href="#">Banners e Faixas</a></li>
+                <li><a href="orcamento personalizado.html?titulo=Banners, Faixas e Lonas">Banners, Faixas e Lonas</a></li>
                 <li><p id="bagulinho">|</p></li>
                 <li><a href="orcamento personalizado.html?titulo=Orçamento Personalizado"><p id="orcamento">Orçamento Personalizado</p></a></li>
             </ul>
@@ -125,6 +125,14 @@
                         <option value="Certificados">Certificados</option>
                         <option value="Fichas">Fichas</option>
                         <option value="Timbrados">Timbrados</option>
+                        <option value="Calendário de Mesa Simples">Calendário de Mesa Simples</option>
+                        <option value="Calendário de Mesa Personalizado">Calendário de Mesa Personalizado</option>
+                        <option value="Calendário de Parede">Calendário de Parede</option>
+                        <option value="Imã de Geladeira">Imã de Geladeira</option>
+                        <option value="Imã de Geladeira com Calendário">Imã de Geladeira com Calendário</option>
+                        <option value="Imã para Porta de Carro">Imã para Porta de Carro</option>
+                        <option value="Fachada em Lona">Fachada em Lona</option>
+                        <option value="Fachada em Adesivo">Fachada em Adesivo</option>
                     </select>
                 </div>
                 <div class="campo">
@@ -217,6 +225,7 @@
                         <option value="270x370mm">270x370mm</option>
                         <option value="280x400mm">280x400mm</option>
                         <option value="300x400mm">300x400mm</option>
+                        <option value="300x400mmm">300x400mmm</option>
                         <option value="360x460mm">360x460mm</option>
                         <option value="594x841mm">594x841mm</option>
                         <option value="594x420mm">594x420mm</option>
@@ -303,6 +312,7 @@
                         <option value="Lona 440g + Instalação ilhós">Lona 440g + Instalação ilhós</option>
                         <option value="Corte Personalizado">Corte Personalizado</option>
                         <option value="12 Páginas + Base Triplex 300g + Wire-o Preto">12 Páginas + Base Triplex 300g + Wire-o Preto</option>
+                        <option value="24 Páginas + Base Triplex 300g + Wire-o Preto">24 Páginas + Base Triplex 300g + Wire-o Preto</option>
                         <option value="Furo 7mm + Bloco de Calendário (Padrão)">Furo 7mm + Bloco de Calendário (Padrão)</option>
                         <option value="Vinil Branco + 4 Cantos Arredondados">Vinil Branco + 4 Cantos Arredondados</option>
                         <option value="Plastificação 0.5 + 4 Cantos Arredondados">Plastificação 0.5 + 4 Cantos Arredondados</option>
@@ -353,6 +363,15 @@ const itemsData = {
         cores: ["Escolha uma opção", "1x0 (Impressão 1 cor)", "4x0 (Frente colorida)"],
         enobrecimento: ["Escolha uma opção", "Sem Enobrecimento"],
         acabamento: ["Escolha uma opção", "Blocagem de 100 Folhas", "Blocagem de 100 Folhas + Numeração", "Blocagem de 100 Folhas + Serrilha e Grampo", "Blocagem de 100 Folhas + Serrilha e Grampo + Numeração", "Blocagem de 50x2 vias", "Blocagem de 50x2 vias + Numeração", "Blocagem de 50x2 vias + Serrilha e Grampo", "Blocagem de 50x2 vias + Serrilha e Grampo + Numeração"],
+    },
+    calendarios: {
+        modelo: ["Escolha uma opção", "Calendário de Mesa Simples", "Calendário de Mesa Personalizado", "Calendário de Parede"],
+        material: ["Escolha uma opção", "Couchê Brilho 250g", "Couchê Brilho 150g", "Duplex 250g"],
+        quantidade: ["Escolha uma opção", "25", "50", "100"], 
+        medida: ["Escolha uma opção", "81x70mm", "100x198mm", "270x370mm"],
+        cores: ["Escolha uma opção", "4x0 (Frente colorida)", "4x4 (Frente e verso coloridos)"],
+        enobrecimento: ["Escolha uma opção", "Sem Enobrecimento"],
+        acabamento: ["Escolha uma opção", "Modelo Padrão", "12 Páginas + Base Triplex 300g + Wire-o Preto", "24 Páginas + Base Triplex 300g + Wire-o Preto", "Furo 7mm + Bloco de Calendário (Padrão)"],
     },
     cardapios: {
         modelo: ["Escolha uma opção", "Placa PS/PVC", "Plastificado"],
@@ -417,6 +436,7 @@ const itemsData = {
         acabamento: ["Escolha uma opção", "Modelo Padrão"],
     },
     fachada: {
+        modelo: ["Escolha uma opção", "Fachada em Lona", "Fachada em Adesivo"],
         material: ["Escolha uma opção", "Metalon 20x20mm", "Vinil Branco"],
         quantidade: ["Escolha uma opção", "1"], 
         medida: ["Escolha uma opção", "Medida Personalizada"],
@@ -451,11 +471,12 @@ const itemsData = {
         acabamento: ["Escolha uma opção", "Instalação"],
     },
     imadegeladeira: {
-        material: ["Escolha uma opção", "Manta Magnética 0,3mm"],
-        quantidade: ["Escolha uma opção", "100", "250", "500", "1000"], 
-        medida: ["Escolha uma opção", "50x40mm", "50x50mm", "50x80mm"],
+        modelo: ["Escolha uma opção", "Imã de Geladeira", "Imã de Geladeira com Calendário", "Imã para Porta de Carro"],
+        material: ["Escolha uma opção", "Manta Magnética 0,3mm", "Manta Magnética 0,8mm"],
+        quantidade: ["Escolha uma opção", "1", "100", "250", "500", "1000", "300x400mmm", "250x600mmm"], 
+        medida: ["Escolha uma opção", "50x40mm", "50x50mm", "50x80mm", "300x400mmm", "250x600mmm"],
         cores: ["Escolha uma opção", "4x0 (Frente colorida)"],
-        enobrecimento: ["Escolha uma opção", "Verniz Total Frente"],
+        enobrecimento: ["Escolha uma opção", "Verniz Total Frente", "Sem Enobrecimento"],
         acabamento: ["Escolha uma opção","Refile", "Corte Personalizado"],
     },
     panfletoseflyers: {
@@ -664,6 +685,22 @@ window.onload = function () {
     exibirOpcoesSelect(enobrecimentoSelect, itemsData.blocosetaloes.enobrecimento);
     exibirOpcoesSelect(acabamentoSelect, itemsData.blocosetaloes.acabamento);
 }
+else if (titulo === "Calendários") {
+        modeloSelect.value = "Escolha uma opção";
+        materialSelect.value = "Escolha uma opção";
+        quantidadeSelect.value = "Escolha uma opção"; 
+        medidaSelect.value = "Escolha uma opção";
+        coresSelect.value = "Escolha uma opção";
+        enobrecimentoSelect.value = "Escolha uma opção";
+        acabamentoSelect.value = "Escolha uma opção";
+        exibirOpcoesSelect(modeloSelect, itemsData.calendarios.modelo);
+        exibirOpcoesSelect(materialSelect, itemsData.calendarios.material);
+        exibirOpcoesSelect(quantidadeSelect, itemsData.calendarios.quantidade);
+        exibirOpcoesSelect(medidaSelect, itemsData.calendarios.medida);
+        exibirOpcoesSelect(coresSelect, itemsData.calendarios.cores);
+        exibirOpcoesSelect(enobrecimentoSelect, itemsData.calendarios.enobrecimento);
+        exibirOpcoesSelect(acabamentoSelect, itemsData.calendarios.acabamento);
+    }
     else if (titulo === "Cardápios") {
         modeloSelect.value = "Escolha uma opção";
         materialSelect.value = "Escolha uma opção";
@@ -803,13 +840,15 @@ window.onload = function () {
         exibirOpcoesSelect(acabamentoSelect, itemsData.adesivos.acabamento);
     }
 
-    else if (titulo === "Fachada") {
+    else if (titulo === "Fachadas") {
+        modeloSelect.value = "Escolha uma opção";
         materialSelect.value = "Escolha uma opção";
         quantidadeSelect.value = "Escolha uma opção"; 
         medidaSelect.value = "Escolha uma opção";
         coresSelect.value = "Escolha uma opção";
         enobrecimentoSelect.value = "Escolha uma opção";
         acabamentoSelect.value = "Escolha uma opção";
+        exibirOpcoesSelect(modeloSelect, itemsData.fachada.modelo);
         exibirOpcoesSelect(materialSelect, itemsData.fachada.material);
         exibirOpcoesSelect(quantidadeSelect, itemsData.fachada.quantidade);
         exibirOpcoesSelect(medidaSelect, itemsData.fachada.medida);
@@ -864,12 +903,14 @@ window.onload = function () {
         exibirOpcoesSelect(acabamentoSelect, itemsData.folders.acabamento);
     }
     else if (titulo === "Imã de Geladeira") {
+        modeloSelect.value = "Escolha uma opção";
         materialSelect.value = "Escolha uma opção";
         quantidadeSelect.value = "Escolha uma opção"; 
         medidaSelect.value = "Escolha uma opção";
         coresSelect.value = "Escolha uma opção";
         enobrecimentoSelect.value = "Escolha uma opção";
         acabamentoSelect.value = "Escolha uma opção";
+        exibirOpcoesSelect(modeloSelect, itemsData.imadegeladeira.modelo);
         exibirOpcoesSelect(materialSelect, itemsData.imadegeladeira.material);
         exibirOpcoesSelect(quantidadeSelect, itemsData.imadegeladeira.quantidade);
         exibirOpcoesSelect(medidaSelect, itemsData.imadegeladeira.medida);
@@ -1221,6 +1262,26 @@ else if (titulo === "Banners, Faixas e Lonas") {
         ajustarOpcoes(acabamentoSelect, ["Sem Acabamento", "Escolha uma opção"], "Escolha uma opção");   
     }
 }
+else if (titulo === "Calendários") {
+    if (modelo === "Calendário de Mesa Simples") {
+        ajustarOpcoes(materialSelect, ["Couchê Brilho 250g", "Escolha uma opção"], "Escolha uma opção");  
+        ajustarOpcoes(medidaSelect, ["81x70mm", "Escolha uma opção"], "Escolha uma opção");  
+        ajustarOpcoes(coresSelect, ["4x0 (Frente colorida)", "Escolha uma opção"], "Escolha uma opção");  
+        ajustarOpcoes(acabamentoSelect, ["Modelo Padrão", "Escolha uma opção"], "Escolha uma opção");   
+    }
+    else if (modelo === "Calendário de Mesa Personalizado") {
+        ajustarOpcoes(materialSelect, ["Couchê Brilho 150g", "Escolha uma opção"], "Escolha uma opção");  
+        ajustarOpcoes(medidaSelect, ["100x198mm", "Escolha uma opção"], "Escolha uma opção");  
+        ajustarOpcoes(coresSelect, ["4x4 (Frente e verso coloridos)", "Escolha uma opção"], "Escolha uma opção");  
+        ajustarOpcoes(acabamentoSelect, ["12 Páginas + Base Triplex 300g + Wire-o Preto", "24 Páginas + Base Triplex 300g + Wire-o Preto", "Escolha uma opção"], "Escolha uma opção");    
+    }
+    else if (modelo === "Calendário de Parede") {
+        ajustarOpcoes(materialSelect, ["Duplex 250g", "Escolha uma opção"], "Escolha uma opção");  
+        ajustarOpcoes(medidaSelect, ["270x370mm", "Escolha uma opção"], "Escolha uma opção");  
+        ajustarOpcoes(coresSelect, ["4x0 (Frente colorida)", "Escolha uma opção"], "Escolha uma opção");  
+        ajustarOpcoes(acabamentoSelect, ["Furo 7mm + Bloco de Calendário (Padrão)", "Escolha uma opção"], "Escolha uma opção");    
+    }
+}
 else if (titulo === "Envelopes") {
     if (modelo === "Saco") {
         ajustarOpcoes(materialSelect, ["Sulfite 80g", "Sulfite 90g", "Escolha uma opção"], "Escolha uma opção");
@@ -1265,13 +1326,16 @@ else if (titulo === "Envelopes") {
             ajustarOpcoes(acabamentoSelect, ["Plastificação 0.5 + 4 Cantos Arredondados", "Escolha uma opção"], "Escolha uma opção");
         }
     }
-    else if (titulo === "Fachada") {
-        if (material === "Metalon 20x20mm") {
+    else if (titulo === "Fachadas") {
+        if(modelo === "Fachada em Lona"){
+            ajustarOpcoes(materialSelect, ["Metalon 20x20mm", "Escolha uma opção"], "Metalon 20x20mm");
             ajustarOpcoes(acabamentoSelect, ["Lona 440g + Instalação Revestida", "Lona 440g + Instalação ilhós", "Escolha uma opção"], "Escolha uma opção");
-        } else if (material === "Vinil Branco") {
-            ajustarOpcoes(acabamentoSelect, ["Instalação", "Escolha uma opção"], "Instalação");
         }
+        else if (modelo === "Fachada em Adesivo") {
+            ajustarOpcoes(materialSelect, ["Vinil Branco", "Escolha uma opção"], "Vinil Branco");
+            ajustarOpcoes(acabamentoSelect, ["Instalação", "Escolha uma opção"], "Instalação");
     }
+}
     else if (titulo === "Fichas e Timbrados") {
         if(modelo === "Fichas"){
             ajustarOpcoes(materialSelect, ["Sulfite 75g", "Sulfite 180g", "Escolha uma opção"], "Escolha uma opção");
@@ -1292,17 +1356,35 @@ else if (titulo === "Envelopes") {
 
 } 
     else if (titulo === "Imã de Geladeira") {
-    if (material === "Manta Magnética 0,3mm") {
-        const quantidade = quantidadeSelect.value;
-
+    if (modelo === "Imã de Geladeira") {
+        ajustarOpcoes(materialSelect, ["Manta Magnética 0,3mm", "Escolha uma opção"], "Escolha uma opção");
+        ajustarOpcoes(quantidadeSelect, ["100", "250", "500", "1000", "Escolha uma opção"], "Escolha uma opção");
+        ajustarOpcoes(medidaSelect, ["50x40mm", "50x50mm", "50x80mm", "Escolha uma opção"], "Escolha uma opção");
+        ajustarOpcoes(enobrecimentoSelect, ["Verniz Total Frente", "Escolha uma opção"], "Verniz Total Frente");
         if (quantidade === "1000") {
             // Libera "Corte Personalizado" e "Refile"
-            ajustarOpcoes(acabamentoSelect, ["Corte Personalizado", "Refile", "Escolha uma opção"], "Refile");
+            ajustarOpcoes(acabamentoSelect, ["Corte Personalizado", "Refile", "Escolha uma opção"], "Escolha uma opção");
         } else {
             // Permite apenas "Refile"
             ajustarOpcoes(acabamentoSelect, ["Refile", "Escolha uma opção"], "Refile");
         }
     }
+    else if (modelo === "Imã de Geladeira com Calendário") {
+        ajustarOpcoes(materialSelect, ["Manta Magnética 0,3mm", "Escolha uma opção"], "Escolha uma opção");
+        ajustarOpcoes(quantidadeSelect, ["100", "250", "500", "1000", "Escolha uma opção"], "Escolha uma opção");
+        ajustarOpcoes(medidaSelect, ["50x40mm", "50x50mm", "50x80mm", "Escolha uma opção"], "Escolha uma opção");
+        ajustarOpcoes(enobrecimentoSelect, ["Verniz Total Frente", "Escolha uma opção"], "Verniz Total Frente");
+        ajustarOpcoes(acabamentoSelect, ["Refile", "Escolha uma opção"], "Refile");
+    }
+    else if (modelo === "Imã para Porta de Carro") {
+        ajustarOpcoes(materialSelect, ["Manta Magnética 0,8mm", "Escolha uma opção"], "Escolha uma opção");
+        ajustarOpcoes(quantidadeSelect, ["1", "Escolha uma opção"], "Escolha uma opção");
+        ajustarOpcoes(medidaSelect, ["300x400mmm", "250x600mmm", "Escolha uma opção"], "Escolha uma opção");
+        ajustarOpcoes(enobrecimentoSelect, ["Sem Enobrecimento", "Escolha uma opção"], "Sem Enobrecimento");
+        ajustarOpcoes(acabamentoSelect, ["Refile", "Escolha uma opção"], "Refile");
+    }
+
+
 }
     else if (titulo === "Panfletos e Folders") {
         if (modelo === "Linha Promocional") {
