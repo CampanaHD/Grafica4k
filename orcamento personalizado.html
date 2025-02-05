@@ -17,10 +17,10 @@
     <title>Gráfica 4k</title>
 </head>
 <body style="min-width: 372px;" class="text-white">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black shadow-sm ">
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm ">
         <div class="container-xxl text-center d-flex" id="containernav">
             <a class="navbar-brand" href="index.html">
-                <img src="imagens/Logo.png" class="rounded float-start" id="logo">
+                <img src="imagens/Logo.png" id="logo">
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
@@ -32,7 +32,7 @@
                     <li id="graficaLi"><p id="grafica">GRÁFICA & COMUNICAÇÃO VISUAL</p></li>
                     <li id="xpLi"><p id="xp">Sua Experiência em 4k</p></li>
                     <li id="bagulinhoLi"><p>|</p></li>
-                    <li id="quemsomosLi"><a href="#"><p>Quem Somos!</p></a></li>
+                    <li id="quemsomosLi"><a href="Quem-somos.html"><p>Quem Somos!</p></a></li>
                     <li id="bagulinhoLi"><p>|</p></li>
                     <li id="duvidasfrequentesLi"><a href="Duvidas Frequentes.html"><p>Dúvidas frequentes</p></a></li>
                     <li>
@@ -64,7 +64,57 @@
     <div id="linksuteis">
         <div class="container-xxl">
             <ul class="links d-flex text-nowrap" id="containerItens">
-                <li><a href="#"><i class="bi bi-list" id="hamburger"></i>Todos os produtos</a></li>
+              <li>
+                <div class="dropdown">
+                    <button id="todosprodutos"><i class="bi bi-list" id="hamburger"></i>Todos os Produtos</button>
+                    <div class="dropdown-content">
+                        <div class="submenu-container">
+                            <div class="submenu">
+                                <a href="orcamento personalizado.html?titulo=Adesivos e Rótulos">Adesivos e Rótulos</a>
+                                <a href="orcamento personalizado.html?titulo=Banner">Banner</a>
+                                <a href="orcamento personalizado.html?titulo=Blocos, Talões e Receituários">Blocos e Talões</a>
+                                <a href="orcamento personalizado.html?titulo=Calendários">Calendários</a>
+                                <a href="orcamento personalizado.html?titulo=Cardápios">Cardápios</a>
+                                <a href="orcamento personalizado.html?titulo=Cartões de Visita">Cartões de Visita</a>
+                                <a href="orcamento personalizado.html?titulo=Cavaletes">Cavaletes</a>
+                            </div>
+                            <div class="submenu">
+                                <a href="orcamento personalizado.html?titulo=Certificado">Certificado</a>
+                                <a href="orcamento personalizado.html?titulo=Convites">Convites</a>
+                                <a href="orcamento personalizado.html?titulo=Envelopamento">Envelopamento</a>
+                                <a href="orcamento personalizado.html?titulo=Envelopes">Envelopes</a>
+                                <a href="orcamento personalizado.html?titulo=Fachadas">Fachadas</a>
+                                <a href="orcamento personalizado.html?titulo=Faixas">Faixas</a>
+                                <a href="orcamento personalizado.html?titulo=Fichas e Timbrados">Fichas e Timbrados</a>
+                            </div>
+                            <div class="submenu">
+                                <a href="orcamento personalizado.html?titulo=Folders">Folders</a>
+                                <a href="orcamento personalizado.html?titulo=Frotas">Frotas</a>
+                                <a href="orcamento personalizado.html?titulo=Ímã de Geladeira">Ímã de Geladeira</a>
+                                <a href="orcamento personalizado.html?titulo=Panfletos">Panfletos</a>
+                                <a href="orcamento personalizado.html?titulo=Pastas">Pastas</a>
+                                <a href="orcamento personalizado.html?titulo=Placas">Placas</a>
+                                <a href="orcamento personalizado.html?titulo=Plotagens e Projetos">Plotagens e Projetos</a>
+                            </div>
+                            <div class="submenu">
+                                <a href="orcamento personalizado.html?titulo=Quadros">Quadros</a>
+                                <a href="orcamento personalizado.html?titulo=Receituários">Receituários</a>
+                                <a href="orcamento personalizado.html?titulo=Tag">Tag</a>
+                                <a href="orcamento personalizado.html?titulo=Vinil Perfurado">Vinil Perfurado</a>
+                                <a href="orcamento personalizado.html?titulo=Wind Banner">Wind Banner</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+                
+
+
+
+
+
+
                 <li><p id="bagulinho">|</p></li>
                 <li><a href="orcamento personalizado.html?titulo=Cartões de Visita">Cartões de Visita</a></li>
                 <li><p id="bagulinho">|</p></li>
@@ -79,7 +129,7 @@
         </div>
     </div>
     <main>
-        <div class="container-xxl containerOrcamento">
+        <div class="container-xxl containerOrcamento bg-dark">
             <div class="orcamentoLogo">
                 <img src="imagens/Mais Vendidos/Banner.png" alt="">
             </div>
@@ -88,6 +138,7 @@
             
                 <div class="campo">
                     <label for="modelo">Modelo:</label>
+                    
                     <select id="modelo" onchange="atualizarDroplist()">
                         <option value="Escolha uma opção">Escolha uma opção</option>
                         <option value="Linha Premium">Linha Premium</option>
@@ -133,10 +184,13 @@
                         <option value="Imã para Porta de Carro">Imã para Porta de Carro</option>
                         <option value="Fachada em Lona">Fachada em Lona</option>
                         <option value="Fachada em Adesivo">Fachada em Adesivo</option>
+                        <option value="Placa PS/PVC">Placa PS/PVC</option>
+                        <option value="Plastificado">Plastificado</option>
                     </select>
                 </div>
                 <div class="campo">
                     <label for="material">Material:</label>
+                    
                     <select id="material" onchange="atualizarDroplist()">
                         <option value="Escolha uma opção">Escolha uma opção</option>
                         <option value="Couchê 90g">Couchê 90g</option>
@@ -180,6 +234,7 @@
             
                 <div class="campo">
                     <label for="quantidade">Quantidade:</label>
+                  
                     <select id="quantidade" onchange="atualizarDroplist()">
                         <option value="Escolha uma opção">Escolha uma opção</option>
                         <option value="1">1 unidade</option>
@@ -201,6 +256,7 @@
             
                 <div class="campo">
                     <label for="medida">Medida:</label>
+                   
                     <select id="medida" onchange="atualizarDroplist()">
                         <option value="Escolha uma opção">Escolha uma opção</option>
                         <option value="30x30mm">30x30mm</option>
@@ -244,6 +300,7 @@
             
                 <div class="campo">
                     <label for="cores">Cores:</label>
+                    
                     <select id="cores" onchange="atualizarDroplist()">
                         <option value="Escolha uma opção">Escolha uma opção</option>
                         <option value="1x0 (Impressão 1 cor)">1x0 (Impressão 1 cor)</option>
@@ -257,6 +314,7 @@
             
                 <div class="campo">
                     <label for="enobrecimento">Enobrecimento:</label>
+                    
                     <select id="enobrecimento">
                         <option value="Escolha uma opção">Escolha uma opção</option>
                         <option value="Sem Enobrecimento">Sem Enobrecimento</option>
@@ -272,6 +330,7 @@
             
                 <div class="campo">
                     <label for="acabamento">Acabamento:</label>
+                    
                     <select id="acabamento" onchange="atualizarDroplist()">
                         <option value="Escolha uma opção">Escolha uma opção</option>
                         <option value="Sem Acabamento">Sem Acabamento</option>
@@ -319,9 +378,8 @@
                     </select>
                 </div>
             
-                <button id="enviarWhatsApp" onclick="enviarWhatsApp()">Enviar para WhatsApp</button>
-                <p id="resultado">Por favor, selecione as opções acima.</p>
-                <h4>Prazo de produção de 2 à 3 dias úteis</h4>
+                <button id="enviarWhatsApp" onclick="enviarWhatsApp()">SOLICITAR ORÇAMENTO</button>
+                <h4 id="prazo">Prazo de produção de 2 à 3 dias úteis</h4>
                 <p>*Considerar prazo, apenas após aprovação do layout</p>
 
                 
@@ -791,7 +849,7 @@ else if (titulo === "Calendários") {
         exibirOpcoesSelect(enobrecimentoSelect, itemsData.convites.enobrecimento);
         exibirOpcoesSelect(acabamentoSelect, itemsData.convites.acabamento);
     }
-     else if (titulo === "Adesivos" && id === "preenchido") {
+     else if (titulo === "Adesivos e Rótulos" && id === "preenchido") {
         modeloSelect.value = "Escolha uma opção";
         materialSelect.value = "Vinil Branco";
         quantidadeSelect.value = "10"; // Exemplo de quantidade padrão para Adesivos
@@ -823,7 +881,7 @@ else if (titulo === "Calendários") {
         exibirOpcoesSelect(enobrecimentoSelect, itemsData.adesivos.enobrecimento);
         exibirOpcoesSelect(acabamentoSelect, itemsData.adesivos.acabamento);
     }
-    else if (titulo === "Adesivos") {
+    else if (titulo === "Adesivos e Rótulos") {
         modeloSelect.value = "Escolha uma opção";
         materialSelect.value = "Escolha uma opção";
         quantidadeSelect.value = "Escolha uma opção"; // Exemplo de quantidade padrão para Adesivos
@@ -1206,6 +1264,11 @@ function atualizarDroplist() {
         }
     };
 
+   
+
+
+
+
     // Habilita todas as opções por padrão
     
     ajustarOpcoes(materialSelect, Array.from(materialSelect.options).map(opt => opt.value), "Escolha uma opção");
@@ -1486,7 +1549,7 @@ else if (titulo === "Envelopes") {
 
 
     }
-     else if (titulo === "Adesivos") {
+     else if (titulo === "Adesivos e Rótulos") {
         if (material === "Vinil Perfurado") {
             ajustarOpcoes(quantidadeSelect, ["1"], "1");
             ajustarOpcoes(acabamentoSelect, ["Refile"], "Refile");
@@ -1545,7 +1608,19 @@ else if (titulo === "Envelopes") {
 
 
 
+function verificarOpcao() {
+    var modelo = document.getElementById('modelo');
 
+    if (titulo === 'Ativar') {
+        modelo.style.display = 'block'; // Mostra o select
+    }
+    else if (titulo === 'Desativar') {
+        modelo.style.display = 'none'; // Esconde o select
+    }
+    else if (titulo === "Orçamento Personalizado") {
+        modelo.style.display = "none"; // Esconde o select quando "Orçamento Personalizado" for selecionado
+    }
+}
 
 
 
@@ -1571,6 +1646,7 @@ else if (titulo === "Envelopes") {
     
         // Envia mensagem no WhatsApp
         function enviarWhatsApp() {
+            const modelo = document.getElementById("modelo").value;
             const material = document.getElementById("material").value;
             const quantidade = document.getElementById("quantidade").value;
             const medida = document.getElementById("medida").value || "Nenhum";
@@ -1585,6 +1661,7 @@ else if (titulo === "Envelopes") {
             }
     
             const mensagem = `Olá, gostaria de finalizar o pedido para ${h2Element}
+    - Modelo: ${modelo}        
     - Material: ${material}
     - Quantidade: ${quantidade}
     - Medida: ${medida}
@@ -1634,9 +1711,9 @@ else if (titulo === "Envelopes") {
           <div>
           <p id="INSTITUCIONAL">INSTITUCIONAL</p>
             <ul id="footerUl">
-              <li><a href="index.html"><P>Inicio</P></a></li>
-              <li><a href="orcamento personalizado.html?titulo=Orçamento Personalizado"><p>Orçamento Personalizado</p></a></li>
-              <li><a href="Politicas de devolução ou cancelamento.html"><p>Politica de Cancelamento</p></a></li>
+              <li><a href="#"><P>Inicio</P></a></li>
+              <li><a href="orcamento personalizado.html"><p>Orçamento Personalizado</p></a></li>
+              <li><a href="Politicas-de-cancelamento.html"><p>Politica de Cancelamento</p></a></li>
               <li><a href="#"><p>Prazos</p></a></li>
             </ul>
           
@@ -1656,7 +1733,7 @@ else if (titulo === "Envelopes") {
         </div>
         <div>
           <ul id="ajuda">
-            <li><a href="#"><p>Quem Somos</p></a></li>
+            <li><a href="Quem-Somos.html"><p>Quem Somos</p></a></li>
             <li><a href="Privacidade.html"><p>Politica e privacidade</p></a></li>
             <li><a href="#"><p>Regulamento</p></a></li>
             <li><a href="#"><p>Suporte</p></a></li>
@@ -1665,7 +1742,7 @@ else if (titulo === "Envelopes") {
         <div>
           <ul id="ajuda">
             <li><a href="#"><p>Trabalhe Conosco</p></a></li>
-            <li><a href="#"><p>Politica de Devolução</p></a></li>
+            <li><a href="Politicas-de-devolução.html"><p>Politica de Devolução</p></a></li>
             <li><a href="#"><p>FAQ Perguntas Frequentes</p></a></li>
           </ul>
         </div>
