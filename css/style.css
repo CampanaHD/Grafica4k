@@ -34,8 +34,8 @@ p{
   height: 134px;
   background-image: url('../imagens/Fundo.png'); 
   background-size: cover;
+  background-repeat: no-repeat; 
   background-position: top;
-  background-position-x: 55px;
 }
 #navbarNav{
   flex-direction: column;
@@ -161,7 +161,7 @@ height: 15px;
     height: 48px;
     justify-content: center;
     align-content: center;
-    font-size: 14.9px;
+    font-size: 15.7px;
   }
   #containerItens{
     margin: 0;
@@ -177,7 +177,7 @@ height: 15px;
   .links li{
     align-items: center;
     justify-content: center;
-    margin-right: 14.5px;
+    margin-right: 19px;
    
     font-weight: 500;
   }
@@ -198,7 +198,7 @@ height: 15px;
 }
   #Categorias{
     background: linear-gradient(to right, blue, #0035ff, #007fff, #e500b5, #f27100, #fff200);
-    border-radius: 5px;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -246,13 +246,13 @@ height: 15px;
 
 .btn-prev-1{
   top: 770px;
-  left: 350px;
+  left: 330px;
   position: absolute;
   
 }
 .btn-next-1{
   top: 770px;
-  right: 350px;
+  right: 330px;
   position: absolute;
   
 }
@@ -263,13 +263,13 @@ height: 15px;
 
 .btn-prev-2{
   top: 1115px;
-  left: 350px;
+  left: 330px;
   position: absolute;
   
 }
 .btn-next-2{
   top: 1115px;
-  right: 350px;
+  right: 330px;
   position: absolute;
   
 }
@@ -280,13 +280,13 @@ height: 15px;
 
 .btn-prev-3{
   top: 1730px;
-  left: 350px;
+  left: 330px;
   position: absolute;
   
 }
 .btn-next-3{
   top: 1730px;
-  right: 350px;
+  right: 330px;
   position: absolute;
   
 }
@@ -338,7 +338,7 @@ height: 15px;
 
 #maisvendidos{
   background: linear-gradient(to right, blue, #0035ff, #007fff, #e500b5, #f27100, #fff200);
-  border-radius: 5px;
+  border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -348,15 +348,17 @@ height: 15px;
   font-weight: 600;
   height: 40px;
 }
-.Maisvendidos_premium{
-  /* font-size: larger; */
-}
 #cardsCarouselMain2 li{
 width: 264px;
 word-break: keep-all;
 white-space: normal; /* Permite quebra de linha automática */
 height: 540px;
 }
+#cardsCarouselMain2 a{
+  display: flex;
+  flex-direction: column;
+  width: 270px;
+  }
 #cardsCarouselMain2 img{
   height: 270px;
   border-radius: 10px;
@@ -372,6 +374,7 @@ height: 540px;
 }
 .Maisvendidos_size{
   height: 430px;
+  width: 270px;
 }
 #apartir{
   margin-top: 20px;
@@ -726,6 +729,7 @@ footer h6{
   position: relative;
   display: flex;
   flex-direction: column;
+  font-size: 15px;
 }
 
 .dropdown-content {
@@ -736,7 +740,7 @@ footer h6{
   color: #000;
   min-width: 700px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  padding: 10px;
+  padding: 15px;
   top: 20px;
   left: 0;
   z-index: 1000;
@@ -772,4 +776,14 @@ footer h6{
 .submenu a:hover {
   color: #007bff;
   text-decoration: underline;
+}
+#solicitarOrcamento{
+  background: linear-gradient(to right, blue, #0035ff, #007fff, #e500b5, #f27100, #fff200);
+  border-radius: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  height: 27px;
 }

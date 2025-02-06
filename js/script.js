@@ -38,7 +38,7 @@ const swiper1 = new Swiper('.mySwiper1', {
       prevEl: '.btn-prev-2',
     },
 
-    spaceBetween: 14,
+    spaceBetween: 13,
     scrollbar: {
       el: '.swiper-scrollbar',
     },
@@ -62,6 +62,7 @@ const swiper1 = new Swiper('.mySwiper1', {
       prevEl: '.btn-prev-3',
     },
 
+    spaceBetween: 30,
     scrollbar: {
       el: '.swiper-scrollbar',
     },

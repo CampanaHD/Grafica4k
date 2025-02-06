@@ -70,7 +70,7 @@
                     <div class="dropdown-content">
                         <div class="submenu-container">
                             <div class="submenu">
-                                <a href="orcamento personalizado.html?titulo=Adesivos e Rótulos">Adesivos e Rótulos</a>
+                                <a href="orcamento personalizado.html?titulo=Adesivos">Adesivos</a>
                                 <a href="orcamento personalizado.html?titulo=Banner">Banner</a>
                                 <a href="orcamento personalizado.html?titulo=Blocos, Talões e Receituários">Blocos e Talões</a>
                                 <a href="orcamento personalizado.html?titulo=Calendários">Calendários</a>
@@ -120,7 +120,7 @@
                 <li><p id="bagulinho">|</p></li>
                 <li><a href="orcamento personalizado.html?titulo=Panfletos e Folders">Panfletos e Folders</a></li>
                 <li><p id="bagulinho">|</p></li>
-                <li><a href="orcamento personalizado.html?titulo=Adesivos e Rótulos">Adesivos e Rótulos</a></li>
+                <li><a href="orcamento personalizado.html?titulo=Adesivos">Adesivos</a></li>
                 <li><p id="bagulinho">|</p></li>
                 <li><a href="orcamento personalizado.html?titulo=Banners, Faixas e Lonas">Banners, Faixas e Lonas</a></li>
                 <li><p id="bagulinho">|</p></li>
@@ -191,7 +191,7 @@
                 <div class="campo">
                     <label for="material">Material:</label>
                     
-                    <select id="material" onchange="atualizarDroplist()">
+                    <select id="material" onchange="atualizarDroplist()" disabled>
                         <option value="Escolha uma opção">Escolha uma opção</option>
                         <option value="Couchê 90g">Couchê 90g</option>
                         <option value="Couchê 115g">Couchê 115g</option>
@@ -235,7 +235,7 @@
                 <div class="campo">
                     <label for="quantidade">Quantidade:</label>
                   
-                    <select id="quantidade" onchange="atualizarDroplist()">
+                    <select id="quantidade" onchange="atualizarDroplist()" disabled>
                         <option value="Escolha uma opção">Escolha uma opção</option>
                         <option value="1">1 unidade</option>
                         <option value="3">3 unidade</option>
@@ -257,7 +257,7 @@
                 <div class="campo">
                     <label for="medida">Medida:</label>
                    
-                    <select id="medida" onchange="atualizarDroplist()">
+                    <select id="medida" onchange="atualizarDroplist()" disabled>
                         <option value="Escolha uma opção">Escolha uma opção</option>
                         <option value="30x30mm">30x30mm</option>
                         <option value="40x40mm">40x40mm</option>
@@ -301,7 +301,7 @@
                 <div class="campo">
                     <label for="cores">Cores:</label>
                     
-                    <select id="cores" onchange="atualizarDroplist()">
+                    <select id="cores" onchange="atualizarDroplist()" disabled>
                         <option value="Escolha uma opção">Escolha uma opção</option>
                         <option value="1x0 (Impressão 1 cor)">1x0 (Impressão 1 cor)</option>
                         <option value="2x0 (Impressão 2 cores)">2x0 (Impressão 2 cores)</option>
@@ -315,7 +315,7 @@
                 <div class="campo">
                     <label for="enobrecimento">Enobrecimento:</label>
                     
-                    <select id="enobrecimento">
+                    <select id="enobrecimento" disabled>
                         <option value="Escolha uma opção">Escolha uma opção</option>
                         <option value="Sem Enobrecimento">Sem Enobrecimento</option>
                         <option value="Verniz Total Frente">Verniz Total Frente</option>
@@ -331,7 +331,7 @@
                 <div class="campo">
                     <label for="acabamento">Acabamento:</label>
                     
-                    <select id="acabamento" onchange="atualizarDroplist()">
+                    <select id="acabamento" onchange="atualizarDroplist()" disabled>
                         <option value="Escolha uma opção">Escolha uma opção</option>
                         <option value="Sem Acabamento">Sem Acabamento</option>
                         <option value="Refile">Refile</option>
@@ -833,7 +833,7 @@ else if (titulo === "Calendários") {
         exibirOpcoesSelect(enobrecimentoSelect, itemsData.certificados.enobrecimento);
         exibirOpcoesSelect(acabamentoSelect, itemsData.certificados.acabamento);
     }
-    else if (titulo === "Convites") {
+    else if (titulo === "Impressos em Geral") {
         modeloSelect.value = "Escolha uma opção";
         materialSelect.value = "Escolha uma opção";
         quantidadeSelect.value = "Escolha uma opção"; 
@@ -849,7 +849,7 @@ else if (titulo === "Calendários") {
         exibirOpcoesSelect(enobrecimentoSelect, itemsData.convites.enobrecimento);
         exibirOpcoesSelect(acabamentoSelect, itemsData.convites.acabamento);
     }
-     else if (titulo === "Adesivos e Rótulos" && id === "preenchido") {
+     else if (titulo === "Adesivos" && id === "preenchido") {
         modeloSelect.value = "Escolha uma opção";
         materialSelect.value = "Vinil Branco";
         quantidadeSelect.value = "10"; // Exemplo de quantidade padrão para Adesivos
@@ -881,7 +881,7 @@ else if (titulo === "Calendários") {
         exibirOpcoesSelect(enobrecimentoSelect, itemsData.adesivos.enobrecimento);
         exibirOpcoesSelect(acabamentoSelect, itemsData.adesivos.acabamento);
     }
-    else if (titulo === "Adesivos e Rótulos") {
+    else if (titulo === "Adesivos") {
         modeloSelect.value = "Escolha uma opção";
         materialSelect.value = "Escolha uma opção";
         quantidadeSelect.value = "Escolha uma opção"; // Exemplo de quantidade padrão para Adesivos
@@ -1549,7 +1549,7 @@ else if (titulo === "Envelopes") {
 
 
     }
-     else if (titulo === "Adesivos e Rótulos") {
+     else if (titulo === "Adesivos") {
         if (material === "Vinil Perfurado") {
             ajustarOpcoes(quantidadeSelect, ["1"], "1");
             ajustarOpcoes(acabamentoSelect, ["Refile"], "Refile");
@@ -1711,10 +1711,10 @@ function verificarOpcao() {
           <div>
           <p id="INSTITUCIONAL">INSTITUCIONAL</p>
             <ul id="footerUl">
-              <li><a href="#"><P>Inicio</P></a></li>
+              <li><a href="index.html"><P>Inicio</P></a></li>
               <li><a href="orcamento personalizado.html"><p>Orçamento Personalizado</p></a></li>
               <li><a href="Politicas-de-cancelamento.html"><p>Politica de Cancelamento</p></a></li>
-              <li><a href="#"><p>Prazos</p></a></li>
+              <li><a href="Duvidas Frequentes.html"><p>Prazos</p></a></li>
             </ul>
           
           <div>
@@ -1733,17 +1733,16 @@ function verificarOpcao() {
         </div>
         <div>
           <ul id="ajuda">
-            <li><a href="Quem-Somos.html"><p>Quem Somos</p></a></li>
+            <li><a href="Quem-somos.html"><p>Quem Somos</p></a></li>
             <li><a href="Privacidade.html"><p>Politica e privacidade</p></a></li>
-            <li><a href="#"><p>Regulamento</p></a></li>
+            <li><a href="#"><p>Trabalhe Conosco</p></a></li>
             <li><a href="#"><p>Suporte</p></a></li>
           </ul>
         </div>
         <div>
           <ul id="ajuda">
-            <li><a href="#"><p>Trabalhe Conosco</p></a></li>
             <li><a href="Politicas-de-devolução.html"><p>Politica de Devolução</p></a></li>
-            <li><a href="#"><p>FAQ Perguntas Frequentes</p></a></li>
+            <li><a href="Duvidas Frequentes.html"><p>FAQ Perguntas Frequentes</p></a></li>
           </ul>
         </div>
         <div id="maps">
