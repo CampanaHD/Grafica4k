@@ -75,3 +75,9 @@ const swiper1 = new Swiper('.mySwiper1', {
     const url = `https://wa.me/${telefone}?text=Olá, gostaria de fazer um pedido.`;
     window.open(url, "_blank");
 }
+
+function enviarWhatsAppSuporte() {
+  const telefone = "5514981520127";
+  const url = `https://wa.me/${telefone}?text=Olá, gostaria de suporte sobre certas informações.`;
+  window.open(url, "_blank");
+}

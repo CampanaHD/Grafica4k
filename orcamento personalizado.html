@@ -45,18 +45,19 @@
                     </li>
                 </ul>
                 <!-- Barra de pesquisa abaixo dos links -->
-                <div id="search" style="position: relative;">
+                <div id="search">
                     <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="O que você está procurando?">
-                    <i class="bi bi-search search-icon fs-3"></i>
+                    <i class="bi bi-search search-icon fs-3" onclick="buscar()"></i>
                     <span class="separator"></span>
                     <datalist id="datalistOptions">
-                        <option value="...">
-                        <option value="...">
-                        <option value="...">
-                        <option value="...">
-                        <option value="...">
+                        <option value="Adesivos">
+                        <option value="Banners">
+                        <option value="Blocos e Talões">
+                        <option value="Cartões de Visita">
+                        <option value="Envelopes">
                     </datalist>
                 </div>
+  
             </div>    
         </div>    
     </nav>
@@ -243,12 +244,12 @@
                         <option value="10">10 unidades</option>
                         <option value="25">25 unidades</option>
                         <option value="50">50 unidades</option>
-                        <option value="100" id="unidades100">100 unidades</option>
+                        <option value="100">100 unidades</option>
                         <option value="200">200 unidades</option>
                         <option value="250">250 unidades</option>
                         <option value="300">300 unidades</option>
                         <option value="500">500 unidades</option>
-                        <option value="1000" id="unidades1000">1000 unidades</option>
+                        <option value="1000">1000 unidades</option>
                         <option value="2500">2500 unidade</option>
                         <option value="5000">5000 unidade</option>
                     </select>
@@ -1264,7 +1265,25 @@ function atualizarDroplist() {
         }
     };
 
-   
+    var modelo1 = document.getElementById("modelo");
+    var material1 = document.getElementById("material");
+    var quantidade1 = document.getElementById("quantidade");
+    var medida1 = document.getElementById("medida");
+    var cores1 = document.getElementById("cores");
+    var enobrecimento1 = document.getElementById("enobrecimento");
+    var acabamento1 = document.getElementById("acabamento");
+
+    if (modelo1.value !== "") {
+        material1.disabled = false;
+        quantidade1.disabled = false;
+        medida1.disabled = false;
+        cores1.disabled = false;
+        enobrecimento1.disabled = false;
+        acabamento1.disabled = false; // Habilita o campo Material
+    } else {
+        material1.disabled = true; // Desabilita se "Escolha uma opção" for selecionado
+        material1.value = ""; // Reseta a seleção do material
+    }
 
 
 
@@ -1681,6 +1700,8 @@ function verificarOpcao() {
             window.open(url, "_blank");
         }
         
+        
+
     </script>
     
         
@@ -1714,7 +1735,7 @@ function verificarOpcao() {
               <li><a href="index.html"><P>Inicio</P></a></li>
               <li><a href="orcamento personalizado.html"><p>Orçamento Personalizado</p></a></li>
               <li><a href="Politicas-de-cancelamento.html"><p>Politica de Cancelamento</p></a></li>
-              <li><a href="Duvidas Frequentes.html"><p>Prazos</p></a></li>
+              <li><a href="Duvidas Frequentes.html?id=6"><p>Prazos</p></a></li>
             </ul>
           
           <div>
@@ -1736,7 +1757,7 @@ function verificarOpcao() {
             <li><a href="Quem-somos.html"><p>Quem Somos</p></a></li>
             <li><a href="Privacidade.html"><p>Politica e privacidade</p></a></li>
             <li><a href="#"><p>Trabalhe Conosco</p></a></li>
-            <li><a href="#"><p>Suporte</p></a></li>
+            <li onclick="enviarWhatsAppSuporte()"><a><p id="Suporte">Suporte</p></a></li>
           </ul>
         </div>
         <div>

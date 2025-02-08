@@ -90,33 +90,43 @@ height: 15px;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-#exampleDataList{
-    border-radius: 40px;
-    border-width: 3px;
-    background-color: black;
-    height: 50px;
-    font-size: 20px;
-    color: white;
+/* Estilizando o input */
+#exampleDataList {
+  border-radius: 40px;
+  border-width: 3px;
+  background-color: black;
+  height: 50px;
+  font-size: 20px;
+  color: white;
+  padding-left: 10px; /* Ajusta o padding para o texto não ficar tão perto da borda */
+  position: relative;
 }
+
+/* Estilo do placeholder */
 .form-control::placeholder {
-    color: white; /* Placeholder claro para contraste */
-    padding-left: 10px;
-  }
-  #search{
-    width: 100%;
-    text-align: center;
-    position: relative;
-  }
-  .search-icon {
-    position: absolute;
-    top: 50%;
-    right: 20px; /* Ajusta o ícone para o final do campo */
-    transform: translateY(-50%);
-    font-size: 20px;
-    color: white;
-    pointer-events: none; /* Impede que o ícone interfira na interação do usuário */
-    font-weight: bolder;
+  color: white; /* Placeholder claro para contraste */
 }
+
+/* Estilo da busca */
+#search {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+/* Ícone de busca */
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 20px; /* Ajusta o ícone para o final do campo */
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+/* Separador entre o campo de pesquisa e o ícone */
 .separator {
   position: absolute;
   top: 50%;
@@ -128,6 +138,30 @@ height: 15px;
   pointer-events: none;
 }
 
+/* Estilo do container das sugestões */
+#suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
+/* Estilo de cada item de sugestão */
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background-color: #444;
+}
 
   #whatsapp{
     padding-right: 10px;
@@ -373,7 +407,7 @@ height: 540px;
   margin-right: 5px;
 }
 .Maisvendidos_size{
-  height: 430px;
+  height: 480px;
   width: 270px;
 }
 #apartir{
@@ -447,6 +481,9 @@ footer p{
   color: black;
   font-size: 16px;
   font-weight: 700;
+}
+#Suporte{
+  cursor: pointer;
 }
 footer h6{
   font-size: 20px;
@@ -686,21 +723,21 @@ footer h6{
 /* Estilo da seção oculta */
 .faq-content {
   display: none;
-  padding: 10px;
+  padding: 0 10px; /* Inicialmente sem padding */
   background-color: #f9f9f9;
   color: black;
   border: 1px solid #ddd;
   border-top: none;
-  border-radius: 0 0 10px 10px; /* Bordas arredondadas para a parte inferior */
-  transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Adicionando transições suaves */
+  border-radius: 0 0 10px 10px;
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out;
   max-height: 0;
-  overflow: hidden; /* Garante que o conteúdo fique escondido quando o max-height for 0 */
+  overflow: hidden;
 }
 
 /* Estilo para texto visível */
 .faq-content.visible {
   display: block;
-  max-height: 500px; /* Define um valor máximo para o conteúdo expandido */
+  max-height: 500px;
   padding: 10px;
 }
 
@@ -715,6 +752,7 @@ footer h6{
       font-size: 14px;
   }
 }
+
 
 #todosprodutos {
   background-color: transparent;

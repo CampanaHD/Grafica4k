@@ -45,18 +45,18 @@
                     </li>
                 </ul>
                 <!-- Barra de pesquisa abaixo dos links -->
-                <div id="search" style="position: relative;">
-                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="O que você está procurando?">
-                    <i class="bi bi-search search-icon fs-3"></i>
+                <div id="search">
+                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="O que você está procurando?" oninput="atualizarSugestoes()" onkeyup="pesquisarProdutos()">
+                    <i class="bi bi-search search-icon fs-3" onclick="buscar()"></i>
                     <span class="separator"></span>
-                    <datalist id="datalistOptions">
-                        <option value="...">
-                        <option value="...">
-                        <option value="...">
-                        <option value="...">
-                        <option value="...">
-                    </datalist>
+                    <datalist id="datalistOptions"></datalist>
                 </div>
+
+
+
+
+
+
             </div>    
         </div>    
     </nav>
@@ -161,7 +161,7 @@
             <div class="container-xxl swiper" id="containerMain">
                 <div class="card-wrapper mySwiper1">
                 <ul class="card-list swiper-wrapper text-nowrap" id="cardsCarouselMain">
-                  <li class="card-item swiper-slide" id="cardsCarousel1"><a href="orcamento personalizado.html?titulo=Banner Personalizado"><img src="imagens/Icones/Banners.png" class="card-image" alt="banners"><h5 id="cardsCarousel">Banners</h5></a></li>
+                  <li class="card-item swiper-slide" id="cardsCarousel1"><a href="orcamento personalizado.html?titulo=Banners, Faixas e Lonas"><img src="imagens/Icones/Banners.png" class="card-image" alt="banners"><h5 id="cardsCarousel">Banners</h5></a></li>
                   <li class="card-item swiper-slide"><a href="orcamento personalizado.html?titulo=Blocos, Talões e Receituários"><img src="imagens/Icones/Blocos e Talões.png" class="card-image" alt="Blocos e Talões"><h5 id="cardsCarousel">Blocos e Talões</h5></a></li>
                   <li class="card-item swiper-slide"><a href="orcamento personalizado.html?titulo=Adesivos"><img src="imagens/Icones/Adesivos e Rotulos.png" class="card-image" alt="Cartões de visita"><h5 id="cardsCarousel">Adesivos</h5></a></li>
                   <li class="card-item swiper-slide"><a href="orcamento personalizado.html?titulo=Calendários"><img src="imagens/Icones/Calendários.png" class="card-image" alt="Calendários"><h5 id="cardsCarousel">Calendários</h5></a></li>
@@ -204,13 +204,102 @@
           <div class="container-xxl swiper" id="containerMain2">
             <div class="card-wrapper mySwiper2">
               <ul class="card-list swiper-wrapper text-nowrap" id="cardsCarouselMain2">
-                <li class="card-item swiper-slide"><a href="orcamento personalizado.html?titulo=Banner Personalizado&id=preenchido"><div class="Maisvendidos_size"><img src="imagens/Mais Vendidos/Banner.png" class="card-image" alt="Banner Personalizado"><h6 id="cardsCarousel2">Comunicação Visual</h6><h5 id="cardsCarousel3">Banner Personalizado</h5><p id="Maisvendidos_banner_material"> Lona 440g -</p><p id="Maisvendidos_banner_medida">600x900mm - </p><p id="Maisvendidos_banner_cores">4x0</p><p>(Colorido Frente) -</p><p id="Maisvendidos_banner_enobrecimento">Sem Enobrecimento</p><p id="Maisvendidos_banner_acabamento"> -  Bastão e Cordão</p></div><br><br><h4 id="solicitarOrcamento">SOLICITAR ORÇAMENTO</h4></a></li>          
-                <li class="card-item swiper-slide"><a href="orcamento personalizado.html?titulo=Blocos e Talões&id=preenchido"><div class="Maisvendidos_size"><img src="imagens/Mais Vendidos/Blocos.png" class="card-image" alt="Banner Personalizado"><h6 id="cardsCarousel2">Gráfica</h6><h5 id="cardsCarousel3">Blocos e Talões</h5><p id="Maisvendidos_blocosetaloes_material">Sulfite 75g - </p><p id="Maisvendidos_blocosetaloes_medida">140x200mm - </p><p id="Maisvendidos_blocosetaloes_cores">1x0</p><p>(Preto Frente) - </p><p id="Maisvendidos_blocosetaloes_enobrecimento">Sem Enobrecimento - </p><p id="Maisvendidos_blocosetaloes_acabamento">Blocagem com 100 Folhas</p></div><br><br><h4 id="solicitarOrcamento">SOLICITAR ORÇAMENTO</h4></a></li>   
-                <li class="card-item swiper-slide"><a href="orcamento personalizado.html?titulo=Cartões de Visita 4x4"><div class="Maisvendidos_size"><img src="imagens/Mais Vendidos/Cartões de Visita - 4x4.png" class="card-image" alt="Banner Personalizado"><h6 id="cardsCarousel2">Gráfica</h6><h5 id="cardsCarousel3">Cartões de Visita</h5><p id="Maisvendidos_cartoesdevisita_4x4_material">Couché Brilho 300g - </p><p id="Maisvendidos_cartoesdevisita_4x4_medida">48x88mm - </p><p id="Maisvendidos_cartoesdevisita_4x4_cores">4x4 </p><p>(Colorido Frente e Verso) - </p><p id="Maisvendidos_cartoesdevisita_4x4_enobrecimento">Verniz Total Frente - </p><p id="Maisvendidos_cartoesdevisita_4x4_acabamento">Refile</p></div><br><br><h4 id="solicitarOrcamento">SOLICITAR ORÇAMENTO</h4></a></li>  
-                <li class="card-item swiper-slide"><a href="orcamento personalizado.html?titulo=Fichas e Timbrados&id=preenchido"><div class="Maisvendidos_size"><img src="imagens/Mais Vendidos/Fichas e Timbrados.png" class="card-image" alt="Banner Personalizado"><h6 id="cardsCarousel2">Gráfica</h6><h5 id="cardsCarousel3">Fichas</h5><p id="Maisvendidos_fichasetimbrados_material">Sulfite 90g - </p><p id="Maisvendidos_fichasetimbrados_medida">140x200mm - </p><p id="Maisvendidos_fichasetimbrados_cores">4x0 </p><p>(Colorido Frente) - </p><p id="Maisvendidos_fichasetimbrados_enobrecimento">Sem Enobrecimento</p><p id="Maisvendidos_fichasetimbrados_acabamento"> -  Refile</p></div><br><br><h4 id="solicitarOrcamento">SOLICITAR ORÇAMENTO</h4></a></li>
-                <li class="card-item swiper-slide"><a href="orcamento personalizado.html?titulo=Panfletos&id=preenchido"><div class="Maisvendidos_size"><img src="imagens/Mais Vendidos/Panfletos.png" class="card-image" alt="Banner Personalizado"><h6 id="cardsCarousel2">Gráfica</h6><h5 id="cardsCarousel3">Panfletos</h5><p id="Maisvendidos_panfletos_material">Couché 90g - </p><p id="Maisvendidos_panfletos_medida">100x140mm - </p><p id="Maisvendidos_panfletos_cores">4x0 </p><p>(Colorido Frente) - </p><p id="Maisvendidos_panfletos_enobrecimento">Sem Enobrecimento</p><p id="Maisvendidos_panfletos_acabamento"> -  Refile</p></div><br><br><h4 id="solicitarOrcamento">SOLICITAR ORÇAMENTO</h4></a></li>
-                <li class="card-item swiper-slide"><a href="orcamento personalizado.html?titulo=Adesivos&id=preenchido"><div class="Maisvendidos_size"><img src="imagens/Mais Vendidos/Vinil 5x5.png" class="card-image" alt="Banner Personalizado"><h6 id="cardsCarousel2">Comunicação Visual</h6><h5 id="cardsCarousel3">Adesivos</h5><p id="Maisvendidos_adesivos_meiocorte_50x50_material">Vinil Branco - </p><p id="Maisvendidos_adesivos_meiocorte_50x50_medida">50x50mm - </p><p id="Maisvendidos_adesivos_meiocorte_50x50_cores">4x0 </p><p>(Colorido Frente) - </p><p id="Maisvendidos_adesivos_meiocorte_50x50_enobrecimento">Sem Enobrecimento</p><p id="Maisvendidos_adesivos_meiocorte_50x50_acabamento"> -  Meio Corte Personalizado</p></div><br><br><h4 id="solicitarOrcamento">SOLICITAR ORÇAMENTO</h4></a></li>
-              </ul>
+                <li class="card-item swiper-slide">
+                    <a href="orcamento personalizado.html?titulo=Banner Personalizado&id=preenchido">
+                        <div class="Maisvendidos_size">
+                            <img src="imagens/Mais Vendidos/Banner.png" class="card-image" alt="Banner Personalizado">
+                            <h6 id="cardsCarousel2">Comunicação Visual</h6>
+                            <h5 id="cardsCarousel3">Banner Personalizado</h5>
+                            <p>Lona 440g - 600x900mm - 4x0 (Colorido Frente) - Sem Enobrecimento - Bastão e Cordão</p>
+                        </div>
+                        <h4 id="solicitarOrcamento">SOLICITAR ORÇAMENTO</h4>
+                    </a>
+                </li>
+                
+                <li class="card-item swiper-slide">
+                    <a href="orcamento personalizado.html?titulo=Blocos e Talões&id=preenchido">
+                        <div class="Maisvendidos_size">
+                            <img src="imagens/Mais Vendidos/Blocos.png" class="card-image" alt="Blocos e Talões">
+                            <h6 id="cardsCarousel2">Gráfica</h6>
+                            <h5 id="cardsCarousel3">Blocos e Talões</h5>
+                            <p>Sulfite 75g - 140x200mm - 1x0 (Impressão em 1 cor) - Sem Enobrecimento - Blocagem com 100 Folhas</p>
+                        </div>
+                        <h4 id="solicitarOrcamento">SOLICITAR ORÇAMENTO</h4>
+                    </a>
+                </li>
+                
+                <li class="card-item swiper-slide">
+                    <a href="orcamento personalizado.html?titulo=Cartões de Visita 4x4">
+                        <div class="Maisvendidos_size">
+                            <img src="imagens/Mais Vendidos/Cartões de Visita - 4x4.png" class="card-image" alt="Cartões de Visita">
+                            <h6 id="cardsCarousel2">Gráfica</h6>
+                            <h5 id="cardsCarousel3">Cartões de Visita</h5>
+                            <p>Couché Brilho 300g - 48x88mm - 4x4 (Colorido Frente e Verso) - Verniz Total Frente - Refile</p>
+                        </div>
+                        <h4 id="solicitarOrcamento">SOLICITAR ORÇAMENTO</h4>
+                    </a>
+                </li>
+                
+                <li class="card-item swiper-slide">
+                    <a href="orcamento personalizado.html?titulo=Fichas e Timbrados&id=preenchido">
+                        <div class="Maisvendidos_size">
+                            <img src="imagens/Mais Vendidos/Fichas e Timbrados.png" class="card-image" alt="Fichas e Timbrados">
+                            <h6 id="cardsCarousel2">Gráfica</h6>
+                            <h5 id="cardsCarousel3">Fichas</h5>
+                            <p>Sulfite 90g - 140x200mm - 4x0 (Colorido Frente) - Sem Enobrecimento - Refile</p>
+                        </div>
+                        <h4 id="solicitarOrcamento">SOLICITAR ORÇAMENTO</h4>
+                    </a>
+                </li>
+                
+                <li class="card-item swiper-slide">
+                    <a href="orcamento personalizado.html?titulo=Panfletos&id=preenchido">
+                        <div class="Maisvendidos_size">
+                            <img src="imagens/Mais Vendidos/Panfletos.png" class="card-image" alt="Panfletos">
+                            <h6 id="cardsCarousel2">Gráfica</h6>
+                            <h5 id="cardsCarousel3">Panfletos</h5>
+                            <p>Couché 90g - 100x140mm - 4x0 (Colorido Frente) - Sem Enobrecimento - Refile</p>
+                        </div>
+                        <h4 id="solicitarOrcamento">SOLICITAR ORÇAMENTO</h4>
+                    </a>
+                </li>
+                
+                <li class="card-item swiper-slide">
+                    <a href="orcamento personalizado.html?titulo=Adesivos&id=preenchido">
+                        <div class="Maisvendidos_size">
+                            <img src="imagens/Mais Vendidos/Vinil 5x5.png" class="card-image" alt="Adesivos">
+                            <h6 id="cardsCarousel2">Comunicação Visual</h6>
+                            <h5 id="cardsCarousel3">Adesivos</h5>
+                            <p>Vinil Branco - 50x50mm - 4x0 (Colorido Frente) - Sem Enobrecimento - Meio Corte Personalizado</p>
+                        </div>
+                        <h4 id="solicitarOrcamento">SOLICITAR ORÇAMENTO</h4>
+                    </a>
+                </li>
+            
+            <li class="card-item swiper-slide">
+                <a href="orcamento personalizado.html?titulo=Adesivos&id=preenchido">
+                    <div class="Maisvendidos_size">
+                        <img src="imagens/Mais Vendidos/Vinil - Meio Corte Personalizado.png" class="card-image" alt="Adesivos">
+                        <h6 id="cardsCarousel2">Comunicação Visual</h6>
+                        <h5 id="cardsCarousel3">Adesivo Recorte Eletrônico</h5>
+                        <p>Vinil Branco - 200x280mm - Sem Impressão - Sem Enobrecimento - Corte Personalizado + Mascara de Aplicação (ITEM NOVO)</p>
+                    </div>
+                    <h4 id="solicitarOrcamento">SOLICITAR ORÇAMENTO</h4>
+                </a>
+            </li>
+            
+            <li class="card-item swiper-slide">
+                <a href="orcamento personalizado.html?titulo=Cartaz&id=preenchido">
+                    <div class="Maisvendidos_size">
+                        <img src="imagens/Mais Vendidos/" class="card-image" alt="Cartaz">
+                        <h6 id="cardsCarousel2">Comunicação Visual</h6>
+                        <h5 id="cardsCarousel3">Cartaz</h5>
+                        <p>Papel Fotográfico Microporoso 260g - (A2) 594x420mm - 4x0 (Colorido Frente) - Sem Enobrecimento - Refile (ITEM NOVO)</p>
+                    </div>
+                    <h4 id="solicitarOrcamento">SOLICITAR ORÇAMENTO</h4>
+                </a>
+            </li>
+            </ul>
               
             </div>
           </div>
@@ -281,7 +370,7 @@
               <li><a href="index.html"><P>Inicio</P></a></li>
               <li><a href="orcamento personalizado.html"><p>Orçamento Personalizado</p></a></li>
               <li><a href="Politicas-de-cancelamento.html"><p>Politica de Cancelamento</p></a></li>
-              <li><a href="Duvidas Frequentes.html"><p>Prazos</p></a></li>
+              <li><a href="Duvidas Frequentes.html?id=6"><p>Prazos</p></a></li>
             </ul>
           
           <div>
@@ -292,7 +381,7 @@
               <li><img src="imagens/Formas de pagamento/Mastercard.svg" alt=""></li>
               <li><img src="imagens/Formas de pagamento/Visa.svg" alt=""></li>
               <li><img src="imagens/Formas de pagamento/Boleto.svg" alt=""></li>
-              
+            
               
               
             </ul>
@@ -303,7 +392,7 @@
             <li><a href="Quem-somos.html"><p>Quem Somos</p></a></li>
             <li><a href="Privacidade.html"><p>Politica e privacidade</p></a></li>
             <li><a href="#"><p>Trabalhe Conosco</p></a></li>
-            <li><a href="#"><p>Suporte</p></a></li>
+            <li onclick="enviarWhatsAppSuporte()"><a><p id="Suporte">Suporte</p></a></li>
           </ul>
         </div>
         <div>
@@ -340,6 +429,18 @@
               console.log(`Link clicado: ${itemKey}`);
           });
       });
+
+
+      function buscar() {
+            let input = document.getElementById("exampleDataList").value;
+            if (input) {
+                // Aqui você pode redirecionar para uma página de busca, exemplo:
+                window.location.href = "Pesquisar.html?query=" + encodeURIComponent(input);
+            } else {
+                alert("Digite algo para buscar.");
+            }
+        }
+    
   </script>
 </body>
 </html>

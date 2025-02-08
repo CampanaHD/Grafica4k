@@ -45,18 +45,19 @@
                     </li>
                 </ul>
                 <!-- Barra de pesquisa abaixo dos links -->
-                <div id="search" style="position: relative;">
+                <div id="search">
                     <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="O que você está procurando?">
-                    <i class="bi bi-search search-icon fs-3"></i>
+                    <i class="bi bi-search search-icon fs-3" onclick="buscar()"></i>
                     <span class="separator"></span>
                     <datalist id="datalistOptions">
-                        <option value="...">
-                        <option value="...">
-                        <option value="...">
-                        <option value="...">
-                        <option value="...">
+                        <option value="Adesivos">
+                        <option value="Banners">
+                        <option value="Blocos e Talões">
+                        <option value="Cartões de Visita">
+                        <option value="Envelopes">
                     </datalist>
                 </div>
+  
             </div>    
         </div>    
     </nav>
@@ -167,7 +168,7 @@
               <li><a href="index.html"><P>Inicio</P></a></li>
               <li><a href="orcamento personalizado.html"><p>Orçamento Personalizado</p></a></li>
               <li><a href="Politicas-de-cancelamento.html"><p>Politica de Cancelamento</p></a></li>
-              <li><a href="Duvidas Frequentes.html"><p>Prazos</p></a></li>
+              <li><a href="Duvidas Frequentes.html?id=6"><p>Prazos</p></a></li>
             </ul>
           
           <div>
@@ -189,7 +190,7 @@
             <li><a href="Quem-somos.html"><p>Quem Somos</p></a></li>
             <li><a href="Privacidade.html"><p>Politica e privacidade</p></a></li>
             <li><a href="#"><p>Trabalhe Conosco</p></a></li>
-            <li><a href="#"><p>Suporte</p></a></li>
+            <li onclick="enviarWhatsAppSuporte()"><a><p id="Suporte">Suporte</p></a></li>
           </ul>
         </div>
         <div>
