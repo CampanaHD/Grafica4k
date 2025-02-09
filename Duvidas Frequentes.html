@@ -46,17 +46,12 @@
                 </ul>
                 <!-- Barra de pesquisa abaixo dos links -->
                 <div id="search">
-                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="O que você está procurando?">
+                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="O que você está procurando?" oninput="atualizarSugestoes()" onkeyup="pesquisarProdutos()">
                     <i class="bi bi-search search-icon fs-3" onclick="buscar()"></i>
                     <span class="separator"></span>
-                    <datalist id="datalistOptions">
-                        <option value="Adesivos">
-                        <option value="Banners">
-                        <option value="Blocos e Talões">
-                        <option value="Cartões de Visita">
-                        <option value="Envelopes">
-                    </datalist>
+                    <datalist id="datalistOptions"></datalist>
                 </div>
+
   
             </div>    
         </div>    
@@ -145,8 +140,8 @@
         <div class="faq-section">
             <button class="faq-button" onclick="toggleFAQ('faq-content-2')">Orçamento Personalizado</button>
             <div id="faq-content-2" class="faq-content">
-                <h6>Como fazer um orçamento</h6>
-                <p>Para clicar em "orçamento personalizado", na barra superior de produtos, e será direcionado para um vendedor no Whatsapp, onde poderá descrever o item que precisa, caso não tenha todas as especificações pelo site!</p>
+                <h6>Como fazer um Orçamento Personalizado</h6>
+                <p>Basta Clicar no "orçamento personalizado", na barra superior de produtos, será direcionado para um pagina, onde poderá descrever previamente o que procura, e sera enviado para um Vendedor no Whatsapp, te atender já com essas informações iniciais enviadas, e ter seu atendimento personalizado.</p>
             </div>
         </div>
     
@@ -164,7 +159,7 @@
             <button class="faq-button" onclick="toggleFAQ('faq-content-4')">Horário de Funcionamento</button>
             <div id="faq-content-4" class="faq-content">
                 <h6>Qual é o horário de atendimento da 4K?</h6>
-                <p>Horário de Atendimento: <br> Segunda a Sexta: 09h00 às 18h00 - (intervalo de almoço das 11h às 13h) <br>Sábado: 09h00 às 13h00 <br>Caso esteja nos contatando durante o intervalo de almoço ou fora do horário de expediente, retornaremos logo seu contato!</p>
+                <p>Horário de Atendimento: <br> Segunda a Sexta: 09h00 às 18h00 - (intervalo de almoço das 12h às 13h) <br>Sábado: 09h00 às 13h00 <br>Caso esteja nos contatando durante o intervalo de almoço ou fora do horário de expediente, retornaremos logo seu contato!</p>
             </div>
         </div>
     
@@ -182,7 +177,7 @@
             <button class="faq-button" onclick="toggleFAQ('faq-content-6')">Prazos</button>
             <div id="faq-content-6" class="faq-content">
                 <h6>Como funciona os prazos?</h6>
-                <p>Cada produto/ serviço terá seu prazo padrão, independente da qualidade, por questões de segurança, mas o prazo funciona como uma margem de segurança de imprevistos que possam ocorrer, nossos materiais tem uma previsão máximo estipulada, onde fazemos o possível para não passar dessa data, mas os materiais podem ficar pronto antes do prazo previsto.</p>
+                <p>Cada produto/ serviço terá seu prazo padrão, independente da qualidade ou quantidade, por questões de segurança, mas o prazo funciona como uma margem de segurança de imprevistos que possam ocorrer, nossos materiais tem uma previsão máxima estipulada, onde fazemos o possível para não passar dessa data, mas os materiais geralmente ficam prontos antes do prazo previsto.</p>
             </div>
         </div>
     
@@ -246,7 +241,7 @@
         <div>
           <ul id="ajuda">
             <li><a href="Quem-somos.html"><p>Quem Somos</p></a></li>
-            <li><a href="Privacidade.html"><p>Politica e privacidade</p></a></li>
+            <li><a href="Privacidade.html"><p>Politica e Privacidade</p></a></li>
             <li><a href="#"><p>Trabalhe Conosco</p></a></li>
             <li onclick="enviarWhatsAppSuporte()"><a><p id="Suporte">Suporte</p></a></li>
           </ul>

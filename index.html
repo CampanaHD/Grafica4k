@@ -49,7 +49,13 @@
                     <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="O que você está procurando?" oninput="atualizarSugestoes()" onkeyup="pesquisarProdutos()">
                     <i class="bi bi-search search-icon fs-3" onclick="buscar()"></i>
                     <span class="separator"></span>
-                    <datalist id="datalistOptions"></datalist>
+                    <datalist id="datalistOptions">
+                            <option value="Adesivos">
+                            <option value="Banners">
+                            <option value="Blocos e Talões">
+                            <option value="Cartões de Visita">
+                            <option value="Envelopes">
+                    </datalist>
                 </div>
 
 
@@ -71,34 +77,34 @@
                         <div class="submenu-container">
                             <div class="submenu">
                                 <a href="orcamento personalizado.html?titulo=Adesivos">Adesivos</a>
-                                <a href="orcamento personalizado.html?titulo=Banner">Banner</a>
-                                <a href="orcamento personalizado.html?titulo=Blocos, Talões e Receituários">Blocos e Talões</a>
+                                <a href="orcamento personalizado.html?titulo=Banners, Faixas e Lonas&id=Banners">Banner</a>
+                                <a href="orcamento personalizado.html?titulo=Blocos, Talões e Receituários&id=Blocos e Talões">Blocos e Talões</a>
                                 <a href="orcamento personalizado.html?titulo=Calendários">Calendários</a>
                                 <a href="orcamento personalizado.html?titulo=Cardápios">Cardápios</a>
                                 <a href="orcamento personalizado.html?titulo=Cartões de Visita">Cartões de Visita</a>
                                 <a href="orcamento personalizado.html?titulo=Cavaletes">Cavaletes</a>
                             </div>
                             <div class="submenu">
-                                <a href="orcamento personalizado.html?titulo=Certificado">Certificado</a>
-                                <a href="orcamento personalizado.html?titulo=Convites">Convites</a>
+                                <a href="orcamento personalizado.html?titulo=Certificados">Certificados</a>
+                                <a href="orcamento personalizado.html?titulo=Impressos em Geral">Impressos em Geral</a>
                                 <a href="orcamento personalizado.html?titulo=Envelopamento">Envelopamento</a>
                                 <a href="orcamento personalizado.html?titulo=Envelopes">Envelopes</a>
                                 <a href="orcamento personalizado.html?titulo=Fachadas">Fachadas</a>
-                                <a href="orcamento personalizado.html?titulo=Faixas">Faixas</a>
+                                <a href="orcamento personalizado.html?titulo=Banners, Faixas e Lonas&id=Faixas">Faixas</a>
                                 <a href="orcamento personalizado.html?titulo=Fichas e Timbrados">Fichas e Timbrados</a>
                             </div>
                             <div class="submenu">
-                                <a href="orcamento personalizado.html?titulo=Folders">Folders</a>
+                                <a href="orcamento personalizado.html?titulo=Panfletos e Folders">Folders</a>
                                 <a href="orcamento personalizado.html?titulo=Frotas">Frotas</a>
-                                <a href="orcamento personalizado.html?titulo=Ímã de Geladeira">Ímã de Geladeira</a>
-                                <a href="orcamento personalizado.html?titulo=Panfletos">Panfletos</a>
+                                <a href="orcamento personalizado.html?titulo=Imã de Geladeira">Imã de Geladeira</a>
+                                <a href="orcamento personalizado.html?titulo=Panfletos e Folders">Panfletos</a>
                                 <a href="orcamento personalizado.html?titulo=Pastas">Pastas</a>
                                 <a href="orcamento personalizado.html?titulo=Placas">Placas</a>
                                 <a href="orcamento personalizado.html?titulo=Plotagens e Projetos">Plotagens e Projetos</a>
                             </div>
                             <div class="submenu">
                                 <a href="orcamento personalizado.html?titulo=Quadros">Quadros</a>
-                                <a href="orcamento personalizado.html?titulo=Receituários">Receituários</a>
+                                <a href="orcamento personalizado.html?titulo=Blocos, Talões e Receituários&id=Receituários">Receituários</a>
                                 <a href="orcamento personalizado.html?titulo=Tag">Tag</a>
                                 <a href="orcamento personalizado.html?titulo=Vinil Perfurado">Vinil Perfurado</a>
                                 <a href="orcamento personalizado.html?titulo=Wind Banner">Wind Banner</a>
@@ -217,7 +223,7 @@
                 </li>
                 
                 <li class="card-item swiper-slide">
-                    <a href="orcamento personalizado.html?titulo=Blocos e Talões&id=preenchido">
+                    <a href="orcamento personalizado.html?titulo=Blocos, Talões e Receituários&id=preenchido">
                         <div class="Maisvendidos_size">
                             <img src="imagens/Mais Vendidos/Blocos.png" class="card-image" alt="Blocos e Talões">
                             <h6 id="cardsCarousel2">Gráfica</h6>
@@ -390,7 +396,7 @@
         <div>
           <ul id="ajuda">
             <li><a href="Quem-somos.html"><p>Quem Somos</p></a></li>
-            <li><a href="Privacidade.html"><p>Politica e privacidade</p></a></li>
+            <li><a href="Privacidade.html"><p>Politica e Privacidade</p></a></li>
             <li><a href="#"><p>Trabalhe Conosco</p></a></li>
             <li onclick="enviarWhatsAppSuporte()"><a><p id="Suporte">Suporte</p></a></li>
           </ul>
@@ -431,15 +437,7 @@
       });
 
 
-      function buscar() {
-            let input = document.getElementById("exampleDataList").value;
-            if (input) {
-                // Aqui você pode redirecionar para uma página de busca, exemplo:
-                window.location.href = "Pesquisar.html?query=" + encodeURIComponent(input);
-            } else {
-                alert("Digite algo para buscar.");
-            }
-        }
+      
     
   </script>
 </body>

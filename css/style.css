@@ -61,6 +61,7 @@ height: 15px;
 #bagulinhoLi{
   width: 1.75px;
   height: 14.21px;
+  cursor: default;
 }
 #quemsomosLi{
   width: 109px;
@@ -82,19 +83,20 @@ height: 15px;
    border-radius: 5px;
    padding-left: 30px;
    padding-right: 30px;
-   
+   cursor: default;
 }
 #xp{
   background: linear-gradient(to right, #0035ff, #007fff, #e500b5, #f27100, #fff200);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  cursor: default;
 }
 /* Estilizando o input */
 #exampleDataList {
   border-radius: 40px;
   border-width: 3px;
-  background-color: black;
+  background-color: transparent;
   height: 50px;
   font-size: 20px;
   color: white;
@@ -113,8 +115,61 @@ height: 15px;
   text-align: center;
   position: relative;
 }
+.containerPesquisar{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+#resultados{
+  display: flex;
+  flex-direction: row;
+  max-width: 1140px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#resultadosH2{
+  margin-bottom: 50px;
+  
+}
+.produto{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  border-radius: 10px;
 
-/* Ícone de busca */
+  width: 300px;
+  height: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+.produto img{
+  width: 150px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  margin: 20px;
+
+}
+.produto a{
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  
+}
+.produto p{
+  height: 100px;
+  
+}
+.produto h2{
+  display: flex;
+  margin: 20px;
+  align-items: center;
+  justify-content: center;
+}
 .search-icon {
   position: absolute;
   top: 50%;
@@ -229,6 +284,7 @@ height: 15px;
   }
   #bagulinho{
   font-size: 16.21px;
+  cursor: default;
 }
   #Categorias{
     background: linear-gradient(to right, blue, #0035ff, #007fff, #e500b5, #f27100, #fff200);
@@ -240,6 +296,7 @@ height: 15px;
     font-size: 22px;
     font-weight: 600;
     height: 40px;
+    cursor: default;
   }
 
 
@@ -381,6 +438,7 @@ height: 15px;
   font-size: 22px;
   font-weight: 600;
   height: 40px;
+  cursor: default;
 }
 #cardsCarouselMain2 li{
 width: 264px;
@@ -511,6 +569,7 @@ footer h6{
   padding: 0;
   margin: 0;
   margin-bottom: 20px;
+  cursor: default;
 }
 #footerUl{
   margin-left: 16px;
@@ -519,13 +578,12 @@ footer h6{
   font-size: 17px; 
   margin-top: 20px;
   margin-bottom: 20px;
+  cursor: default;
 }
 #formas_de_pagamento{
   list-style: none;
   display: flex;
   flex-direction: row;
-
- 
 }
 #formas_de_pagamento h6{
   margin-bottom: 20px;
@@ -622,6 +680,16 @@ footer h6{
   padding: 8px; /* Espaçamento interno */
   background-color: white;
   cursor: pointer;
+}
+.campo input {
+  width: 257px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 17px;
+  appearance: none; /* Remove aparência padrão */
+  padding: 8px; /* Espaçamento interno */
+  background-color: white;
+
 }
 
 #enviarWhatsApp{

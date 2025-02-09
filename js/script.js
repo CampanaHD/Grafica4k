@@ -81,3 +81,13 @@ function enviarWhatsAppSuporte() {
   const url = `https://wa.me/${telefone}?text=Olá, gostaria de suporte sobre certas informações.`;
   window.open(url, "_blank");
 }
+
+function buscar() {
+  let input = document.getElementById("exampleDataList").value;
+  if (input) {
+      // Aqui você pode redirecionar para uma página de busca, exemplo:
+      window.location.href = "Pesquisar.html?query=" + encodeURIComponent(input);
+  } else {
+      alert("Digite algo para buscar.");
+  }
+}

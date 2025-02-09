@@ -46,17 +46,12 @@
               </ul>
               <!-- Barra de pesquisa abaixo dos links -->
               <div id="search">
-                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="O que você está procurando?">
+                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="O que você está procurando?" oninput="atualizarSugestoes()" onkeyup="pesquisarProdutos()">
                 <i class="bi bi-search search-icon fs-3" onclick="buscar()"></i>
                 <span class="separator"></span>
-                <datalist id="datalistOptions">
-                    <option value="Adesivos">
-                    <option value="Banners">
-                    <option value="Blocos e Talões">
-                    <option value="Cartões de Visita">
-                    <option value="Envelopes">
-                </datalist>
+                <datalist id="datalistOptions"></datalist>
             </div>
+
 
           </div>    
       </div>    
@@ -194,7 +189,7 @@
       <div>
         <ul id="ajuda">
           <li><a href="Quem-somos.html"><p>Quem Somos</p></a></li>
-          <li><a href="Privacidade.html"><p>Politica e privacidade</p></a></li>
+          <li><a href="Privacidade.html"><p>Politica e Privacidade</p></a></li>
           <li><a href="#"><p>Trabalhe Conosco</p></a></li>
           <li onclick="enviarWhatsAppSuporte()"><a><p id="Suporte">Suporte</p></a></li>
         </ul>
@@ -217,6 +212,6 @@
       </div>
     
   </footer>
-
+  <script src="js/script.js"></script>
 </body>
 </html>
