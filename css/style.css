@@ -365,7 +365,7 @@ height: 15px;
   
 }
 #btn-pagination-2{
-  top: 1530px;
+  top: 1480px;
   position: absolute;
 }
 
@@ -440,6 +440,23 @@ height: 15px;
   height: 40px;
   cursor: default;
 }
+
+#clientes{
+  background: linear-gradient(to right, blue, #0035ff, #007fff, #e500b5, #f27100, #fff200);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  height: 40px;
+  cursor: default;
+}
+#containerMain2{
+  height: 540px;
+}
 #cardsCarouselMain2 li{
 width: 264px;
 word-break: keep-all;
@@ -458,6 +475,7 @@ height: 540px;
 }
 #cardsCarouselMain2 h5{
   font-weight: bolder;
+  font-size: 18px;
 }
 #cardsCarouselMain2 p{
   font-size: 13px;
@@ -465,7 +483,7 @@ height: 540px;
   margin-right: 5px;
 }
 .Maisvendidos_size{
-  height: 480px;
+  height: 450px;
   width: 270px;
 }
 #apartir{
@@ -674,7 +692,7 @@ footer h6{
   width: 257px;
   height: 40px;
   border-radius: 5px;
-  font-size: 17px;
+  font-size: 13px;
   appearance: none; /* Remove aparência padrão */
   background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyIDE2bC03LjgtOGgxNS42eiIgZmlsbD0iIzAwMDAwMCIvPjwvc3ZnPg==') no-repeat right 10px center;
   padding: 8px; /* Espaçamento interno */
