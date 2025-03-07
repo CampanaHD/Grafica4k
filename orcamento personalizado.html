@@ -437,6 +437,7 @@
                     
                     <select id="acabamento" onchange="atualizarDroplist()" disabled style="display: block;">
                         <option value="Escolha uma opção">Escolha uma opção</option>
+                        <option value="Refile">Refile</option>
                         <option value="4 Cantos Arredondados - Furo 4mm - Elástico com Ponteira">4 Cantos Arredondados - Furo 4mm - Elástico com Ponteira</option>
                         <option value="Dupla Face (Costurado)">Dupla Face (Costurado)</option>
                         <option value="Base Plástica">Base Plástica</option>
@@ -448,8 +449,7 @@
                         <option value="Suporte + Instalação">Suporte + Instalação</option>
                         <option value="Espaçadores + Instalação">Espaçadores + Instalação</option>
                         <option value="Elástico com Ponteira">Elástico com Ponteira</option>
-                        <option value="Refile + Instalação">Refile + Instalação</option>
-                        <option value="Refile">Refile</option>
+                        <option value="Refile + Instalação">Refile + Instalação</option>              
                         <option value="2 Cantos Arredondados">2 Cantos Arredondados</option>
                         <option value="4 Cantos Arredondados">4 Cantos Arredondados</option>
                         <option value="1 Dobra">1 Dobra</option>
@@ -506,6 +506,8 @@
                         <option value="Furo 7mm + Bloco de Calendário (Padrão)">Furo 7mm + Bloco de Calendário (Padrão)</option>
                         <option value="Vinil Branco + 4 Cantos Arredondados">Vinil Branco + 4 Cantos Arredondados</option>
                         <option value="Plastificação 0.5 + 4 Cantos Arredondados">Plastificação 0.5 + 4 Cantos Arredondados</option>
+                        <option value="Dupla Face (Costurado), Base Plástica e Hastes Desmontáveis">Dupla Face (Costurado), Base Plástica e Hastes Desmontáveis</option>
+                        
                     </select>
                     <input type="text" id="acabamentoInput" placeholder="Digite o acabamento" style="display: none;">
                 </div>
@@ -647,7 +649,7 @@ const itemsData = {
     },
     folders: {
         modelo: ["Escolha uma opção", "Panfletos", "Folhetos", "Flyers", "Folders"],
-        material: ["Escolha uma opção", "Couchê 90g", "Couchê 115g", "Couchê 150g", "Monolucido 120g"],
+        material: ["Escolha uma opção", "Couchê 90g", "Couchê 115g", "Couchê 150g", "Monolucido 120g", "Sulfite 90g"],
         quantidade: ["Escolha uma opção", "25", "50" ,"100", "200", "250", "300", "400", "500", "1000", "2500", "5000", "10000"], 
         medida: ["Escolha uma opção", "100x140mm", "100x200mm", "140x200mm", "200x280mm"],
         cores: ["Escolha uma opção", "4x0 (Colorido Frente)", "4x4 (Colorido Frente e Verso)"],
@@ -682,7 +684,7 @@ const itemsData = {
         acabamento: ["Escolha uma opção", "PDF (Logo Editável para uso proprio)", "Restauração da Qualidade de uma Logo"],
     },
     panfletoseflyers: {
-        material: ["Escolha uma opção", "Couchê 90g", "Couchê 115g"],
+        material: ["Escolha uma opção", "Couchê 90g", "Couchê 115g", "Sulfite 90g"],
         quantidade: ["Escolha uma opção", "100", "1000"], 
         medida: ["Escolha uma opção", "100x140mm", "140x200mm", "200x280mm"],
         cores: ["Escolha uma opção", "4x0 (Colorido Frente)", "4x4 (Colorido Frente e Verso)"],
@@ -720,7 +722,7 @@ const itemsData = {
     receituarios: {
         material: ["Escolha uma opção", "Couchê 90g"],
         quantidade: ["Escolha uma opção", "1", "3", "5", "10"], 
-        medida: ["Escolha uma opção", "100x140mm", "100x200mm", "140x200mm"],
+        medida: ["Escolha uma opção", "140x200mm"],
         cores: ["Escolha uma opção", "1x0 (Impressão em 1 cor)"],
         enobrecimento: ["Escolha uma opção", "Sem Enobrecimento"],
         acabamento: ["Escolha uma opção", "Blocagem de 100 Folhas"],
@@ -776,7 +778,7 @@ const itemsData = {
         medida: ["Escolha uma opção", "650x1900mm", "650x2500mm", "650x3000mm"],
         cores: ["Escolha uma opção", "4x4 (Colorido Frente e Verso)"],
         enobrecimento: ["Escolha uma opção", "Impressão Ultra HD Sublimática"],
-        acabamento: ["Escolha uma opção", "Dupla Face (Costurado)", "Base Plástica", "Hastes Desmontáveis"],
+        acabamento: ["Escolha uma opção", "Dupla Face (Costurado), Base Plástica e Hastes Desmontáveis"],
     },
 };
 
@@ -1785,6 +1787,7 @@ function atualizarDroplist() {
     const acabamentoSelect = document.getElementById("acabamento");
     const titulo = document.getElementById("orcamentoH2").textContent;
 
+
     // Função para habilitar/desabilitar opções com base em valores permitidos
     const ajustarOpcoes = (select, valoresPermitidos, valorPadrao) => {
         Array.from(select.options).forEach(option => {
@@ -1909,16 +1912,16 @@ function atualizarDroplist() {
 // document.getElementById("imagemModelo").src = caminhoImagem;
 
 
-            let select = document.getElementById("modelo");
-            let selectedOption = select.value;
+            // let select = document.getElementById("modelo");
+            // let selectedOption = select.value;
 
-            if (imagePaths[titulo]) {
-                imagem.src = imagePaths[titulo];
-            } else {
-                imagem.src = "imagens/Icones/Calendários.png"; // Imagem padrão caso não encontre
-            }
+            // if (imagePaths[titulo]) {
+            //     imagem.src = imagePaths[titulo];
+            // } else {
+            //     imagem.src = "imagens/Icones/Calendários.png"; 
+            // }
         
-
+        
 
 
 
@@ -2189,7 +2192,7 @@ else if (titulo === "Envelopes") {
     }
         else if (modelo === "Folhetos") {
             
-            ajustarOpcoes(materialSelect, ["Couchê 90g", "Monolucido 120g", "Escolha uma opção"], "Escolha uma opção");
+            ajustarOpcoes(materialSelect, ["Sulfite 90g", "Monolucido 120g", "Escolha uma opção"], "Escolha uma opção");
             ajustarOpcoes(quantidadeSelect, ["100", "200", "300", "400", "Escolha uma opção"], "Escolha uma opção");
             ajustarOpcoes(acabamentoSelect, ["Refile", "Escolha uma opção"], "Escolha uma opção");
     }
@@ -2203,6 +2206,7 @@ else if (titulo === "Envelopes") {
             
             ajustarOpcoes(materialSelect, ["Couchê 90g", "Couchê 115g", "Couchê 150g", "Escolha uma opção"], "Escolha uma opção");
             ajustarOpcoes(quantidadeSelect, ["25", "50", "100", "250", "500", "1000", "2500", "5000", "Escolha uma opção"], "Escolha uma opção");
+            ajustarOpcoes(coresSelect, ["4x4 (Colorido Frente e Verso)", "Escolha uma opção"], "Escolha uma opção");
             ajustarOpcoes(acabamentoSelect, ["1 Dobra", "2 Dobras", "Escolha uma opção"], "Escolha uma opção");
 
             if(material === "Couchê 90g"){
@@ -2243,6 +2247,7 @@ else if (titulo === "Envelopes") {
         }
         else if (modelo === "Receituários") {
             ajustarOpcoes(materialSelect, ["Sulfite 90g", "Escolha uma opção"], "Escolha uma opção");
+            ajustarOpcoes(medidaSelect, ["140x200mm", "200x280mm", "Escolha uma opção"], "Escolha uma opção");
             ajustarOpcoes(coresSelect, ["4x0 (Colorido Frente)", "Escolha uma opção"], "Escolha uma opção");
             ajustarOpcoes(acabamentoSelect, ["Blocagem de 100 Folhas",  "Blocagem de 100 Folhas - Numeração", "Blocagem de 100 Folhas - Serrilha - Grampo", "Blocagem de 100 Folhas - Serrilha - Grampo - Numeração", "Escolha uma opção"], "Escolha uma opção");
     }
@@ -2392,28 +2397,187 @@ else if (titulo === "Envelopes") {
                             ajustarOpcoes(medidaSelect, ["300x300mm", "400x300mm", "400x400mm", "600x300mm", "600x600mm", "600x900mm", "Escolha uma opção"], "Escolha uma opção");
                             ajustarOpcoes(enobrecimentoSelect, ["Impressão Digital UV", "Escolha uma opção"], "Escolha uma opção");
                             ajustarOpcoes(acabamentoSelect, ["Borda Infinita", "Escolha uma opção"], "Escolha uma opção");
+                            prazo.textContent = "Prazo de Produção de 5 à 7 dias úteis.";
+                            //waypoint
                     }
                     else if (modelo === "Moldura") {
                             ajustarOpcoes(materialSelect, ["Papel Fotográfico Microporoso 260g", "Escolha uma opção"], "Escolha uma opção");
                             ajustarOpcoes(medidaSelect, ["140x200mm", "200x300mm", "300x400mm", "Escolha uma opção"], "Escolha uma opção");
                             ajustarOpcoes(enobrecimentoSelect, ["Sem Enobrecimento", "Escolha uma opção"], "Escolha uma opção");
                             ajustarOpcoes(acabamentoSelect, ["Moldura Preta c/ Vidro", "Moldura Branca c/ Vidro", "Moldura Madeira c/ Vidro", "Escolha uma opção"], "Escolha uma opção");
-                    }
+                            prazo.textContent = "Prazo de Produção de 2 à 4 dias úteis.";
+                        }
 
 
             }
-
-
-
-
-
-    else if(titulo === "Cavaletes"){  
+            else if(titulo === "Cavaletes"){  
             
             if(modelo === "Madeira"){
                 ajustarOpcoes(acabamentoSelect, ["Estrutura de Ferro + Lona Revestida", "Escolha uma opção"], "Estrutura de Ferro + Lona Revestida");
             }
-        }
+}
 
+        if(titulo === "Adesivos"){
+
+        if(modelo === "Adesivos para Parede"){
+        imagem.src = "Imagens/Subpastas Padrão/Adesivos personalizados, Etiquetas e rotulos, adesivos de parede, Adesivos de recorte/Adesivos  de parede.png";
+        }
+        if(modelo === "Adesivos Recorte Eletrônico"){	
+        imagem.src = "imagens/SubPastas Padrão/Adesivos personalizados, Etiquetas e rotulos, adesivos de parede, Adesivos de recorte/Adesivos de recorte azul.png";
+        }
+}
+
+        if(titulo === "Banners, Faixas e Lonas"){
+
+        if(modelo === "Banners"){
+            imagem.src = "Imagens/Subpastas Padrão/Banner, faixas e lonas/Banner Padrão.png";
+        }
+        else if(modelo === "Faixas"){
+            imagem.src = "Imagens/Subpastas Padrão/Banner, faixas e lonas/Faixa Padrão.png";
+        }
+        else if(modelo === "Lonas"){
+                imagem.src = "Imagens/Subpastas Padrão/Banner, faixas e lonas/Lona Padrão.png";
+        }
+}
+
+        if(titulo === "Blocos, Talões e Receituários"){
+
+        if(modelo === "Blocos"){
+            imagem.src = "imagens/SubPastas Padrão/Blocos, talões e receituario/Blocos 75g 1x0 100x200mm.png";
+        }
+        else if(modelo === "Talões"){
+            imagem.src = "imagens/SubPastas Padrão/Blocos, talões e receituario/Talão 50x3 vias.png";
+        }
+        else if(modelo === "Receituários"){
+            imagem.src = "imagens/SubPastas Padrão/Blocos, talões e receituario/Receituario.png";
+        }
+}
+
+        if(titulo === "Calendários"){
+
+        if(modelo === "Calendário de Mesa Simples"){
+            imagem.src = "imagens/SubPastas Padrão/Calendarios de mesa, personalizados, parede e geladeira/Caalendario de mesa simples.png";
+        }
+        else if(modelo === "Calendário de Mesa Personalizado"){
+            imagem.src = "imagens/SubPastas Padrão/Calendarios de mesa, personalizados, parede e geladeira/calendario de mesa personalizado 120x148.png";
+        }
+        else if(modelo === "Calendário de Parede"){
+            imagem.src = "imagens/SubPastas Padrão/Calendarios de mesa, personalizados, parede e geladeira/Calendario de parede.png";
+        }
+        else if(modelo === "Calendário de Geladeira"){
+            imagem.src = "imagens/SubPastas Padrão/Calendarios de mesa, personalizados, parede e geladeira/Calendario de geladeir.png";
+        }  
+}
+
+        if(titulo === "Cardápios"){
+
+        if(modelo === "Placa PS/PVC"){
+            imagem.src = "imagens/SubPastas Padrão/Cardapios em ps 1 e 2, polaseal/cardápio ps 1 e 2 mm 4x4.png";
+        }
+        else if(modelo === "Plastificado"){
+            imagem.src = "imagens/SubPastas Padrão/Cardapios em ps 1 e 2, polaseal/cardapio em polaseal.png";
+        }
+}
+
+        if(titulo === "Cartões de Visita"){
+
+        if(modelo === "Linha Premium"){
+        imagem.src = "imagens/SubPastas Padrão/linha promocional, stardard, premium cartões/linha premium 4x4 dourado enobrecimento 2 cantos.png";
+        }
+        else if(modelo === "Linha Standard"){
+        imagem.src = "imagens/SubPastas Padrão/linha promocional, stardard, premium cartões/linha standard 4x4 refile.png";
+        }
+        else if(modelo === "Linha Promocional"){
+        imagem.src = "imagens/SubPastas Padrão/linha promocional, stardard, premium cartões/linha promocional 4x4.png";
+        }
+}
+
+        if(titulo === "Cavaletes"){
+
+        if(modelo === "Ferro"){
+        imagem.src = "imagens/SubPastas Padrão/cavalete de ferro e madeira/cavalete de ferro.png";
+        }
+        else if(modelo === "Madeira"){
+        imagem.src = "imagens/SubPastas Padrão/cavalete de ferro e madeira/Cavalete de madeira.png";
+        }
+}
+
+        if(titulo === "Envelopamento"){
+
+        if(modelo === "Geladeira"){
+        imagem.src = "imagens/SubPastas Padrão/Envelopamentos geladeira e moveis/geladeira.png";
+        }
+        else if(modelo === "Móveis"){
+        imagem.src = "imagens/SubPastas Padrão/Envelopamentos geladeira e moveis/Moveis.png";
+        }
+}
+
+        if(titulo === "Envelopes"){
+
+        if(modelo === "Comercial"){
+        imagem.src = "imagens/SubPastas Padrão/Envelopes, comercial, oficio e saco/comercial.png";
+        }
+        else if(modelo === "Oficio"){
+        imagem.src = "imagens/SubPastas Padrão/Envelopes, comercial, oficio e saco/Oficio.png";
+        }
+        else if(modelo === "Saco"){
+        imagem.src = "imagens/SubPastas Padrão/Envelopes, comercial, oficio e saco/Saco.png";
+        }
+}
+
+        if(titulo === "Fachadas"){
+
+        if(modelo === "Lona"){
+        imagem.src = "imagens/SubPastas Padrão/Fachadas de lona, vidro e placa/Fachada de lona.png";
+        }
+        else if(modelo === "Placa"){
+        imagem.src = "imagens/SubPastas Padrão/Fachadas de lona, vidro e placa/Placa.png";
+        }
+        else if(modelo === "Vidro"){
+        imagem.src = "imagens/SubPastas Padrão/Fachadas de lona, vidro e placa/Vidro.png";
+        }
+}
+
+        if(titulo === "Fichas e Timbrados"){
+
+        if(modelo === "Ficha"){
+        imagem.src = "imagens/SubPastas Padrão/fichas e timbrados/Fichas.png";
+        }
+        else if(modelo === "Timbrado"){
+        imagem.src = "imagens/SubPastas Padrão/fichas e timbrados/Timbrados.png";
+        }
+}
+
+//         if(titulo === "Panfletos, Flyers e Folders"){
+
+//         if(modelo === "Panfletos"){
+//             imagem.src = "Imagens/Subpastas Padrão/Banner, faixas e lonas/Banner Padrão.png";
+//         }
+//         if(modelo === "Folhetos"){
+//             imagem.src = "Imagens/Subpastas Padrão/Banner, faixas e lonas/Banner Padrão.png";
+//         }
+//         else if(modelo === "Flyers"){
+//             imagem.src = "Imagens/Subpastas Padrão/Banner, faixas e lonas/Faixa Padrão.png";
+//         }
+//         else if(modelo === "Folders"){
+//                 imagem.src = "Imagens/Subpastas Padrão/Banner, faixas e lonas/Lona Padrão.png";
+//         }
+// }
+        if(titulo === "Wind Banner"){
+
+        if(modelo === "Faca"){
+        imagem.src = "imagens/SubPastas Padrão/Windbanner/Wind banner faca.png";
+        }
+        else if(modelo === "Pena"){
+        imagem.src = "imagens/SubPastas Padrão/Windbanner/Wind banner pena.png";
+        }
+        if(modelo === "Retangular"){
+        imagem.src = "imagens/SubPastas Padrão/Windbanner/Wind banner retangular.png";
+        }
+        else if(modelo === "Ângulo"){
+        imagem.src = "imagens/SubPastas Padrão/Windbanner/wind banner angulo.png";
+        }
+}
 }
 
 

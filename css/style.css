@@ -724,6 +724,7 @@ footer h6{
 }
 #prazo{
   margin: 0;
+  font-size: 27px;
 }
 #pedidoUrgente{
   display: flex;
