@@ -1088,7 +1088,7 @@ else if (titulo === "Calendários") {
         exibirOpcoesSelect(enobrecimentoSelect, itemsData.cardapios.enobrecimento);
         exibirOpcoesSelect(acabamentoSelect, itemsData.cardapios.acabamento);
         imagem.src = "imagens/SubPastas Padrão/Cardapios em ps 1 e 2, polaseal/cardapio em polaseal.png";
-        prazo.textContent = "Prazo de Produção de 8 à 10 dias úteis.";
+        prazo.textContent = "Prazo de Produção de 2 à 4 dias úteis.";
     }
     else if (titulo === "Cartões de Visita" && id === "preenchido") {
         modeloSelect.value = "Linha Standard";
@@ -1793,6 +1793,7 @@ function atualizarDroplist() {
     const quantidade = document.getElementById("quantidade").value;
     const medida = document.getElementById("medida").value;
     const cores = document.getElementById("cores").value;
+    const enobrecimento = document.getElementById("enobrecimento").value;
     const acabamento = document.getElementById("acabamento").value;
 
     const modeloSelect = document.getElementById("modelo");
@@ -2459,6 +2460,30 @@ else if (titulo === "Envelopes") {
             }
             else if(modelo === "Adesivos Recorte Eletrônico"){	
             imagem.src = "imagens/SubPastas Padrão/Adesivos personalizados, Etiquetas e rotulos, adesivos de parede, Adesivos de recorte/Adesivos de recorte azul.png";
+                if(material === "Vinil Branco"){
+                    imagem.src = "imagens/SubPastas Padrão/Adesivos personalizados, Etiquetas e rotulos, adesivos de parede, Adesivos de recorte/Adesivo de recorte branco.png";
+                }
+                else if(material === "Vinil Preto Brilho"){
+                    imagem.src = "imagens/SubPastas Padrão/Adesivos personalizados, Etiquetas e rotulos, adesivos de parede, Adesivos de recorte/Adesivo de recorte preto brilho e fosco.png";
+                }
+                else if(material === "Vinil Preto Fosco"){
+                    imagem.src = "imagens/SubPastas Padrão/Adesivos personalizados, Etiquetas e rotulos, adesivos de parede, Adesivos de recorte/Adesivo de recorte preto brilho e fosco.png";
+                }
+                else if(material === "Vinil Amarelo"){
+                    imagem.src = "imagens/SubPastas Padrão/Adesivos personalizados, Etiquetas e rotulos, adesivos de parede, Adesivos de recorte/Adesivo de recorte amarelo.png";
+                }
+                else if(material === "Vinil Azul"){
+                    imagem.src = "imagens/SubPastas Padrão/Adesivos personalizados, Etiquetas e rotulos, adesivos de parede, Adesivos de recorte/Adesivos de recorte azul.png";
+                }
+                else if(material === "Vinil Verde"){
+                    imagem.src = "imagens/SubPastas Padrão/Adesivos personalizados, Etiquetas e rotulos, adesivos de parede, Adesivos de recorte/Adesivo de recorte verde.png";
+                }
+                else if(material === "Vinil Vermelho"){
+                    imagem.src = "imagens/SubPastas Padrão/Adesivos personalizados, Etiquetas e rotulos, adesivos de parede, Adesivos de recorte/Adesivo de recorte vermelho.png";
+                }
+                else if(material === "Vinil Transparente Jateado"){
+                    imagem.src = "imagens/SubPastas Padrão/Adesivos personalizados, Etiquetas e rotulos, adesivos de parede, Adesivos de recorte/Adesivo de recorte jateado.png";
+                }
             }
 }
 
@@ -2479,6 +2504,12 @@ else if (titulo === "Envelopes") {
 
             if(modelo === "Blocos"){
                 imagem.src = "imagens/SubPastas Padrão/Blocos, talões e receituario/Blocos 75g 1x0.png";
+                if(material === "Sulfite 75g"){
+                    imagem.src = "imagens/SubPastas Padrão/Blocos, talões e receituario/Blocos 75g 1x0.png";
+                }
+                else if(material === "Sulfite 90g"){
+                    imagem.src = "imagens/SubPastas Padrão/Blocos, talões e receituario/Blocos 90g 4x0.png";
+                }
             }
             else if(modelo === "Talões"){
                 imagem.src = "imagens/SubPastas Padrão/Blocos, talões e receituario/Talão 50x2 vias.png";
@@ -2495,6 +2526,18 @@ else if (titulo === "Envelopes") {
             }
             else if(modelo === "Calendário de Mesa Personalizado"){
                 imagem.src = "imagens/SubPastas Padrão/Calendarios de mesa, personalizados, parede e geladeira/calendario de mesa personalizado 120x148.png";
+                if(medida === "98x98mm"){
+                    imagem.src = "imagens/SubPastas Padrão/Calendarios de mesa, personalizados, parede e geladeira/calendario de mesa personalizado 98x98.png";
+                }
+                else if(medida === "100x198mm"){
+                    imagem.src = "imagens/SubPastas Padrão/Calendarios de mesa, personalizados, parede e geladeira/calendario de mesa personalizado 100x198.png";
+                }
+                else if(medida === "120x148mm"){
+                    imagem.src = "imagens/SubPastas Padrão/Calendarios de mesa, personalizados, parede e geladeira/calendario de mesa personalizado 120x148.png";
+                }
+                else if(medida === "148x198mm"){
+                    imagem.src = "imagens/SubPastas Padrão/Calendarios de mesa, personalizados, parede e geladeira/calendario de mesa personalizado 148x198.png";
+                }
             }
             else if(modelo === "Calendário de Parede"){
                 imagem.src = "imagens/SubPastas Padrão/Calendarios de mesa, personalizados, parede e geladeira/Calendario de parede.png";
@@ -2507,7 +2550,13 @@ else if (titulo === "Envelopes") {
         else if(titulo === "Cardápios"){
 
             if(modelo === "Placa PS/PVC"){
-                imagem.src = "imagens/SubPastas Padrão/Cardapios em ps 1 e 2, polaseal/cardápio ps 1 e 2 mm 4x4.png";
+                imagem.src = "imagens/SubPastas Padrão/Cardapios em ps 1 e 2, polaseal/cardápio ps 1 e 2 mm 4x0.png";
+                if(cores === "4x0 (Colorido Frente)"){
+                    imagem.src = "imagens/SubPastas Padrão/Cardapios em ps 1 e 2, polaseal/cardápio ps 1 e 2 mm 4x0.png";
+                }
+                else if(cores === "4x4 (Colorido Frente e Verso)"){
+                    imagem.src = "imagens/SubPastas Padrão/Cardapios em ps 1 e 2, polaseal/cardápio ps 1 e 2 mm 4x4.png";
+                }
             }
             else if(modelo === "Plastificado"){
                 imagem.src = "imagens/SubPastas Padrão/Cardapios em ps 1 e 2, polaseal/cardapio em polaseal.png";
@@ -2517,13 +2566,53 @@ else if (titulo === "Envelopes") {
         else if(titulo === "Cartões de Visita"){
 
             if(modelo === "Linha Premium"){
+                
             imagem.src = "imagens/SubPastas Padrão/linha promocional, stardard, premium cartões/linha premium 4x4 dourado enobrecimento 2 cantos.png";
+                if(enobrecimento === "Laminação Soft Touch e Hot Stamping Dourado Frente"){
+                    imagem.src = "imagens/SubPastas Padrão/linha promocional, stardard, premium cartões/linha premium 4x4 dourado enobrecimento refile.png";
+                    if(acabamento === "2 Cantos Arredondados"){
+                        imagem.src = "imagens/SubPastas Padrão/linha promocional, stardard, premium cartões/linha premium 4x4 dourado enobrecimento 2 cantos.png";
+                    }
+                    else if(acabamento === "4 Cantos Arredondados"){
+                        imagem.src = "imagens/SubPastas Padrão/linha promocional, stardard, premium cartões/linha premium 4x4 dourado enobrecimento 4 cantos.png";
+                    }
+                    else if(acabamento === "Refile"){
+                        imagem.src = "imagens/SubPastas Padrão/linha promocional, stardard, premium cartões/linha premium 4x4 dourado enobrecimento refile.png";
+                    }
+                }
+                else if(enobrecimento === "Laminação Soft Touch e Hot Stamping Prata Frente"){
+                    imagem.src = "imagens/SubPastas Padrão/linha promocional, stardard, premium cartões/linha premium 4x4 Prata enobrecimento refile.png";
+                    if(acabamento === "2 Cantos Arredondados"){
+                        imagem.src = "imagens/SubPastas Padrão/linha promocional, stardard, premium cartões/linha premium 4x4 Prata enobrecimento 2 cantos.png";
+                    }
+                    else if(acabamento === "4 Cantos Arredondados"){
+                        imagem.src = "imagens/SubPastas Padrão/linha promocional, stardard, premium cartões/linha premium 4x4 Prata enobrecimento 4 cantos.png";
+                    }
+                    else if(acabamento === "Refile"){
+                        imagem.src = "imagens/SubPastas Padrão/linha promocional, stardard, premium cartões/linha premium 4x4 Prata enobrecimento refile.png";
+                    }
+                }
             }
             else if(modelo === "Linha Standard"){
             imagem.src = "imagens/SubPastas Padrão/linha promocional, stardard, premium cartões/linha standard 4x4 refile.png";
+                if(acabamento === "2 Cantos Arredondados"){
+                    imagem.src = "imagens/SubPastas Padrão/linha promocional, stardard, premium cartões/linha standard 4x4 2 cantos.png";
+                }
+                else if(acabamento === "4 Cantos Arredondados"){
+                    imagem.src = "imagens/SubPastas Padrão/linha promocional, stardard, premium cartões/linha standard 4x4 4 cantos.png";
+                }
+                else if(acabamento === "Refile"){
+                    imagem.src = "imagens/SubPastas Padrão/linha promocional, stardard, premium cartões/linha standard 4x4 refile.png";
+                }
             }
             else if(modelo === "Linha Promocional"){
-            imagem.src = "imagens/SubPastas Padrão/linha promocional, stardard, premium cartões/linha promocional 4x4.png";
+            imagem.src = "imagens/SubPastas Padrão/linha promocional, stardard, premium cartões/linha promocional 4x0.png";
+                if(cores === "4x0 (Colorido Frente)"){
+                    imagem.src = "imagens/SubPastas Padrão/linha promocional, stardard, premium cartões/linha promocional 4x0.png";
+                }
+                else if(cores === "4x4 (Colorido Frente e Verso)"){
+                    imagem.src = "imagens/SubPastas Padrão/linha promocional, stardard, premium cartões/linha promocional 4x4.png";
+                }
             }
 }
 
@@ -2600,6 +2689,41 @@ else if (titulo === "Envelopes") {
             
             if(modelo === "Geladeira"){
                 imagem.src = "imagens/SubPastas Padrão/Imas/Ima - 50x40mm - Bloco de Calendario.png";
+                    if(medida === "50x40mm"){
+                        if(acabamento === "Bloco de Calendário"){
+                            imagem.src = "imagens/SubPastas Padrão/Imas/Ima - 50x40mm - Bloco de Calendario.png";
+                        }
+                        else if(acabamento === "Corte Personalizado"){
+                            imagem.src = "imagens/SubPastas Padrão/Imas/Ima - 50x40mm - Corte Personalizado.png";
+                        }
+                        else if(acabamento === "Refile"){
+                            imagem.src = "imagens/SubPastas Padrão/Imas/Ima - 50x40mm - Refile.png";
+                        }
+                    }
+                    else if(medida === "50x50mm"){
+                            imagem.src = "imagens/SubPastas Padrão/Imas/Ima - 50x50mm - Refile.png";
+                                if(acabamento === "Bloco de Calendário"){
+                                    imagem.src = "imagens/SubPastas Padrão/Imas/Ima - 50x50mm - Bloco de Calendario.png";
+                                }
+                                else if(acabamento === "Corte Personalizado"){
+                                    imagem.src = "imagens/SubPastas Padrão/Imas/Ima - 50x50mm - Corte Personalizado.png";
+                                }
+                                else if(acabamento === "Refile"){
+                                    imagem.src = "imagens/SubPastas Padrão/Imas/Ima - 50x50mm - Refile.png";
+                                }
+                        }
+                    else if(medida === "80x50mm"){
+                        imagem.src = "imagens/SubPastas Padrão/Imas/Ima - 50x80mm - Refile.png";
+                            if(acabamento === "Bloco de Calendário"){
+                                imagem.src = "imagens/SubPastas Padrão/Imas/Ima - 50x80mm - Bloco de Calendario.png";
+                            }
+                            else if(acabamento === "Corte Personalizado"){
+                                imagem.src = "imagens/SubPastas Padrão/Imas/Ima - 50x80mm - Corte Personalizado.png";
+                            }
+                            else if(acabamento === "Refile"){
+                                imagem.src = "imagens/SubPastas Padrão/Imas/Ima - 50x80mm - Refile.png";
+                            }
+                    }
             }
             else if(modelo === "Porta de Carro"){
                 imagem.src = "imagens/SubPastas Padrão/Imas/Porta de Carro 150x300mm.png";  
@@ -2609,6 +2733,12 @@ else if (titulo === "Envelopes") {
             
             if(modelo === "Cobre Placa"){
                 imagem.src = "imagens/SubPastas Padrão/Placas/Placa - CObre placa Carro.png";
+                if(medida === "175x205mm (Moto)"){
+                    imagem.src = "imagens/SubPastas Padrão/Placas/Placa - CObre placa Moto.png";
+                }
+                else if(medida === "135x405mm (Carro)"){
+                    imagem.src = "imagens/SubPastas Padrão/Placas/Placa - CObre placa Carro.png";
+                }
             }
             else if(modelo === "Imobiliária"){
                 imagem.src = "imagens/SubPastas Padrão/Placas/Placa de Imobiliaria 30x40.png";  
@@ -2622,20 +2752,20 @@ else if (titulo === "Envelopes") {
                     imagem.src = "imagens/SubPastas Padrão/Placas/Placa de Imobiliaria 60x50.png";
                 }
             }
-        }
-        else if(modelo === "Sinalização"){
-            imagem.src = "imagens/SubPastas Padrão/Placas/Placas - Sinalização - 10x14cm.png";
-            if(medida === "100x140mm"){
+            else if(modelo === "Sinalização"){
                 imagem.src = "imagens/SubPastas Padrão/Placas/Placas - Sinalização - 10x14cm.png";
-            }
-            else if(medida === "100x280mm"){
-                imagem.src = "imagens/SubPastas Padrão/Placas/Placas - Sinalização - 10x28cm.png";
-            }
-            else if(medida === "140x200mm"){
-                imagem.src = "imagens/SubPastas Padrão/Placas/Placas - Sinalização - 14x20cm.png";
-            }
-            else if(medida === "200x280mm"){
-                imagem.src = "imagens/SubPastas Padrão/Placas/Placas - Sinalização - 20x28cm.png";
+                if(medida === "100x140mm"){
+                    imagem.src = "imagens/SubPastas Padrão/Placas/Placas - Sinalização - 10x14cm.png";
+                }
+                else if(medida === "100x280mm"){
+                    imagem.src = "imagens/SubPastas Padrão/Placas/Placas - Sinalização - 10x28cm.png";
+                }
+                else if(medida === "140x200mm"){
+                    imagem.src = "imagens/SubPastas Padrão/Placas/Placas - Sinalização - 14x20cm.png";
+                }
+                else if(medida === "200x280mm"){
+                    imagem.src = "imagens/SubPastas Padrão/Placas/Placas - Sinalização - 20x28cm.png";
+                }
             }
         }
         else if(titulo === "Logos e Vetorização"){
@@ -2694,21 +2824,93 @@ else if (titulo === "Envelopes") {
 
         
 
-//         if(titulo === "Panfletos, Flyers e Folders"){
+        if(titulo === "Panfletos, Flyers e Folders"){
 
-//         if(modelo === "Panfletos"){
-//             imagem.src = "Imagens/Subpastas Padrão/Banner, faixas e lonas/Banner Padrão.png";
-//         }
-//         if(modelo === "Folhetos"){
-//             imagem.src = "Imagens/Subpastas Padrão/Banner, faixas e lonas/Banner Padrão.png";
-//         }
-//         else if(modelo === "Flyers"){
-//             imagem.src = "Imagens/Subpastas Padrão/Banner, faixas e lonas/Faixa Padrão.png";
-//         }
-//         else if(modelo === "Folders"){
-//                 imagem.src = "Imagens/Subpastas Padrão/Banner, faixas e lonas/Lona Padrão.png";
-//         }
-// }
+        if(modelo === "Panfletos"){
+            imagem.src = "Imagens/Subpastas Padrão/Banner, faixas e lonas/Banner Padrão.png";
+                if(medida === "100x140mm"){
+                    imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Panfleto - 100x140m - 4x0 - Couché 90g, 115g e 150g.png";
+                    if(cores === "4x0 (Colorido Frente)"){
+                        imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Panfleto - 100x140m - 4x0 - Couché 90g, 115g e 150g.png";
+                    }
+                    else if(cores === "4x4 (Colorido Frente e Verso)"){
+                        imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Panfleto - 100x140m - 4x4 - Couché 90g, 115g e 150g.png";
+                    }
+                }
+                else if(medida === "100x200mm"){
+                    imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Panfleto - 100x200m - 4x0 - Couché 90g, 115g e 150g.png";
+                    if(cores === "4x0 (Colorido Frente)"){
+                        imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Panfleto - 100x200m - 4x0 - Couché 90g, 115g e 150g.png";
+                    }
+                    else if(cores === "4x4 (Colorido Frente e Verso)"){
+                        imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Panfleto - 100x200m - 4x4 - Couché 90g, 115g e 150g.png";
+                    }
+                }
+                else if(medida === "140x200mm"){
+                    imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Panfleto - 140x200m - 4x0 - Couché 90g, 115g e 150g.png";
+                    if(cores === "4x0 (Colorido Frente)"){
+                        imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Panfleto - 140x200m - 4x0 - Couché 90g, 115g e 150g.png";
+                    }
+                    else if(cores === "4x4 (Colorido Frente e Verso)"){
+                        imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Panfleto - 140x200m - 4x4 - Couché 90g, 115g e 150g.png";
+                    }
+                }
+                else if(medida === "200x280mm"){
+                    imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Panfleto - 200x280m - 4x0 - Couché 90g, 115g e 150g.png";
+                    if(cores === "4x0 (Colorido Frente)"){
+                        imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Panfleto - 200x280m - 4x0 - Couché 90g, 115g e 150g.png";
+                    }
+                    else if(cores === "4x4 (Colorido Frente e Verso)"){
+                        imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Panfleto - 200x280m - 4x4 - Couché 90g, 115g e 150g.png";
+                    }
+                }
+        }
+        if(modelo === "Folhetos"){
+            imagem.src = "Imagens/Subpastas Padrão/Banner, faixas e lonas/Banner Padrão.png";
+        }
+        else if(modelo === "Flyers"){
+            imagem.src = "Imagens/Subpastas Padrão/Banner, faixas e lonas/Faixa Padrão.png";
+        }
+        else if(modelo === "Folders"){
+                imagem.src = "Imagens/Subpastas Padrão/Banner, faixas e lonas/Lona Padrão.png";
+                if(medida === "100x140mm"){
+                    imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Folder - 100x140mm - 4x4 - 90g, 115g e 150g - 1 Dobra.png";
+                    if(acabamento === "1 Dobra"){
+                        imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Folder - 100x140mm - 4x4 - 90g, 115g e 150g - 1 Dobra.png";
+                    }
+                    else if(acabamento === "2 Dobras"){
+                        imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Folder - 100x140mm - 4x4 - 90g, 115g e 150g - 2 Dobra.png";
+                    }
+                }
+                else if(medida === "100x200mm"){
+                    imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Folder - 100x200mm - 4x4 - 90g, 115g e 150g - 1 Dobra.png";
+                    if(acabamento === "1 Dobra"){
+                        imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Folder - 100x200mm - 4x4 - 90g, 115g e 150g - 1 Dobra.png";
+                    }
+                    else if(acabamento === "2 Dobras"){
+                        imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Folder - 100x200mm - 4x4 - 90g, 115g e 150g - 2 Dobra.png";
+                    }
+                }
+                else if(medida === "140x200mm"){
+                    imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Folder - 140x200mm - 4x4 - 90g, 115g e 150g - 1 Dobra.png";
+                    if(acabamento === "1 Dobra"){
+                        imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Folder - 140x200mm - 4x4 - 90g, 115g e 150g - 1 Dobra.png";
+                    }
+                    else if(acabamento === "2 Dobras"){
+                        imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Folder - 140x200mm - 4x4 - 90g, 115g e 150g - 2 Dobra.png";
+                    }
+                }
+                else if(medida === "200x280mm"){
+                    imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Folder - 200x280mm - 4x4 - 90g, 115g e 150g - 1 Dobra.png";
+                    if(acabamento === "1 Dobra"){
+                        imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Folder - 200x280mm - 4x4 - 90g, 115g e 150g - 1 Dobra.png";
+                    }
+                    else if(acabamento === "2 Dobras"){
+                        imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Folder - 200x280mm - 4x4 - 90g, 115g e 150g - 2 Dobra.png";
+                    }
+                }
+        }
+}
         if(titulo === "Wind Banner"){
 
             if(modelo === "Faca"){
