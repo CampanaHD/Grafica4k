@@ -155,6 +155,7 @@
                         <option value="Calendário de Mesa Personalizado">Calendário de Mesa Personalizado</option>
                         <option value="Calendário de Parede">Calendário de Parede</option>
                         <option value="Calendário de Geladeira">Calendário de Geladeira</option>
+                        <option value="Moldura">Moldura</option>
                         <option value="Canva">Canva</option>
                         <option value="Carro">Carro</option>
                         <option value="Certificados">Certificados</option>
@@ -168,7 +169,7 @@
                         <option value="Pena">Pena</option>      
                         <option value="Faixas">Faixas</option>
                         <option value="Ferro">Ferro</option>
-                        <option value="Ficha">Ficha</option>
+                        <option value="Fichas">Fichas</option>
                         <option value="Panfletos">Panfletos</option>
                         <option value="Folhetos">Folhetos</option>
                         <option value="Flyers">Flyers</option>
@@ -186,7 +187,6 @@
                         <option value="Lonas">Lonas</option>
                         <option value="Mini Tag">Mini Tag</option>
                         <option value="Madeira">Madeira</option>
-                        <option value="Moldura">Moldura</option>
                         <option value="Móveis">Móveis</option>
                         <option value="Oficio">Oficio</option>
                         <option value="Orelha">Orelha</option>
@@ -209,7 +209,7 @@
                         <option value="Sinalização">Sinalização</option>
                         <option value="Tags">Tags</option>
                         <option value="Tags Gravatinha">Tags Gravatinha</option>  
-                        <option value="Timbrado">Timbrado</option>
+                        <option value="Timbrados">Timbrados</option>
                         <option value="Vitrine">Vitrine</option>
                         <option value="Vetorização">Vetorização</option>
                         <option value="Vela">Vela</option>
@@ -485,6 +485,7 @@
                         <option value="Vinco">Vinco</option>
                         <option value="Vende-se">Vende-se</option>
                         <option value="Bolsa Colada">Bolsa Colada</option>
+                        <option value="Bolsa Colada Branca">Bolsa Colada Branca</option>
                         <option value="Bolsa Personalizada">Bolsa Personalizada</option>
                         <option value="Bolsa de Encaixe">Bolsa de Encaixe</option>
                         <option value="Orelha">Orelha</option>
@@ -590,7 +591,7 @@ const itemsData = {
         modelo: ["Escolha uma opção", "Ferro", "Madeira"],
         material: ["Escolha uma opção", "Lona 440g"],
         quantidade: ["Escolha uma opção", "1"], 
-        medida: ["Escolha uma opção", "700x1200mm"],
+        medida: ["Escolha uma opção", "700x1200mm", "Medida Personalizada"],
         cores: ["Escolha uma opção", "4x0 (Colorido Frente)", "4x4 (Colorido Frente e Verso)"],
         enobrecimento: ["Escolha uma opção", "Sem Enobrecimento"],
         acabamento: ["Escolha uma opção", "Estrutura de Ferro + Lona Revestida", "Estrutura de Ferro + Lona c/ Ilhos"],
@@ -626,7 +627,7 @@ const itemsData = {
         modelo: ["Escolha uma opção", "Saco", "Oficio", "Comercial"],
         material: ["Escolha uma opção", "Sulfite 90g"],
         quantidade: ["Escolha uma opção", "100", "200", "250", "300", "500", "1000"], 
-        medida: ["Escolha uma opção", "240x340mm", "360x460mm", "115x230mm", "114x162mm"],
+        medida: ["Escolha uma opção", "240x340mm", "360x460mm", "115x230mm", "114x162mm", "229x324mm"],
         cores: ["Escolha uma opção", "1x0 (Impressão em 1 cor)", "4x0 (Colorido Frente)"],
         enobrecimento: ["Escolha uma opção", "Sem Enobrecimento"],
         acabamento: ["Escolha uma opção", "Faca Padrão"],
@@ -634,14 +635,14 @@ const itemsData = {
     fachada: {
         modelo: ["Escolha uma opção", "Lona", "Vidro", "Placa"],
         material: ["Escolha uma opção", "Lona Brilho 440g", "Vinil Adesivo"],
-        quantidade: ["Escolha uma opção", "1"], 
+        quantidade: ["Escolha uma opção", "1", "Quantidade Personalizada"], 
         medida: ["Escolha uma opção", "Medida Personalizada"],
         cores: ["Escolha uma opção", "4x0 (Colorido Frente)", "Adesivo Recorte Eletrônico"],
         enobrecimento: ["Escolha uma opção", "Sem Enobrecimento", "Aplicação de Verniz"],
         acabamento: ["Escolha uma opção", "Estrutura(s) + Lona(s) e Instalação", "Suporte + Instalação", "Espaçadores + Instalação", "Refile + Instalação"],
     },
-    fichas: {
-        modelo: ["Escolha uma opção", "Ficha", "Timbrado"],
+    Fichas: {
+        modelo: ["Escolha uma opção", "Fichas", "Timbrados"],
         material: ["Escolha uma opção", "Sulfite 75g", "Sulfite 180g", "Sulfite 90g", "Sulfite 240g", "Sulfite 120g"],
         quantidade: ["Escolha uma opção", "10", "25", "50", "100", "250", "500", "1000"], 
         medida: ["Escolha uma opção", "140x200mm", "200x280mm"],
@@ -665,7 +666,7 @@ const itemsData = {
         medida: ["Escolha uma opção", "Medida Personalizada"],
         cores: ["Escolha uma opção", "4x0 (Colorido Frente)", "Sem Impressão"],
         enobrecimento: ["Escolha uma opção", "Sem Enobrecimento"],
-        acabamento: ["Escolha uma opção", "Corte Personalizado"],
+        acabamento: ["Escolha uma opção", "Corte Personalizado", "Refile"],
     },
     imadegeladeira: {
         modelo: ["Escolha uma opção", "Geladeira", "Porta de Carro"],
@@ -700,7 +701,7 @@ const itemsData = {
         medida: ["Escolha uma opção", "220x310mm"],
         cores: ["Escolha uma opção", "4x0 (Colorido Frente)"],
         enobrecimento: ["Escolha uma opção", "Sem Enobrecimento", "Verniz Total Frente"],
-        acabamento: ["Escolha uma opção", "Vinco", "Bolsa Colada", "Bolsa Personalizada", "Bolsa de Encaixe", "Orelha"],
+        acabamento: ["Escolha uma opção", "Vinco", "Bolsa Colada", "Bolsa Colada Branca", "Bolsa Personalizada", "Bolsa de Encaixe", "Orelha"],
     },
     placas: {
         modelo: ["Escolha uma opção", "Sinalização", "Imobiliária", "Cobre Placa"],
@@ -746,8 +747,8 @@ const itemsData = {
         enobrecimento: ["Escolha uma opção", "Sem Enobrecimento", "Verniz Total Frente"],
         acabamento: ["Escolha uma opção", "Furo 4mm"],
     },
-    timbrados: {
-        modelo: ["Escolha uma opção", "Ficha", "Timbrado"],
+    timbradoss: {
+        modelo: ["Escolha uma opção", "Fichas", "Timbrados"],
         material: ["Escolha uma opção", "Sulfite 90g"],
         quantidade: ["Escolha uma opção", "100", "250", "500", "1000"], 
         medida: ["Escolha uma opção", "140x200mm", "200x280mm"],
@@ -1069,8 +1070,10 @@ else if (titulo === "Calendários") {
         exibirOpcoesSelect(coresSelect, itemsData.calendarios.cores);
         exibirOpcoesSelect(enobrecimentoSelect, itemsData.calendarios.enobrecimento);
         exibirOpcoesSelect(acabamentoSelect, itemsData.calendarios.acabamento);
-        imagem.src = "imagens/SubPastas Padrão/Calendarios de mesa, personalizados, parede e geladeira/Caalendario de mesa simples.png";
+        imagem.src = "imagens/SubPastas Padrão/Calendarios de mesa, personalizados, parede e geladeira/calendario de mesa personalizado 98x98.png";
         prazo.textContent = "Prazo de Produção de 8 à 10 dias úteis.";
+        document.getElementById("prazo").style.fontSize = "26px";
+
     }
     else if (titulo === "Cardápios") {
         modeloSelect.value = "Escolha uma opção";
@@ -1128,7 +1131,7 @@ else if (titulo === "Calendários") {
         exibirOpcoesSelect(coresSelect, itemsData.cartoesdevisita.cores);
         exibirOpcoesSelect(enobrecimentoSelect, itemsData.cartoesdevisita.enobrecimento);
         exibirOpcoesSelect(acabamentoSelect, itemsData.cartoesdevisita.acabamento);
-        imagem.src = "imagens/SubPastas Padrão/linha promocional, stardard, premium cartões/linha premium 4x4 dourado enobrecimento 2 cantos.png";
+        imagem.src = "imagens/SubPastas Padrão/linha promocional, stardard, premium cartões/linha promocional 4x0.png";
         prazo.textContent = "Prazo de Produção de 5 à 7 dias úteis.";
     }
     else if (titulo === "Cavaletes") {
@@ -1149,29 +1152,6 @@ else if (titulo === "Calendários") {
         imagem.src = "imagens/SubPastas Padrão/cavalete de ferro e madeira/cavalete de ferro.png";
         prazo.textContent = "Prazo de Produção de 5 à 7 dias úteis.";
 
-    }else if (titulo === "Certificados") {
-        modeloSelect.value = "Certificados";
-        materialSelect.value = "Escolha uma opção";
-        quantidadeSelect.value = "Escolha uma opção"; 
-        medidaSelect.value = "Escolha uma opção";
-        coresSelect.value = "Escolha uma opção";
-        enobrecimentoSelect.value = "Escolha uma opção";
-        acabamentoSelect.value = "Escolha uma opção";
-        exibirOpcoesSelect(modeloSelect, itemsData.certificados.modelo);
-        exibirOpcoesSelect(materialSelect, itemsData.certificados.material);
-        exibirOpcoesSelect(quantidadeSelect, itemsData.certificados.quantidade);
-        exibirOpcoesSelect(medidaSelect, itemsData.certificados.medida);
-        exibirOpcoesSelect(coresSelect, itemsData.certificados.cores);
-        exibirOpcoesSelect(enobrecimentoSelect, itemsData.certificados.enobrecimento);
-        exibirOpcoesSelect(acabamentoSelect, itemsData.certificados.acabamento);
-        imagem.src = "imagens/SubPastas Padrão/impressos em geral/Certificados.png";
-        materialSelect.disabled = false;
-        quantidadeSelect.disabled = false;
-        medidaSelect.disabled = false;
-        coresSelect.disabled = false;
-        enobrecimentoSelect.disabled = false;
-        acabamentoSelect.disabled = false;
-        prazo.textContent = "Prazo de Produção de 1 à 2 dias úteis.";
     }
     else if (titulo === "Impressos em Geral" && id === "Certificados") {
         modeloSelect.value = "Certificados";
@@ -1210,10 +1190,10 @@ else if (titulo === "Calendários") {
         prazo.textContent = "Prazo de Produção de 1 à 2 dias úteis."
     }
      else if (titulo === "Adesivos" && id === "preenchido") {
-        modeloSelect.value = "Escolha uma opção";
+        modeloSelect.value = "Adesivos Recorte Eletrônico";
         materialSelect.value = "Vinil Branco";
-        quantidadeSelect.value = "10"; // Exemplo de quantidade padrão para Adesivos
-        medidaSelect.value = "40x40mm";
+        quantidadeSelect.value = "100"; // Exemplo de quantidade padrão para Adesivos
+        medidaSelect.value = "50x50mm";
         coresSelect.value = "4x0 (Colorido Frente)";
         enobrecimentoSelect.value = "Sem Enobrecimento";
         acabamentoSelect.value = "Meio-Corte Personalizado";
@@ -1233,10 +1213,10 @@ else if (titulo === "Calendários") {
         imagem.src = "imagens/SubPastas Padrão/Adesivos personalizados, Etiquetas e rotulos, adesivos de parede, Adesivos de recorte/Adesivo de recorte branco.png";
         prazo.textContent = "Prazo de Produção de 2 à 3 dias úteis."
     }
-    else if (titulo === "Vinil 5x5" && id === "preenchido") {
-        modeloSelect.value = "Escolha uma opção";
+    else if (titulo === "Adesivos" && id === "Recorte Eletrônico") {
+        modeloSelect.value = "Adesivos Recorte Eletrônico";
         materialSelect.value = "Vinil Branco";
-        quantidadeSelect.value = "10"; // Exemplo de quantidade padrão para Adesivos
+        quantidadeSelect.value = "1"; // Exemplo de quantidade padrão para Adesivos
         medidaSelect.value = "50x50mm";
         coresSelect.value = "4x0 (Colorido Frente)";
         enobrecimentoSelect.value = "Sem Enobrecimento";
@@ -1294,6 +1274,30 @@ else if (titulo === "Calendários") {
         imagem.src = "imagens/SubPastas Padrão/Fachadas de lona, vidro e placa/Fachada de lona.png";
         prazo.textContent = "Prazo de Produção de 5 à 7 dias úteis."
     }
+    else if (titulo === "Fichas e Timbrados" && id === "preenchido") {
+        modeloSelect.value = "Fichas";
+        materialSelect.value = "Sulfite 90g";
+        quantidadeSelect.value = "500"; // Exemplo de quantidade padrão para Adesivos
+        medidaSelect.value = "140x200mm";
+        coresSelect.value = "4x0 (Colorido Frente)";
+        enobrecimentoSelect.value = "Sem Enobrecimento";
+        acabamentoSelect.value = "Refile";
+        materialSelect.disabled = false;
+        quantidadeSelect.disabled = false;
+        medidaSelect.disabled = false;
+        coresSelect.disabled = false;
+        enobrecimentoSelect.disabled = false;
+        acabamentoSelect.disabled = false;
+        exibirOpcoesSelect(modeloSelect, itemsData.Fichas.modelo);
+        exibirOpcoesSelect(materialSelect, itemsData.Fichas.material);
+        exibirOpcoesSelect(quantidadeSelect, itemsData.Fichas.quantidade);
+        exibirOpcoesSelect(medidaSelect, itemsData.Fichas.medida);
+        exibirOpcoesSelect(coresSelect, itemsData.Fichas.cores);
+        exibirOpcoesSelect(enobrecimentoSelect, itemsData.Fichas.enobrecimento);
+        exibirOpcoesSelect(acabamentoSelect, itemsData.Fichas.acabamento);
+        imagem.src = "imagens/SubPastas Padrão/Fichas e timbrados/Ficha - 1x0 cor.png";
+        prazo.textContent = "Prazo de Produção de 2 à 3 dias úteis."
+    }
     else if (titulo === "Fichas e Timbrados") {
         modeloSelect.value = "Escolha uma opção";
         materialSelect.value = "Escolha uma opção";
@@ -1302,14 +1306,14 @@ else if (titulo === "Calendários") {
         coresSelect.value = "Escolha uma opção";
         enobrecimentoSelect.value = "Escolha uma opção";
         acabamentoSelect.value = "Escolha uma opção";
-        exibirOpcoesSelect(modeloSelect, itemsData.fichas.modelo);
-        exibirOpcoesSelect(materialSelect, itemsData.fichas.material);
-        exibirOpcoesSelect(quantidadeSelect, itemsData.fichas.quantidade);
-        exibirOpcoesSelect(medidaSelect, itemsData.fichas.medida);
-        exibirOpcoesSelect(coresSelect, itemsData.fichas.cores);
-        exibirOpcoesSelect(enobrecimentoSelect, itemsData.fichas.enobrecimento);
-        exibirOpcoesSelect(acabamentoSelect, itemsData.fichas.acabamento);
-        imagem.src = "imagens/SubPastas Padrão/fichas e timbrados/Ficha - 1x0 cor.png";
+        exibirOpcoesSelect(modeloSelect, itemsData.Fichas.modelo);
+        exibirOpcoesSelect(materialSelect, itemsData.Fichas.material);
+        exibirOpcoesSelect(quantidadeSelect, itemsData.Fichas.quantidade);
+        exibirOpcoesSelect(medidaSelect, itemsData.Fichas.medida);
+        exibirOpcoesSelect(coresSelect, itemsData.Fichas.cores);
+        exibirOpcoesSelect(enobrecimentoSelect, itemsData.Fichas.enobrecimento);
+        exibirOpcoesSelect(acabamentoSelect, itemsData.Fichas.acabamento);
+        imagem.src = "imagens/SubPastas Padrão/Fichas e timbrados/Ficha - 1x0 cor.png";
         prazo.textContent = "Prazo de Produção de 2 à 3 dias úteis."
     }
     else if (titulo === "Frotas" & id==="Frotas") {
@@ -1348,24 +1352,6 @@ else if (titulo === "Calendários") {
         imagem.src = "imagens/SubPastas Padrão/Frotas, tanto parcial quanto completo/Frotas, tanto parcial quanto completo.png";
         prazo.textContent = "Prazo de Produção de 4 à 5 dias úteis."
     }
-    else if (titulo === "Panfletos, Flyers e Folders") {
-        modeloSelect.value = "Escolha uma opção";
-        materialSelect.value = "Escolha uma opção";
-        quantidadeSelect.value = "Escolha uma opção"; // Exemplo de quantidade padrão para Adesivos
-        medidaSelect.value = "Escolha uma opção";
-        coresSelect.value = "Escolha uma opção";
-        enobrecimentoSelect.value = "Escolha uma opção";
-        acabamentoSelect.value = "Escolha uma opção";
-        exibirOpcoesSelect(modeloSelect, itemsData.folders.modelo);
-        exibirOpcoesSelect(materialSelect, itemsData.folders.material);
-        exibirOpcoesSelect(quantidadeSelect, itemsData.folders.quantidade);
-        exibirOpcoesSelect(medidaSelect, itemsData.folders.medida);
-        exibirOpcoesSelect(coresSelect, itemsData.folders.cores);
-        exibirOpcoesSelect(enobrecimentoSelect, itemsData.folders.enobrecimento);
-        exibirOpcoesSelect(acabamentoSelect, itemsData.folders.acabamento);
-        imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Panfleto - 100x140m - 4x0 - Couché 90g, 115g e 150g.png";
-        prazo.textContent = "Prazo de Produção de 5 à 7 dias úteis."
-    }
     else if (titulo === "Imã de Geladeira") {
         modeloSelect.value = "Escolha uma opção";
         materialSelect.value = "Escolha uma opção";
@@ -1381,8 +1367,8 @@ else if (titulo === "Calendários") {
         exibirOpcoesSelect(coresSelect, itemsData.imadegeladeira.cores);
         exibirOpcoesSelect(enobrecimentoSelect, itemsData.imadegeladeira.enobrecimento);
         exibirOpcoesSelect(acabamentoSelect, itemsData.imadegeladeira.acabamento);
-        imagem.src = "imagens/SubPastas Padrão/Imas/Ima - 50x40mm - Bloco de Calendario.png";
-        prazo.textContent = "Prazo de Produção de 5 à 7 dias úteis."
+        imagem.src = "imagens/SubPastas Padrão/Imas/Ima - 50x40mm - Refile.png";
+        prazo.textContent = "Prazo de Produção de 2 à 4 dias úteis."
     }
     else if (titulo === "Envelopamento") {
         materialSelect.value = "Escolha uma opção";
@@ -1418,6 +1404,7 @@ else if (titulo === "Calendários") {
         exibirOpcoesSelect(acabamentoSelect, itemsData.envelopes.acabamento);
         imagem.src = "imagens/SubPastas Padrão/Envelopes, comercial, oficio e saco/comercial.png";
         prazo.textContent = "Prazo de Produção de 5 à 10 dias úteis."
+        document.getElementById("prazo").style.fontSize = "26px";
     }
     else if (titulo === "Logos e Vetorização") {
         modeloSelect.value = "Escolha uma opção";
@@ -1438,28 +1425,28 @@ else if (titulo === "Calendários") {
         prazo.textContent = "Prazo de Produção de 3 à 5 dias úteis."
     }
     else if (titulo === "Panfletos, Flyers e Folders" && id === "preenchido") {
-        modeloSelect.value = "Escolha uma opção";
+        modeloSelect.value = "Panfletos";
         materialSelect.value = "Couchê 90g";
         quantidadeSelect.value = "1000"; // Exemplo de quantidade padrão para Adesivos
         medidaSelect.value = "100x140mm";
         coresSelect.value = "4x0 (Colorido Frente)";
         enobrecimentoSelect.value = "Sem Enobrecimento";
         acabamentoSelect.value = "Refile";
-        exibirOpcoesSelect(modeloSelect, itemsData.panfletoseflyers.modelo);
-        exibirOpcoesSelect(materialSelect, itemsData.panfletoseflyers.material);
-        exibirOpcoesSelect(quantidadeSelect, itemsData.panfletoseflyers.quantidade);
-        exibirOpcoesSelect(medidaSelect, itemsData.panfletoseflyers.medida);
-        exibirOpcoesSelect(coresSelect, itemsData.panfletoseflyers.cores);
-        exibirOpcoesSelect(enobrecimentoSelect, itemsData.panfletoseflyers.enobrecimento);
-        exibirOpcoesSelect(acabamentoSelect, itemsData.panfletoseflyers.acabamento);
-        atualizarDroplist();
-        imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Panfleto - 100x140m - 4x0 - Couché 90g, 115g e 150g.png";
         materialSelect.disabled = false;
         quantidadeSelect.disabled = false;
         medidaSelect.disabled = false;
         coresSelect.disabled = false;
         enobrecimentoSelect.disabled = false;
         acabamentoSelect.disabled = false;
+        exibirOpcoesSelect(modeloSelect, itemsData.folders.modelo);
+        exibirOpcoesSelect(materialSelect, itemsData.folders.material);
+        exibirOpcoesSelect(quantidadeSelect, itemsData.folders.quantidade);
+        exibirOpcoesSelect(medidaSelect, itemsData.folders.medida);
+        exibirOpcoesSelect(coresSelect, itemsData.folders.cores);
+        exibirOpcoesSelect(enobrecimentoSelect, itemsData.folders.enobrecimento);
+        exibirOpcoesSelect(acabamentoSelect, itemsData.folders.acabamento);
+        atualizarDroplist();
+        imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Panfleto - 100x140m - 4x0 - Couché 90g, 115g e 150g.png";
         prazo.textContent = "Prazo de Produção de 5 à 7 dias úteis."
     }
     else if (titulo === "Panfletos, Flyers e Folders") {
@@ -1470,13 +1457,13 @@ else if (titulo === "Calendários") {
         coresSelect.value = "Escolha uma opção";
         enobrecimentoSelect.value = "Escolha uma opção";
         acabamentoSelect.value = "Escolha uma opção";
-        exibirOpcoesSelect(modeloSelect, itemsData.panfletoseflyers.modelo);
-        exibirOpcoesSelect(materialSelect, itemsData.panfletoseflyers.material);
-        exibirOpcoesSelect(quantidadeSelect, itemsData.panfletoseflyers.quantidade);
-        exibirOpcoesSelect(medidaSelect, itemsData.panfletoseflyers.medida);
-        exibirOpcoesSelect(coresSelect, itemsData.panfletoseflyers.cores);
-        exibirOpcoesSelect(enobrecimentoSelect, itemsData.panfletoseflyers.enobrecimento);
-        exibirOpcoesSelect(acabamentoSelect, itemsData.panfletoseflyers.acabamento);
+        exibirOpcoesSelect(modeloSelect, itemsData.folders.modelo);
+        exibirOpcoesSelect(materialSelect, itemsData.folders.material);
+        exibirOpcoesSelect(quantidadeSelect, itemsData.folders.quantidade);
+        exibirOpcoesSelect(medidaSelect, itemsData.folders.medida);
+        exibirOpcoesSelect(coresSelect, itemsData.folders.cores);
+        exibirOpcoesSelect(enobrecimentoSelect, itemsData.folders.enobrecimento);
+        exibirOpcoesSelect(acabamentoSelect, itemsData.folders.acabamento);
         imagem.src = "imagens/SubPastas Padrão/Panfletos e Folders/Panfleto - 100x140m - 4x0 - Couché 90g, 115g e 150g.png";
         prazo.textContent = "Prazo de Produção de 5 à 7 dias úteis."
     }
@@ -1570,22 +1557,6 @@ else if (titulo === "Calendários") {
         imagem.src = "imagens/SubPastas Padrão/Plotagem e projetos/Plotagem e projetos.png";
         prazo.textContent = "Prazo de Produção de 1 à 2 dias úteis."
     }
-    else if (titulo === "Receituários") {
-        materialSelect.value = "Escolha uma opção";
-        quantidadeSelect.value = "Escolha uma opção"; 
-        medidaSelect.value = "Escolha uma opção";
-        coresSelect.value = "Escolha uma opção";
-        enobrecimentoSelect.value = "Escolha uma opção";
-        acabamentoSelect.value = "Escolha uma opção";
-        exibirOpcoesSelect(materialSelect, itemsData.receituarios.material);
-        exibirOpcoesSelect(quantidadeSelect, itemsData.receituarios.quantidade);
-        exibirOpcoesSelect(medidaSelect, itemsData.receituarios.medida);
-        exibirOpcoesSelect(coresSelect, itemsData.receituarios.cores);
-        exibirOpcoesSelect(enobrecimentoSelect, itemsData.receituarios.enobrecimento);
-        exibirOpcoesSelect(acabamentoSelect, itemsData.receituarios.acabamento);
-        imagem.src = "imagens/SubPastas Padrão/Blocos, talões e receituario/Receituario.png";
-        prazo.textContent = "Prazo de Produção de 3 à 4 dias úteis."
-    }
     else if (titulo === "Tag") {
         modeloSelect.value = "Escolha uma opção";
         materialSelect.value = "Escolha uma opção";
@@ -1603,22 +1574,6 @@ else if (titulo === "Calendários") {
         exibirOpcoesSelect(acabamentoSelect, itemsData.tag.acabamento);
         imagem.src = "imagens/SubPastas Padrão/Tags/Tag Padrão - 4x0.png";
         prazo.textContent = "Prazo de Produção de 5 à 7 dias úteis."
-    }
-    else if (titulo === "Timbrados") {
-        materialSelect.value = "Escolha uma opção";
-        quantidadeSelect.value = "Escolha uma opção"; // Exemplo de quantidade padrão para Adesivos
-        medidaSelect.value = "Escolha uma opção";
-        coresSelect.value = "Escolha uma opção";
-        enobrecimentoSelect.value = "Escolha uma opção";
-        acabamentoSelect.value = "Escolha uma opção";
-        exibirOpcoesSelect(materialSelect, itemsData.timbrados.material);
-        exibirOpcoesSelect(quantidadeSelect, itemsData.timbrados.quantidade);
-        exibirOpcoesSelect(medidaSelect, itemsData.timbrados.medida);
-        exibirOpcoesSelect(coresSelect, itemsData.timbrados.cores);
-        exibirOpcoesSelect(enobrecimentoSelect, itemsData.timbrados.enobrecimento);
-        exibirOpcoesSelect(acabamentoSelect, itemsData.timbrados.acabamento);
-        imagem.src = "imagens/SubPastas Padrão/fichas e timbrados/Timbrados.png";
-        prazo.textContent = "Prazo de Produção de 2 à 3 dias úteis."
     }
     else if (titulo === "Vinil Perfurado" && id === "Vitrine") {
         modeloSelect.value = "Escolha uma opção";
@@ -1717,7 +1672,7 @@ else if (titulo === "Calendários") {
         exibirOpcoesSelect(coresSelect, itemsData.windbannerangulo.cores);
         exibirOpcoesSelect(enobrecimentoSelect, itemsData.windbannerangulo.enobrecimento);
         exibirOpcoesSelect(acabamentoSelect, itemsData.windbannerangulo.acabamento);
-        imagem.src = "imagens/SubPastas Padrão/Wind banner/Wind Banner Retangular.png";
+        imagem.src = "imagens/SubPastas Padrão/Wind banner/Wind Banner - Faca.png";
         prazo.textContent = "Prazo de Produção de 5 à 7 dias úteis."
     }
     else {
@@ -1854,7 +1809,7 @@ function atualizarDroplist() {
         "Envelopes": "imagens/Icones/Envelopes.png",
         "Fachadas": "imagens/Icones/Fachadas.png",
         "Faixas": "imagens/Icones/Faixas.png",
-        "Fichas e Timbrados": "imagens/Icones/Fichas e Timbrados.png",
+        "Fichass e Timbradoss": "imagens/Icones/Fichass e Timbradoss.png",
         "Folders": "imagens/Icones/Folders.png",
         "Frotas": "imagens/Icones/Frotas.png",
         "Imãs": "imagens/Icones/Imãs.png",
@@ -1878,7 +1833,7 @@ function atualizarDroplist() {
             "Envelopamento": "SubPastas/Envelopamento",
             "Envelopes": "SubPastas/Envelopes",
             "Fachadas": "SubPastas/Fachadas",
-            "Fichas e Timbrados": "SubPastas/Fichas e Timbradoss",
+            "Fichas e Timbrados": "SubPastas/Fichass e Timbradosss",
             "Impressos em Geral": "SubPastas/Impressos em Geral"
         };
         const imagePaths = {
@@ -1886,7 +1841,7 @@ function atualizarDroplist() {
             "Plotagem e projetos": "imagens/SubPastas Padrão/Plotagem e projetos/plotagem.png",
             "Criação e vetorização de logo": "imagens/SubPastas Padrão/Criação e vetorização de logo/logo.png",
             "Frotas": "imagens/SubPastas Padrão/Frotas, tanto parcial quanto completo/frotas.png",
-            "Fichas e timbrados": "imagens/SubPastas Padrão/fichas e timbrados/fichas.png",
+            "Fichas e timbrados": "imagens/SubPastas Padrão/Fichass e timbradoss/Fichass.png",
             "Envelopes": "imagens/SubPastas Padrão/Envelopes, comercial, oficio e saco/envelopes.png",
             "Fachadas": "imagens/SubPastas Padrão/Fachadas de lona, vidro e placa/fachadas.png",
             "Envelopamentos": "imagens/SubPastas Padrão/Envelopamentos geladeira e moveis/envelopamentos.png",
@@ -2100,23 +2055,27 @@ else if (titulo === "Envelopes") {
         else if (titulo === "Fachadas") {
                 if(modelo === "Lona"){
                     ajustarOpcoes(materialSelect, ["Lona Brilho 440g", "Escolha uma opção"], "Lona Brilho 440g");
+                    ajustarOpcoes(quantidadeSelect, ["1", "Escolha uma opção"], "Escolha uma opção");
                     ajustarOpcoes(coresSelect, ["4x0 (Colorido Frente)", "Escolha uma opção"], "Escolha uma opção");
+                    ajustarOpcoes(enobrecimentoSelect, ["Sem Enobrecimento", "Escolha uma opção"], "Sem Enobrecimento");
                     ajustarOpcoes(acabamentoSelect, ["Estrutura(s) + Lona(s) e Instalação", "Escolha uma opção"], "Escolha uma opção");
                 }
                 else if (modelo === "Vidro") {
                     ajustarOpcoes(materialSelect, ["Vinil Adesivo", "Escolha uma opção"], "Vinil Adesivo");
+                    ajustarOpcoes(quantidadeSelect, ["1", "Quantidade Personalizada", "Escolha uma opção"], "Escolha uma opção");
                     ajustarOpcoes(enobrecimentoSelect, ["Sem Enobrecimento", "Escolha uma opção"], "Sem Enobrecimento");
                     ajustarOpcoes(acabamentoSelect, ["Suporte + Instalação", "Espaçadores + Instalação", "Escolha uma opção"], "Escolha uma opção");
             }
             else if (modelo === "Placa") {
                     ajustarOpcoes(materialSelect, ["Vinil Adesivo", "Escolha uma opção"], "Vinil Adesivo");
+                    ajustarOpcoes(quantidadeSelect, ["1", "Escolha uma opção"], "Escolha uma opção");
                     ajustarOpcoes(coresSelect, ["4x0 (Colorido Frente)", "Escolha uma opção"], "Escolha uma opção");
                     ajustarOpcoes(enobrecimentoSelect, ["Sem Enobrecimento", "Escolha uma opção"], "Sem Enobrecimento");
                     ajustarOpcoes(acabamentoSelect, ["Refile + Instalação", "Escolha uma opção"], "Escolha uma opção");
             }
         }
-//         else if (titulo === "Fichas e Timbrados") {
-//             if(modelo === "Fichas"){
+//         else if (titulo === "Fichass e Timbradoss") {
+//             if(modelo === "Fichass"){
 //                 ajustarOpcoes(materialSelect, ["Sulfite 75g", "Sulfite 180g", "Escolha uma opção"], "Escolha uma opção");
 //                 ajustarOpcoes(coresSelect, ["1x0 (Impressão em 1 cor)", "1x1 (Escala de Cinza Frente e Verso)", "Escolha uma opção"], "Escolha uma opção");
 //             if (material === "Sulfite 75g") {
@@ -2127,7 +2086,7 @@ else if (titulo === "Envelopes") {
 //                 ajustarOpcoes(coresSelect, ["1x0 (Impressão em 1 cor)", "1x1 (Escala de Cinza Frente e Verso)", "Escolha uma opção"], "Escolha uma opção");
 //             }   
 //         }
-//         else if (modelo === "Timbrados") {
+//         else if (modelo === "Timbradoss") {
 //             ajustarOpcoes(materialSelect, ["Sulfite 90g", "Escolha uma opção"], "Escolha uma opção");
 //             ajustarOpcoes(coresSelect, ["4x0 (Colorido Frente)", "Escolha uma opção"], "4x0 (Colorido Frente)");
 //         }
@@ -2135,14 +2094,14 @@ else if (titulo === "Envelopes") {
 
 // } 
             else if (titulo === "Fichas e Timbrados") {
-                        if(modelo === "Ficha"){
+                        if(modelo === "Fichas"){
                             ajustarOpcoes(materialSelect, ["Sulfite 75g", "Sulfite 90g", "Sulfite 180g", "Sulfite 240g", "Escolha uma opção"], "Escolha uma opção");
                             ajustarOpcoes(medidaSelect, ["140x200mm", "Escolha uma opção"], "Escolha uma opção");
                         if (material === "Sulfite 75g") {       
                             ajustarOpcoes(coresSelect, ["1x0 (Impressão em 1 cor)", "1x1 (Escala de Cinza Frente e Verso)", "Escolha uma opção"], "Escolha uma opção");
                         } 
                     }
-                    else if (modelo === "Timbrado") {
+                    else if (modelo === "Timbrados") {
                         ajustarOpcoes(materialSelect, ["Sulfite 90g", "Sulfite 120g", "Escolha uma opção"], "Escolha uma opção");
                         ajustarOpcoes(medidaSelect, ["200x280mm", "Escolha uma opção"], "Escolha uma opção");
                         ajustarOpcoes(coresSelect, ["1x0 (Impressão em 1 cor)", "4x0 (Colorido Frente)", "Escolha uma opção"], "Escolha uma opção");
@@ -2261,8 +2220,7 @@ else if (titulo === "Envelopes") {
             }
             else if(material === "Sulfite 90g") {
                 ajustarOpcoes(coresSelect, ["4x0 (Colorido Frente)", "Escolha uma opção"], "Escolha uma opção");
-           
-               }
+            }
         }
         else if (modelo === "Talões") {
             ajustarOpcoes(materialSelect, ["Sulfite 75g",  "Autocopiativo 53g", "Escolha uma opção"], "Escolha uma opção");
@@ -2275,7 +2233,7 @@ else if (titulo === "Envelopes") {
             ajustarOpcoes(medidaSelect, ["140x200mm", "200x280mm", "Escolha uma opção"], "Escolha uma opção");
             ajustarOpcoes(coresSelect, ["4x0 (Colorido Frente)", "Escolha uma opção"], "Escolha uma opção");
             ajustarOpcoes(acabamentoSelect, ["Blocagem de 100 Folhas",  "Blocagem de 100 Folhas - Numeração", "Blocagem de 100 Folhas - Serrilha - Grampo", "Blocagem de 100 Folhas - Serrilha - Grampo - Numeração", "Escolha uma opção"], "Escolha uma opção");
-    }
+        }
     } 
     
     
@@ -2296,7 +2254,7 @@ else if (titulo === "Envelopes") {
         else if (modelo === "Mini Tag"){
             ajustarOpcoes(medidaSelect, ["43x48mm", "Escolha uma opção"], "Escolha uma opção");
             ajustarOpcoes(acabamentoSelect, ["Furo 4mm", "Escolha uma opção"], "Escolha uma opção"); 
-                if (quantidade === "2000") {
+                if (quantidade === "500" || quantidade === "1000" || quantidade === "2000") {
                 ajustarOpcoes(enobrecimentoSelect, ["Verniz Total Frente", "Escolha uma opção"], "Escolha uma opção");
                 }
                 else{
@@ -2372,7 +2330,7 @@ else if (titulo === "Envelopes") {
                 ajustarOpcoes(acabamentoSelect, ["Bolsa Colada", "Bolsa Personalizada", "Bolsa de Encaixe", "Escolha uma opção"], "Escolha uma opção");
             }
             else{
-            ajustarOpcoes(acabamentoSelect, ["Bolsa Colada", "Bolsa Personalizada", "Escolha uma opção"], "Escolha uma opção");
+            ajustarOpcoes(acabamentoSelect, ["Bolsa Colada", "Bolsa Personalizada", "Bolsa Colada Branca", "Escolha uma opção"], "Escolha uma opção");
             }
         }
         else if(modelo === "Orelha"){
@@ -2459,7 +2417,7 @@ else if (titulo === "Envelopes") {
             imagem.src = "Imagens/Subpastas Padrão/Adesivos personalizados, Etiquetas e rotulos, adesivos de parede, Adesivos de recorte/Adesivos  de parede.png";
             }
             else if(modelo === "Adesivos Recorte Eletrônico"){	
-            imagem.src = "imagens/SubPastas Padrão/Adesivos personalizados, Etiquetas e rotulos, adesivos de parede, Adesivos de recorte/Adesivos de recorte azul.png";
+            imagem.src = "imagens/SubPastas Padrão/Adesivos personalizados, Etiquetas e rotulos, adesivos de parede, Adesivos de recorte/Adesivo de recorte branco.png";
                 if(material === "Vinil Branco"){
                     imagem.src = "imagens/SubPastas Padrão/Adesivos personalizados, Etiquetas e rotulos, adesivos de parede, Adesivos de recorte/Adesivo de recorte branco.png";
                 }
@@ -2506,6 +2464,9 @@ else if (titulo === "Envelopes") {
                 imagem.src = "imagens/SubPastas Padrão/Blocos, talões e receituario/Blocos 75g 1x0.png";
                 if(material === "Sulfite 75g"){
                     imagem.src = "imagens/SubPastas Padrão/Blocos, talões e receituario/Blocos 75g 1x0.png";
+                    if(medida === "100x200mm"){
+                        imagem.src = "imagens/SubPastas Padrão/Blocos, talões e receituario/Blocos 75g 1x0 100x200mm.png";
+                    }
                 }
                 else if(material === "Sulfite 90g"){
                     imagem.src = "imagens/SubPastas Padrão/Blocos, talões e receituario/Blocos 90g 4x0.png";
@@ -2513,6 +2474,12 @@ else if (titulo === "Envelopes") {
             }
             else if(modelo === "Talões"){
                 imagem.src = "imagens/SubPastas Padrão/Blocos, talões e receituario/Talão 50x2 vias.png";
+                if(acabamento === "Blocagem de 50x2 vias"){
+                    imagem.src = "imagens/SubPastas Padrão/Blocos, talões e receituario/Talão 50x2 vias.png";
+                }
+                else if(acabamento === "Blocagem de 50x3 vias"){
+                    imagem.src = "imagens/SubPastas Padrão/Blocos, talões e receituario/Talão 50x3 vias.png";
+                }
             }
             else if(modelo === "Receituários"){
                 imagem.src = "imagens/SubPastas Padrão/Blocos, talões e receituario/Receituario.png";
@@ -2664,17 +2631,17 @@ else if (titulo === "Envelopes") {
 
         else if(titulo === "Fichas e Timbrados"){
 
-            if(modelo === "Ficha"){
-                imagem.src = "imagens/SubPastas Padrão/fichas e timbrados/Ficha - 1x0 cor.png";
+            if(modelo === "Fichas"){
+                imagem.src = "imagens/SubPastas Padrão/Fichas e timbrados/Ficha - 1x0 cor.png";
                 if(material === "Sulfite 75g"){
-                    imagem.src = "imagens/SubPastas Padrão/fichas e timbrados/Ficha - 1x0 cor.png";
+                    imagem.src = "imagens/SubPastas Padrão/Fichas e timbrados/Ficha - 1x0 cor.png";
                 }
                 else if(material === "Sulfite 90g" || material === "Sulfite 180g" || material === "Sulfite 240g"){
-                    imagem.src = "imagens/SubPastas Padrão/fichas e timbrados/Fichas.png";
+                    imagem.src = "imagens/SubPastas Padrão/Fichas e timbrados/Fichas.png";
                 }
             }
-            else if(modelo === "Timbrado"){
-            imagem.src = "imagens/SubPastas Padrão/fichas e timbrados/Timbrados.png";
+            else if(modelo === "Timbrados"){
+            imagem.src = "imagens/SubPastas Padrão/Fichas e timbrados/Timbrados.png";
             }
 }
         else if(titulo === "Impressos em Geral"){
@@ -2781,6 +2748,7 @@ else if (titulo === "Envelopes") {
                 imagem.src = "imagens/SubPastas Padrão/QUadros/Canvas Geral.png";
             }
             else if(modelo === "Moldura"){
+                imagem.src = "imagens/SubPastas Padrão/QUadros/Quadro Moldura Preta.png";
                 if(acabamento === "Moldura Preta c/ Vidro"){
                     imagem.src = "imagens/SubPastas Padrão/QUadros/Quadro Moldura Preta.png";
                 }
