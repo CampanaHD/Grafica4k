@@ -8,14 +8,15 @@
   padding: 0;
 }
 body {
-  background-image: url('../imagens/Fundo.png'); 
+  /* background-image: url('../imagens/Fundo.png'); 
   background-size: cover; 
   background-repeat: no-repeat; 
-  background-position: center;
+  background-position: center; */
+  background-color: black
 }
 #logo{
-  width: 165px;
-  height: 88px;
+  width: 296,08px;
+  height: 80px;
 }
 
 ul{
@@ -32,10 +33,11 @@ p{
 
 .navbar{
   height: 134px;
-  background-image: url('../imagens/Fundo.png'); 
+  /* background-image: url('../imagens/Fundo.png'); 
   background-size: cover;
   background-repeat: no-repeat; 
-  background-position: top;
+  background-position: top; */
+  background-color: black;
 }
 #navbarNav{
   flex-direction: column;
@@ -911,4 +913,368 @@ footer h6{
   align-items: center;
   font-size: 14px;
   height: 27px;
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVO
+========================================= */
+
+@media (max-width: 991px) {
+
+    /* =========================================
+       GERAL
+    ========================================= */
+
+    body {
+        overflow-x: hidden;
+        min-width: 100% !important;
+    }
+
+    * {
+        max-width: 100%;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .container,
+    .container-fluid,
+    .container-xxl {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* =========================================
+       NAVBAR
+    ========================================= */
+
+    #containernav {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #logo {
+        width: 180px !important;
+        margin: auto;
+    }
+
+    .navbar1 {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .navbar1 li {
+        width: 100%;
+        text-align: center;
+    }
+
+    #grafica,
+    #xp {
+        white-space: normal !important;
+    }
+
+    #bagulinhoLi {
+        display: none;
+    }
+
+    #icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-top: 10px;
+    }
+
+    /* =========================================
+       SEARCH
+    ========================================= */
+
+    #search {
+        width: 100%;
+        margin-top: 20px;
+        position: relative;
+    }
+
+    #exampleDataList {
+        width: 100%;
+        padding-right: 50px;
+    }
+
+    .search-icon {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .separator {
+        display: none;
+    }
+
+    /* =========================================
+       LINKS ÚTEIS
+    ========================================= */
+
+    #linksuteis {
+        overflow-x: auto;
+    }
+
+    #containerItens {
+        flex-wrap: nowrap;
+        gap: 10px;
+        padding: 10px 0;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    #containerItens::-webkit-scrollbar {
+        display: none;
+    }
+
+    #containerItens li {
+        flex-shrink: 0;
+    }
+
+    #bagulinho {
+        display: none;
+    }
+
+    /* =========================================
+       DROPDOWN
+    ========================================= */
+
+    .dropdown-content {
+        position: static !important;
+        width: 100%;
+        max-height: 400px;
+        overflow-y: auto;
+    }
+
+    .submenu-container {
+        flex-direction: column;
+    }
+
+    .submenu {
+        width: 100%;
+    }
+
+    /* =========================================
+       CARROSSEL HEADER
+    ========================================= */
+
+    .carousel-item img {
+        min-height: 180px;
+        object-fit: cover;
+    }
+
+    /* =========================================
+       CATEGORIAS
+    ========================================= */
+
+    #containerMain,
+    #containerMain2 {
+        overflow: hidden;
+    }
+
+    .card-item {
+        width: auto !important;
+    }
+
+    .card-image {
+        width: 100%;
+        height: auto;
+    }
+
+    #cardsCarousel {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    /* =========================================
+       MAIS VENDIDOS
+    ========================================= */
+
+    .Maisvendidos_size {
+        height: auto !important;
+        padding: 10px;
+    }
+
+    #cardsCarousel3 {
+        font-size: 18px;
+    }
+
+    #solicitarOrcamento {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    /* =========================================
+       ORÇAMENTO
+    ========================================= */
+
+    .containerOrcamento {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .orcamentoLogo,
+    .orcamentoPersonalizado {
+        width: 100%;
+    }
+
+    #imagemModelo {
+        width: 100%;
+        max-width: 300px;
+        margin: auto;
+        display: block;
+    }
+
+    .campo {
+        width: 100%;
+    }
+
+    .campo select,
+    .campo input {
+        width: 100% !important;
+    }
+
+    #enviarWhatsApp {
+        width: 100%;
+    }
+
+    /* =========================================
+       TEXTO
+    ========================================= */
+
+    h1, h2, h3, h4, h5, p, a {
+        word-break: break-word;
+    }
+
+    .text-nowrap {
+        white-space: normal !important;
+    }
+
+}
+
+/* =========================================
+   CELULARES PEQUENOS
+========================================= */
+
+@media (max-width: 576px) {
+
+    #logo {
+        width: 150px !important;
+    }
+
+    #grafica {
+        font-size: 13px;
+    }
+
+    #xp {
+        font-size: 12px;
+    }
+
+    #todosprodutos {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    #Categorias,
+    #maisvendidos {
+        text-align: center;
+        font-size: 22px;
+    }
+
+    #cardsCarousel3 {
+        font-size: 16px;
+    }
+
+    .carousel-item img {
+        min-height: 140px;
+    }
+
+}
+
+/* =========================================
+   SWIPER MOBILE
+========================================= */
+
+@media (max-width: 768px){
+
+    /* =====================================
+       SWIPER 1
+    ===================================== */
+
+    .btn-prev-1{
+        left: 5px !important;
+        top: 50% !important;
+        transform: translateY(-50%);
+    }
+
+    .btn-next-1{
+        right: 5px !important;
+        top: 50% !important;
+        transform: translateY(-50%);
+    }
+
+    #btn-pagination-1{
+        top: auto !important;
+        position: relative !important;
+        margin-top: 15px;
+    }
+
+    /* =====================================
+       SWIPER 2
+    ===================================== */
+
+    .btn-prev-2{
+        left: 5px !important;
+        top: 50% !important;
+        transform: translateY(-50%);
+    }
+
+    .btn-next-2{
+        right: 5px !important;
+        top: 50% !important;
+        transform: translateY(-50%);
+    }
+
+    #btn-pagination-2{
+        top: auto !important;
+        position: relative !important;
+        margin-top: 15px;
+    }
+
+    /* =====================================
+       SWIPER 3
+    ===================================== */
+
+    .btn-prev-3{
+        left: 5px !important;
+        top: 50% !important;
+        transform: translateY(-50%);
+    }
+
+    .btn-next-3{
+        right: 5px !important;
+        top: 50% !important;
+        transform: translateY(-50%);
+    }
+
+    #btn-pagination-3{
+        top: auto !important;
+        position: relative !important;
+        margin-top: 15px;
+    }
+
 }
