@@ -313,92 +313,112 @@ height: 15px;
   width: 40px;
   height: 40px;
   color: gray;
-  border-radius: 50%; /* Torna os botões circulares */
+  border-radius: 50%;
+  /* Torna os botões circulares */
   cursor: pointer;
-  
+
 }
 
 /* Remove o estilo padrão das setas */
 .swiper-button-prev::after,
 .swiper-button-next::after {
-  font-size: 0; /* Remove as setas padrão */
+  font-size: 0;
+  /* Remove as setas padrão */
   content: '';
   width: 25px;
   height: 25px;
   background-image: url('../imagens/seta\ .png');
-  background-size: cover; /* Faz a imagem cobrir todo o fundo */
-  background-repeat: no-repeat; /* Evita repetição da imagem */
-  background-position: center; /* Centraliza a imagem */
-   /* Forma a seta */
-  
+  background-size: cover;
+  /* Faz a imagem cobrir todo o fundo */
+  background-repeat: no-repeat;
+  /* Evita repetição da imagem */
+  background-position: center;
+  /* Centraliza a imagem */
+  /* Forma a seta */
+
 }
+
 .swiper-button-next::after {
-  transform: rotate(-180deg); /* Ajusta a rotação da seta para "avançar" */
+  transform: rotate(-180deg);
+  /* Ajusta a rotação da seta para "avançar" */
 }
 
 
-.btn-prev-1{
+/* .btn-prev-1 {
   top: 770px;
   left: 330px;
   position: absolute;
-  
+
 }
-.btn-next-1{
+
+.btn-next-1 {
   top: 770px;
   right: 330px;
   position: absolute;
-  
+
 }
-#btn-pagination-1{
+
+#btn-pagination-1 {
   top: 885px;
   position: absolute;
-}
+} */
 
-.btn-prev-2{
+.btn-prev-2 {
   top: 1115px;
   left: 330px;
   position: absolute;
-  
+
 }
-.btn-next-2{
+
+.btn-next-2 {
   top: 1115px;
   right: 330px;
   position: absolute;
-  
+
 }
-#btn-pagination-2{
+
+#btn-pagination-2 {
   top: 1480px;
   position: absolute;
 }
 
-.btn-prev-3{
+.btn-prev-3 {
   top: 1690px;
   left: 330px;
   position: absolute;
-  
+
 }
-.btn-next-3{
+
+.btn-next-3 {
   top: 1690px;
   right: 330px;
   position: absolute;
-  
+
 }
-#btn-pagination-3{
+
+#btn-pagination-3 {
   top: 1810px;
   position: absolute;
 }
+
 .swiper-pagination.btn-pagination-3 .swiper-pagination-bullet {
-  width: 7px; /* Largura do botão */
-  height: 7px; /* Altura do botão */ /* Cor do botão (personalize como quiser) */
+  width: 7px;
+  /* Largura do botão */
+  height: 7px;
+  /* Altura do botão */
+  /* Cor do botão (personalize como quiser) */
   background-color: #0035ff;
-  margin: 5px; /* Espaçamento entre os botões */
-  border-radius: 50%; /* Forma arredondada */
-  transform: scale(1.5); /* Aumentar proporcionalmente */
+  margin: 5px;
+  /* Espaçamento entre os botões */
+  border-radius: 50%;
+  /* Forma arredondada */
+  transform: scale(1.5);
+  /* Aumentar proporcionalmente */
 }
 
 
 
-.mySwiper1{
+.mySwiper1 {
   position: relative;
 }
 
@@ -1276,5 +1296,500 @@ footer h6{
         position: relative !important;
         margin-top: 15px;
     }
+}
 
+/* =========================================================
+   MARCAS
+========================================================= */
+
+.marcas-section {
+  width: 100%;
+  background: #fff;
+  padding: 45px 20px;
+  overflow: hidden;
+}
+
+.marcas-container {
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 70px;
+}
+
+/* ===== TEXTO ===== */
+
+.marcas-texto {
+  width: 360px;
+  flex-shrink: 0;
+}
+
+.marcas-texto h2 {
+  font-size: 1.6rem;
+  font-weight: 850;
+  line-height: 1.05;
+
+  color: #111;
+
+  margin-bottom: 16px;
+
+  text-transform: uppercase;
+}
+
+.marcas-texto p {
+  font-size: 0.98rem;
+  color: #666;
+  line-height: 1.7;
+
+  margin-bottom: 24px;
+}
+
+/* ===== BOTÃO ===== */
+
+.btn-cases {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 24px;
+
+  border-radius: 999px;
+  border: 2px solid transparent;
+
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(90deg, #2563ff, #ff9800) border-box;
+
+  color: #111;
+
+  font-size: 0.92rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.btn-cases:hover {
+  transform: translateY(-3px);
+}
+
+.btn-cases span {
+  width: 24px;
+  height: 24px;
+
+  border-radius: 50%;
+
+  background: #111;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+}
+
+/* ===== LOGOS ===== */
+
+.marcas-logos {
+  flex: 1;
+
+  display: grid;
+
+  grid-template-columns: repeat(5, minmax(120px, 1fr));
+
+  align-items: center;
+  justify-items: center;
+
+  gap: 45px;
+
+  transition: 0.25s ease;
+}
+
+.marcas-logos img {
+  display: block;
+
+  width: 100%;
+  max-width: 210px;
+  height: 110px;
+
+  object-fit: contain;
+
+  opacity: 1;
+
+  transition: 0.3s ease;
+}
+
+.marcas-logos img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== ANIMAÇÃO ===== */
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.25s ease;
+}
+
+/* =========================================================
+   RESPONSIVO - MARCAS
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .marcas-container {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 40px;
+  }
+
+  .marcas-texto {
+    width: 100%;
+  }
+
+  .marcas-logos {
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .marcas-section {
+    padding: 35px 15px;
+  }
+
+  .marcas-container {
+    align-items: center;
+    text-align: center;
+  }
+
+  .marcas-texto h2 {
+    font-size: 1.7rem;
+  }
+
+  .marcas-texto p {
+    font-size: 0.92rem;
+  }
+
+  .btn-cases {
+    justify-content: center;
+  }
+
+  .marcas-logos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .marcas-logos img {
+    max-width: 130px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .marcas-texto h2 {
+    font-size: 1.4rem;
+  }
+
+  .marcas-logos img {
+    max-width: 105px;
+    height: 60px;
+  }
+}
+
+/* =========================================================
+   CATEGORIAS
+========================================================= */
+
+.categorias-section {
+  width: 100%;
+  background: #f5f5f5;
+  padding: 60px 20px;
+  overflow: hidden;
+  border-top: 1px solid #ddd;
+}
+
+.categorias-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ===== TITULO ===== */
+
+.categorias-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 45px;
+}
+
+.categorias-titulo::before,
+.categorias-titulo::after {
+  content: "";
+  width: 260px;
+  height: 5px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.categorias-titulo::before {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #2563ff 40%,
+    #8b3dff 100%
+  );
+}
+
+.categorias-titulo::after {
+  background: linear-gradient(
+    90deg,
+    #ff2d55 0%,
+    #ff9800 60%,
+    transparent 100%
+  );
+}
+
+.categorias-titulo h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ===== WRAPPER ===== */
+
+.categorias-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* ===== LISTA ===== */
+
+.categorias {
+  flex: 1;
+
+  display: flex;
+  gap: 28px;
+
+  overflow-x: auto;
+  scroll-behavior: smooth;
+
+  padding: 10px 5px 20px;
+
+  scrollbar-width: none;
+}
+
+.categorias::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== ITEM ===== */
+
+.categoria-item {
+  width: calc((100% - (28px * 5)) / 6);
+  min-width: calc((100% - (28px * 5)) / 6);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+  text-decoration: none;
+
+  flex-shrink: 0;
+}
+
+/* ===== CIRCULO ===== */
+
+.categoria-img {
+  width: 100%;
+  max-width: 150px;
+  aspect-ratio: 1 / 1;
+
+  border-radius: 50%;
+  padding: 4px;
+
+  background: linear-gradient(
+    135deg,
+    #0066ff,
+    #8b3dff,
+    #ff2d55,
+    #ff9800
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s ease;
+
+  margin: 0 auto;
+}
+
+.categoria-item:hover .categoria-img {
+  transform: translateY(-6px) scale(1.03);
+}
+
+.categoria-img img {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  background: #fff;
+  padding: 10px;
+}
+
+/* ===== TEXTO ===== */
+
+.categoria-item span {
+  margin-top: 14px;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  color: #111;
+  line-height: 1.3;
+}
+
+/* ===== BOTÕES ===== */
+
+.categorias-btn {
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #111;
+  color: #fff;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  flex-shrink: 0;
+
+  transition: 0.3s;
+}
+
+.categorias-btn:hover {
+  background: #2563ff;
+  transform: scale(1.08);
+}
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .categoria-item {
+    width: calc((100% - (28px * 4)) / 5);
+    min-width: calc((100% - (28px * 4)) / 5);
+  }
+
+  .categoria-img {
+    max-width: 135px;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .categoria-item {
+    width: calc((100% - (28px * 3)) / 4);
+    min-width: calc((100% - (28px * 3)) / 4);
+  }
+
+
+  .categoria-img {
+    max-width: 125px;
+  }
+
+  .categorias-titulo h2 {
+    font-size: 1.7rem;
+  }
+
+  .categorias-titulo::before,
+  .categorias-titulo::after {
+    width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .categorias-section {
+    padding: 45px 15px;
+  }
+
+  .categoria-item {
+    width: calc((100% - (20px * 2)) / 3);
+    min-width: calc((100% - (20px * 2)) / 3);
+  }
+
+  .categoria-img {
+    max-width: 110px;
+  }
+
+  .categoria-item span {
+    font-size: 0.9rem;
+  }
+
+  .categorias-titulo {
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .categorias-titulo::before,
+  .categorias-titulo::after {
+    width: 90px;
+    height: 4px;
+  }
+
+  .categorias-titulo h2 {
+    font-size: 1.3rem;
+  }
+
+  .categorias-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .categorias {
+    gap: 18px;
+  }
+
+  .categoria-item {
+    width: calc((100% - 18px) / 2);
+    min-width: calc((100% - 18px) / 2);
+  }
+
+  .categoria-img {
+    max-width: 90px;
+  }
+
+  .categoria-item span {
+    font-size: 0.82rem;
+  }
+
+  .categorias-titulo::before,
+  .categorias-titulo::after {
+    width: 55px;
+  }
 }
