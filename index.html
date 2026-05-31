@@ -166,7 +166,7 @@
 
 <section class="marcas-section">
 
-  <div class="marcas-container">
+  <div class="container-xxl marcas-container">
 
     <!-- TEXTO -->
     <div class="marcas-texto">
@@ -207,7 +207,7 @@
 <!-- ===== CATEGORIAS ===== -->
 <section class="categorias-section">
 
-  <div class="categorias-container">
+  <div class="container-xxl categorias-container">
 
     <div class="categorias-titulo">
       <h2>Nossas Categorias</h2>
@@ -422,27 +422,170 @@
 </section>
 
 <script>
-  const categorias = document.querySelector(".categorias");
-  const nextBtn = document.querySelector(".next");
-  const prevBtn = document.querySelector(".prev");
+const categorias = document.querySelector(".categorias");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
 
-  nextBtn.addEventListener("click", () => {
-    categorias.scrollBy({
-      left: 300,
-      behavior: "smooth"
-    });
-  });
+function getItemWidth() {
+  const item = document.querySelector(".categoria-item");
+  const gap = parseInt(getComputedStyle(categorias).gap);
 
-  prevBtn.addEventListener("click", () => {
-    categorias.scrollBy({
-      left: -300,
-      behavior: "smooth"
-    });
+  return item.offsetWidth + gap;
+}
+
+nextBtn.addEventListener("click", () => {
+  categorias.scrollBy({
+    left: getItemWidth(),
+    behavior: "smooth"
   });
+});
+
+prevBtn.addEventListener("click", () => {
+  categorias.scrollBy({
+    left: -getItemWidth(),
+    behavior: "smooth"
+  });
+});
 </script>
 
+<!-- MAIS VENDIDOS -->
+<section class="mais-vendidos">
+    <div class="container-xxl titulo-vendidos">
+        <span></span>
+        <h2>MAIS <strong>VENDIDOS</strong></h2>
+        <span></span>
+    </div>
+
+    <div class="container-xxl produtos-grid">
+
+        <div class="produto-card">
+            <img src="https://placehold.co/400x400" alt="">
+            <h3>Produto 01</h3>
+        </div>
+
+        <div class="produto-card">
+            <img src="https://placehold.co/400x400" alt="">
+            <h3>Produto 02</h3>
+        </div>
+
+        <div class="produto-card">
+            <img src="https://placehold.co/400x400" alt="">
+            <h3>Produto 03</h3>
+        </div>
+
+        <div class="produto-card">
+            <img src="https://placehold.co/400x400" alt="">
+            <h3>Produto 04</h3>
+        </div>
+
+    </div>
+
+    <a href="#" class="btn-produtos">
+        VER TODOS OS PRODUTOS →
+    </a>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="diferenciais">
+    <div class="container-xxl diferenciais-container">
+
+        <div class="diferencial">
+            <div class="icone azul">
+                <img src="Imagens/Icones Novos/Icone 1.png" alt="Até 24h de Produção">
+            </div>
+
+            <div>
+                <h3>ATÉ 24H DE PRODUÇÃO</h3>
+                <p>Mais agilidade para o seu projeto</p>
+            </div>
+        </div>
+
+        <div class="diferencial">
+            <div class="icone roxo">
+                <img src="Imagens/Icones Novos/Icone 2.png" alt="Qualidade 4K">
+            </div>
+
+            <div>
+                <h3>QUALIDADE 4K</h3>
+                <p>Impressões com cores vivas e alta definição</p>
+            </div>
+        </div>
+
+        <div class="diferencial">
+            <div class="icone rosa">
+                <img src="Imagens/Icones Novos/Icone 3.png" alt="Atendimento Especializado">
+            </div>
+
+            <div>
+                <h3>ATENDIMENTO ESPECIALIZADO</h3>
+                <p>Conte com quem entende do seu negócio</p>
+            </div>
+        </div>
+
+        <div class="diferencial">
+            <div class="icone laranja">
+                <img src="Imagens/Icones Novos/Icone 4.png" alt="Materiais de Qualidade">
+            </div>
+
+            <div>
+                <h3>MATERIAIS DE QUALIDADE</h3>
+                <p>Durabilidade e acabamento que fazem a diferença</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- RESULTADOS -->
+<section class="impacto">
+    <div class="container-xxl impacto-container">
+
+        <div class="impacto-texto">
+            <h2>
+                RESULTADOS QUE<br>
+                GERAM <strong>IMPACTO</strong>
+            </h2>
+
+            <p>
+                A comunicação visual certa transforma marcas,
+                atrai olhares e abre portas para novas oportunidades.
+            </p>
+
+            <button class="btn-cases">
+              CONHEÇA MAIS CASES
+              <span>➜</span>
+            </button>
+        </div>
+
+        <div class="impacto-cards">
+
+            <div class="impacto-card">
+                <div class="impacto-icone"><img src="Imagens/Icones Novos/+ Visibilidade.png" alt="VISIBILIDADE"></div>
+                <h3>+ VISIBILIDADE</h3>
+                <p>Sua marca em destaque onde importa.</p>
+            </div>
+
+            <div class="impacto-card">
+                <div class="impacto-icone"><img src="Imagens/Icones Novos/Credibilidade.png" alt="CREDIBILIDADE"></div>
+                <h3>+ CREDIBILIDADE</h3>
+                <p>Profissionalismo que gera confiança.</p>
+            </div>
+
+            <div class="impacto-card">
+                <div class="impacto-icone"><img src="Imagens/Icones Novos/Resultados.png" alt="RESULTADOS"></div>
+                <h3>+ RESULTADOS</h3>
+                <p>Comunicação que conecta, impacta e vende.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
         <!-- Conteúdo principal -->
-        <div class="container-xxl">
+        <!-- <div class="container-xxl">
           <h5 id="Categorias">CATEGORIAS</h5>
         
             <div class="container-xxl swiper" id="containerMain">
@@ -641,7 +784,7 @@
               <div class="swiper-pagination btn-pagination-3" id="btn-pagination-3"></div>
               <div class="swiper-button-prev btn-prev-3"></div>
               <div class="swiper-button-next btn-next-3"></div>
-          </div>
+          </div> -->
 
           
        
@@ -651,52 +794,86 @@
       
       
         <div class="container-xxl" id="containerFooter">
-          <div>
-          <p id="INSTITUCIONAL">INSTITUCIONAL</p>
-            <ul id="footerUl">
-              <li><a href="index.html"><P>Inicio</P></a></li>
-              <li><a href="orcamento personalizado.html"><p>Orçamento Personalizado</p></a></li>
-              <li><a href="Politicas-de-cancelamento.html"><p>Politica de Cancelamento</p></a></li>
-              <li><a href="Duvidas Frequentes.html?id=6"><p>Prazos</p></a></li>
-            </ul>
+          <div class="solucoes">
+            <<img src="imagens/LOGO PNG Branco 1.png">
+              <p>Soluções completas em comunicação Visual com qualidade, agilidade e compromisso com o seu sucesso!</p>
+              <a onclick="enviarWhatsAppIcone()"><i class="bi bi-whatsapp fs-3" id="whatsapp"></i></a>
+              <a href="https://www.instagram.com/grafica4k.cv/"><i class="bi bi-instagram fs-3" id="instagram"></i></a>
+              <a href="https://www.facebook.com/grafica4k21/"><img src="imagens/Facebook.svg" id="facebook"></a>
           
+          </div>
+
           <div>
-            <p id="formas_de_pagamentoP">FORMAS DE PAGAMENTO</p>
-            <ul id="formas_de_pagamento">
-              
-              <li><img src="imagens/Formas de pagamento/PIX.svg" alt=""></li>
-              <li><img src="imagens/Formas de pagamento/Mastercard.svg" alt=""></li>
-              <li><img src="imagens/Formas de pagamento/Visa.svg" alt=""></li>
-              <li><img src="imagens/Formas de pagamento/Boleto.svg" alt=""></li>
-            
-              
-              
+            <p id="INSTITUCIONAL">INSTITUCIONAL</p>
+            <ul id="footerUl">
+              <li><a href="index.html">
+                  <P>Inicio</P>
+                </a></li>
+              <li><a href="orcamento personalizado.html">
+                  <p>Orçamento Personalizado</p>
+                </a></li>
+              <li><a href="Politicas-de-cancelamento.html">
+                  <p>Politica de Cancelamento</p>
+                </a></li>
+              <li><a href="Duvidas Frequentes.html?id=6">
+                  <p>Prazos</p>
+                </a></li>
+            </ul>
+        
+            <div>
+              <p id="formas_de_pagamentoP">FORMAS DE PAGAMENTO</p>
+              <ul id="formas_de_pagamento">
+        
+                <li><img src="imagens/Formas de pagamento/PIX.svg" alt=""></li>
+                <li><img src="imagens/Formas de pagamento/Mastercard.svg" alt=""></li>
+                <li><img src="imagens/Formas de pagamento/Visa.svg" alt=""></li>
+                <li><img src="imagens/Formas de pagamento/Boleto.svg" alt=""></li>
+        
+        
+        
+              </ul>
+            </div>
+          </div>
+          <div>
+            <ul id="ajuda">
+              <li><a href="Quem-somos.html">
+                  <p>Quem Somos</p>
+                </a></li>
+              <li><a href="Privacidade.html">
+                  <p>Politica e Privacidade</p>
+                </a></li>
+              <li><a
+                  href="mailto:exemplo@email.com?subject=Assunto%20do%20E-mail&body=Olá,%20gostaria%20de%20mais%20informações.">
+                  <p>Trabalhe Conosco</p>
+                </a></li>
+              <li onclick="enviarWhatsAppSuporte()"><a>
+                  <p id="Suporte">Suporte</p>
+                </a></li>
             </ul>
           </div>
-        </div>
-        <div>
-          <ul id="ajuda">
-            <li><a href="Quem-somos.html"><p>Quem Somos</p></a></li>
-            <li><a href="Privacidade.html"><p>Politica e Privacidade</p></a></li>
-            <li><a href="mailto:exemplo@email.com?subject=Assunto%20do%20E-mail&body=Olá,%20gostaria%20de%20mais%20informações."><p>Trabalhe Conosco</p></a></li>
-            <li onclick="enviarWhatsAppSuporte()"><a><p id="Suporte">Suporte</p></a></li>
-          </ul>
-        </div>
-        <div>
-          <ul id="ajuda">
-            <li><a href="Politicas-de-devolução.html"><p>Politica de Devolução</p></a></li>
-            <li><a href="Duvidas Frequentes.html"><p>FAQ Perguntas Frequentes</p></a></li>
-          </ul>
-        </div>
-        <div id="maps">
-          <a href="https://maps.app.goo.gl/dH4vpYswEiNbhkhUA"><img src="imagens/Maps.png" alt=""></a>
-        </div>
-      </div>
-        <div id="direitos">
-            <ul id="direitosUl">
-              <li class="no-style"><p>Todos os direitos reservados © 2021 | 4K - Gráfica e Comunicação Visual</p></li>
-              <li class="no-style"><p>CNPJ: 42.915.741/0001-42 - R. São Carlos, 792 - Alto Cafezal - Marília/SP - CEP: 17.504-010</p></li>
+          <div>
+            <ul id="ajuda">
+              <li><a href="Politicas-de-devolução.html">
+                  <p>Politica de Devolução</p>
+                </a></li>
+              <li><a href="Duvidas Frequentes.html">
+                  <p>FAQ Perguntas Frequentes</p>
+                </a></li>
             </ul>
+          </div>
+          <div id="maps">
+            <a href="https://maps.app.goo.gl/dH4vpYswEiNbhkhUA"><img src="imagens/Maps.png" alt=""></a>
+          </div>
+        </div>
+        <div id="direitos">
+          <ul id="direitosUl">
+            <li class="no-style">
+              <p>Todos os direitos reservados © 2021 | 4K - Gráfica e Comunicação Visual</p>
+            </li>
+            <li class="no-style">
+              <p>CNPJ: 42.915.741/0001-42 - R. São Carlos, 792 - Alto Cafezal - Marília/SP - CEP: 17.504-010</p>
+            </li>
+          </ul>
         </div>
       
     </footer>
