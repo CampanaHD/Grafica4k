@@ -252,7 +252,8 @@ height: 15px;
     height: 48px;
     justify-content: center;
     align-content: center;
-    font-size: 15.7px;
+    /* font-size: 15.7px; */
+    font-size: 20px;
   }
   #containerItens{
     margin: 0;
@@ -1596,9 +1597,19 @@ footer h6{
 .categorias {
     display: flex;
     gap: 20px;
-    scroll-snap-type: x mandatory;
+    /* scroll-snap-type: x mandatory;
     overflow-x: hidden;
+    scroll-behavior: smooth; */
+     overflow-x: auto;
+    overflow-y: hidden;
+
     scroll-behavior: smooth;
+
+    -webkit-overflow-scrolling: touch;
+
+    touch-action: pan-x;
+
+    scrollbar-width: none;
 }
 
 .categorias::-webkit-scrollbar {
