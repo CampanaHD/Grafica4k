@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    
+    <link rel="stylesheet" href="css/bootstrap-icons-1.11.3/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/produtos.css">
+
+    <link rel="icon" type="image/x-icon" href="Imagens/SubPastas/Logo.ico">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <title>Nagano • Comunicação Visual</title>
+</head>
+<body class="text-white">
+  <!-- <li style="background-color: yellow;" ><h3 style="color: black; font-weight: bolder; height: 60px; font-size: 48px;">SITE EM MANUTENÇÃO</h3></li> -->
+    <header class="nagano-header">
+    
+        <div class="container-xxl">
+    
+            <div class="nagano-header-wrapper">
+    
+                <!-- LOGO -->
+                <a href="index.html" class="nagano-header-logo">
+                    <img src="imagens/LOGO PNG Branco 1.png" alt="Nagano">
+                </a>
+    
+                <!-- LADO DIREITO -->
+                <div class="nagano-header-right">
+    
+                    <!-- TOPO -->
+                    <div class="nagano-header-links">
+    
+                        <!-- <span class="nagano-header-4k">
+                            Sua <strong>Experiência em 4K!</strong>
+                        </span> -->
+                        <p id="xp">Sua Experiência em 4K</p>
+    
+                        <span class="nagano-separator">|</span>
+    
+                        <a href="Quem-somos.html">
+                            Quem Somos!
+                        </a>
+    
+                        <span class="nagano-separator">|</span>
+    
+                        <a href="Duvidas Frequentes.html">
+                            Dúvidas Frequentes
+                        </a>
+    
+                        <a onclick="enviarWhatsAppIcone()">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+    
+                        <a href="https://www.instagram.com/grafica4k.cv/">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+    
+                        <a href="https://www.facebook.com/grafica4k21/">
+                            <img src="imagens/Facebook.svg" alt="">
+                        </a>
+    
+                    </div>
+    
+                    <!-- BUSCA -->
+                    <div id="search">
+                        <input class="form-control" list="datalistOptions" id="exampleDataList"
+                            placeholder="O que você procura?" oninput="atualizarSugestoes()" onkeyup="pesquisarProdutos()">
+                        <i class="bi bi-search search-icon fs-3" onclick="buscar()"></i>
+                        <span class="separator"></span>
+                        <datalist id="datalistOptions">
+                            <option value="Adesivos">
+                            <option value="Banners">
+                            <option value="Blocos e Talões">
+                            <option value="Cartões de Visita">
+                            <option value="Envelopes">
+                        </datalist>
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    
+    </header>
+
+
+    <div id="linksuteis">
+        <div class="container-xxl">
+            <ul class="links d-flex text-nowrap" id="containerItens">
+              <li>
+                <div class="dropdown">
+                    <button id="todosprodutos"><i class="bi bi-list" id="hamburger"></i>Todos os Produtos</button>
+                    <div class="dropdown-content">
+                        <div class="submenu-container">
+                            <div class="submenu">
+                                <a href="orcamento personalizado.html?titulo=Adesivos">Adesivos</a>
+                                <a href="orcamento personalizado.html?titulo=Banners, Faixas e Lonas&id=Banners">Banner</a>
+                                <a href="orcamento personalizado.html?titulo=Blocos, Talões e Receituários&id=Blocos e Talões">Blocos e Talões</a>
+                                <a href="orcamento personalizado.html?titulo=Calendários">Calendários</a>
+                                <a href="orcamento personalizado.html?titulo=Cardápios">Cardápios</a>
+                                <a href="orcamento personalizado.html?titulo=Cartões de Visita">Cartões de Visita</a>
+                                <a href="orcamento personalizado.html?titulo=Cavaletes">Cavaletes</a>
+                            </div>
+                            <div class="submenu">
+                                <a href="orcamento personalizado.html?titulo=Impressos em Geral&id=Certificados">Certificados</a>
+                                <a href="orcamento personalizado.html?titulo=Impressos em Geral">Impressos em Geral</a>
+                                <a href="orcamento personalizado.html?titulo=Envelopamento">Envelopamento</a>
+                                <a href="orcamento personalizado.html?titulo=Envelopes">Envelopes</a>
+                                <a href="orcamento personalizado.html?titulo=Fachadas">Fachadas</a>
+                                <a href="orcamento personalizado.html?titulo=Banners, Faixas e Lonas&id=Faixas">Faixas</a>
+                                <a href="orcamento personalizado.html?titulo=Fichas e Timbrados">Fichas e Timbrados</a>
+                            </div>
+                            <div class="submenu">
+                                <a href="orcamento personalizado.html?titulo=Panfletos, Flyers e Folders">Folders</a>
+                                <a href="orcamento personalizado.html?titulo=Frotas">Frotas</a>
+                                <a href="orcamento personalizado.html?titulo=Imã de Geladeira">Imã de Geladeira</a>
+                                <a href="orcamento personalizado.html?titulo=Panfletos, Flyers e Folders">Panfletos</a>
+                                <a href="orcamento personalizado.html?titulo=Pastas">Pastas</a>
+                                <a href="orcamento personalizado.html?titulo=Placas">Placas</a>
+                                <a href="orcamento personalizado.html?titulo=Logos e Vetorização">Logos e Vetorização</a>
+                            </div>
+                            <div class="submenu">
+                                <a href="orcamento personalizado.html?titulo=Plotagens e Projetos">Plotagens e Projetos</a>
+                                <a href="orcamento personalizado.html?titulo=Quadros">Quadros</a>
+                                <a href="orcamento personalizado.html?titulo=Blocos, Talões e Receituários&id=Receituários">Receituários</a>
+                                <a href="orcamento personalizado.html?titulo=Tag">Tag</a>
+                                <a href="orcamento personalizado.html?titulo=Vinil Perfurado&id=Vitrine">Vinil Perfurado</a>
+                                <a href="orcamento personalizado.html?titulo=Wind Banner">Wind Banner</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+                
+
+
+
+
+
+
+                <li><p id="bagulinho">|</p></li>
+                <li><a href="orcamento personalizado.html?titulo=Cartões de Visita">Cartões de Visita</a></li>
+                <li><p id="bagulinho">|</p></li>
+                <li><a href="orcamento personalizado.html?titulo=Panfletos, Flyers e Folders">Panfletos e Folders</a></li>
+                <li><p id="bagulinho">|</p></li>
+                <li><a href="orcamento personalizado.html?titulo=Adesivos">Adesivos e Rótulos</a></li>
+                <li><p id="bagulinho">|</p></li>
+                <li><a href="orcamento personalizado.html?titulo=Banners, Faixas e Lonas">Banners, Faixas e Lonas</a></li>
+                <li><p id="bagulinho">|</p></li>
+                <li><a href="orcamento personalizado.html?titulo=Orçamento Personalizado"><p id="orcamento">Orçamento Personalizado</p></a></li>
+            </ul>
+        </div>
+    </div>
+
+<!-- PRODUTOS -->
+<section class="container-xxl nagano-produtos-section">
+
+    <div class="nagano-produtos-title">
+
+        <span></span>
+
+        <h1>TODOS OS PRODUTOS</h1>
+
+        <span></span>
+
+    </div>
+
+    <div class="nagano-produtos-grid">
+
+        <!-- duplicar quantos precisar -->
+
+        <a href="#" class="nagano-produtos-card">
+            <img src="https://placehold.co/500x500" alt="">
+        </a>
+
+        <a href="#" class="nagano-produtos-card">
+            <img src="https://placehold.co/500x500" alt="">
+        </a>
+
+        <a href="#" class="nagano-produtos-card">
+            <img src="https://placehold.co/500x500" alt="">
+        </a>
+
+        <a href="#" class="nagano-produtos-card">
+            <img src="https://placehold.co/500x500" alt="">
+        </a>
+
+        <a href="#" class="nagano-produtos-card">
+            <img src="https://placehold.co/500x500" alt="">
+        </a>
+
+        <a href="#" class="nagano-produtos-card">
+            <img src="https://placehold.co/500x500" alt="">
+        </a>
+
+        <a href="#" class="nagano-produtos-card">
+            <img src="https://placehold.co/500x500" alt="">
+        </a>
+
+        <a href="#" class="nagano-produtos-card">
+            <img src="https://placehold.co/500x500" alt="">
+        </a>
+
+        <a href="#" class="nagano-produtos-card">
+            <img src="https://placehold.co/500x500" alt="">
+        </a>
+
+        <a href="#" class="nagano-produtos-card">
+            <img src="https://placehold.co/500x500" alt="">
+        </a>
+
+    </div>
+
+</section>
+
+<div id="barrafooter"></div>
+<!-- <div class="nagano-produtos-footer-bar"></div> -->
+
+<footer class="nagano-produtos-footer">
+
+    <div class="container-xxl nagano-produtos-footer-container">
+
+        <div class="nagano-produtos-footer-logo">
+
+    <img src="imagens/LOGO PNG Branco 1.png" alt="">
+
+    <p>
+        Soluções completas em comunicação Visual
+        com qualidade, agilidade e compromisso
+        com o seu sucesso!
+    </p>
+
+    <div class="nagano-produtos-social">
+
+        <a onclick="enviarWhatsAppIcone()"><i class="bi bi-whatsapp fs-3" id="whatsapp-footer"></i></a>
+        <a href="https://www.instagram.com/grafica4k.cv/"><i class="bi bi-instagram fs-3" id="instagram-footer"></i></a>
+        <a href="https://www.facebook.com/grafica4k21/"><img src="imagens/Facebook.svg" id="facebook-footer"></a>
+
+    </div>
+
+</div>
+
+        <div>
+            <h3>NAVEGAÇÃO</h3>
+
+            <a href="index.html">Início</a>
+            <a href="Quem-somos.html">Quem Somos</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="orcamento personalizado.html">Orçamento Personalizado</a>
+            <a href="mailto:exemplo@email.com?subject=Assunto%20do%20E-mail&body=Olá,%20gostaria%20de%20mais%20informações.">Trabalhe Conosco</a>
+            <a href="contato.html">Contato</a>
+        </div>
+
+        <div>
+            <h3>INSTITUCIONAL</h3>
+
+            <a href="Politicas-de-devolucao.html">Política de Devolução</a>
+            <a href="Privacidade.html">Política de Privacidade</a>
+            <a href="#">Termos de Uso</a>
+            <a href="Duvidas Frequentes.html">FAQ Perguntas Frequentes</a>
+        </div>
+
+        <div>
+
+    <h3>ONDE ESTAMOS</h3>
+
+    <div class="nagano-produtos-mapa">
+
+        <iframe
+            src="https://www.google.com/maps?q=R.+Vinte+e+Quatro+de+Dezembro,+948,+Marilia,+SP&output=embed"
+            loading="lazy">
+        </iframe>
+
+    </div>
+
+    <div class="nagano-produtos-endereco">
+
+        R. Vinte e Quatro de Dezembro, 948<br>
+        Alto Cafezal - Marília/SP<br>
+        CEP: 17.504-010
+
+    </div>
+
+</div>
+
+    </div>
+
+</footer>
+
+<div class="nagano-produtos-copy">
+    Todos os direitos reservados © 2021 - Nagano Comunicação Visual | CNPJ: 42.915.741/0001-42
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Inclusão do JS do Bootstrap local -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+      // Opcional: Adicione lógica caso precise modificar algo antes de redirecionar
+      document.querySelectorAll("a[data-item]").forEach(link => {
+          link.addEventListener("click", event => {
+              const itemKey = link.getAttribute("data-item");
+              console.log(`Link clicado: ${itemKey}`);
+          });
+      });
+
+
+      
+    
+  </script>
+
+</body>
+</html>

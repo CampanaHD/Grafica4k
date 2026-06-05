@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/bootstrap-icons-1.11.3/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/produtos.css">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
@@ -17,46 +18,123 @@
     <title>Nagano • Comunicação Visual</title>
 </head>
 <body style="min-width: 372px;" class="text-white">
-  <nav class="navbar navbar-expand-lg navbar-dark shadow-sm ">
-      <div class="container-xxl text-center d-flex" id="containernav">
-          <a class="navbar-brand" href="index.html">
-              <img src="imagens/LOGO PNG Branco 1.png" class="rounded float-start" id="logo">
+  <div class="container-xxl" style="padding:20px 0;">
+  
+    <div class="nagano-header-wrapper">
+  
+      <!-- LOGO -->
+      <a href="index.html" class="nagano-header-logo">
+        <img src="imagens/LOGO PNG Branco 1.png" alt="Nagano">
+      </a>
+  
+      <!-- LADO DIREITO -->
+      <div class="nagano-header-right">
+  
+        <!-- TOPO -->
+        <div class="nagano-header-links">
+  
+          <!-- <span class="nagano-header-4k">
+                              Sua <strong>Experiência em 4K!</strong>
+                          </span> -->
+          <p id="xp">Sua Experiência em 4K</p>
+  
+          <span class="nagano-separator">|</span>
+  
+          <a href="Quem-somos.html">
+            Quem Somos!
           </a>
+  
+          <span class="nagano-separator">|</span>
+  
+          <a href="Duvidas Frequentes.html">
+            Dúvidas Frequentes
+          </a>
+  
+          <a onclick="enviarWhatsAppIcone()">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+  
+          <a href="https://www.instagram.com/grafica4k.cv/">
+            <i class="bi bi-instagram"></i>
+          </a>
+  
+          <a href="https://www.facebook.com/grafica4k21/">
+            <img src="imagens/Facebook.svg" alt="">
+          </a>
+  
+        </div>
+  
+        <!-- BUSCA -->
+        <div id="search">
+          <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="O que você procura?"
+            oninput="atualizarSugestoes()" onkeyup="pesquisarProdutos()">
+          <i class="bi bi-search search-icon fs-3" onclick="buscar()"></i>
+          <span class="separator"></span>
+          <datalist id="datalistOptions">
+            <option value="Adesivos">
+            <option value="Banners">
+            <option value="Blocos e Talões">
+            <option value="Cartões de Visita">
+            <option value="Envelopes">
+          </datalist>
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </div>
 
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-      
-          <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar1 d-flex text-nowrap">
-                  <li id="graficaLi"><p id="grafica">GRÁFICA & COMUNICAÇÃO VISUAL</p></li>
-                  <li id="xpLi"><p id="xp">Sua Experiência em 4k</p></li>
-                  <li id="bagulinhoLi"><p>|</p></li>
-                  <li id="quemsomosLi"><a href="Quem-somos.html"><p>Quem Somos!</p></a></li>
-                  <li id="bagulinhoLi"><p>|</p></li>
-                  <li id="duvidasfrequentesLi"><a href="Duvidas Frequentes.html"><p>Dúvidas frequentes</p></a></li>
-                  <li>
-                      <div id="icons">
-                          <a onclick="enviarWhatsAppIcone()"><i class="bi bi-whatsapp fs-3" id="whatsapp"></i></a>
-                          <a href="https://www.instagram.com/grafica4k.cv/"><i class="bi bi-instagram fs-3" id="instagram"></i></a>
-                          <a href="https://www.facebook.com/grafica4k21/"><img src="imagens/Facebook.svg" id="facebook"></a>
 
-                      </div>
-                  </li>
-              </ul>
-              <!-- Barra de pesquisa abaixo dos links -->
-              <div id="search">
-                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="O que você está procurando?" oninput="atualizarSugestoes()" onkeyup="pesquisarProdutos()">
-                <i class="bi bi-search search-icon fs-3" onclick="buscar()"></i>
-                <span class="separator"></span>
-                <datalist id="datalistOptions"></datalist>
-            </div>
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+        <div class="container-xxl text-center d-flex" id="containernav">
+            <a class="navbar-brand" href="index.html">
+                <img src="imagens/LOGO PNG Branco 1.png" class="rounded float-start" id="logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar1 d-flex text-nowrap">
+                    <li id="graficaLi"><p id="grafica">GRÁFICA & COMUNICAÇÃO VISUAL</p></li>
+                    <li id="xpLi"><p id="xp">Sua Experiência em 4K</p></li>
+                    <li id="bagulinhoLi"><p>|</p></li>
+                    <li id="quemsomosLi"><a href="Quem-somos.html"><p>Quem Somos!</p></a></li>
+                    <li id="bagulinhoLi"><p>|</p></li>
+                    <li id="duvidasfrequentesLi"><a href="Duvidas Frequentes.html"><p>Dúvidas frequentes</p></a></li>
+                    <li>
+                        <div id="icons">
+                            <a onclick="enviarWhatsAppIcone()"><i class="bi bi-whatsapp fs-3" id="whatsapp"></i></a>
+                            <a href="https://www.instagram.com/grafica4k.cv/"><i class="bi bi-instagram fs-3" id="instagram"></i></a>
+                            <a href="https://www.facebook.com/grafica4k21/"><img src="imagens/Facebook.svg" id="facebook"></a>
+
+                        </div>
+                    </li>
+                </ul>
+                Barra de pesquisa abaixo dos links
+                <div id="search">
+                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="O que você procura?" oninput="atualizarSugestoes()" onkeyup="pesquisarProdutos()">
+                    <i class="bi bi-search search-icon fs-3" onclick="buscar()"></i>
+                    <span class="separator"></span>
+                    <datalist id="datalistOptions">
+                            <option value="Adesivos">
+                            <option value="Banners">
+                            <option value="Blocos e Talões">
+                            <option value="Cartões de Visita">
+                            <option value="Envelopes">
+                    </datalist>
+                </div>
 
 
-          </div>    
-      </div>    
-  </nav>
 
+
+
+
+            </div>    
+        </div>    
+    </nav> -->
   <div id="linksuteis">
       <div class="container-xxl">
           <ul class="links d-flex text-nowrap" id="containerItens">
@@ -158,7 +236,7 @@
 
 
     <div id="barrafooter"></div>
-    <footer>
+    <!-- <footer>
       
       
       <div class="container-xxl" id="containerFooter">
@@ -210,7 +288,84 @@
           </ul>
       </div>
     
-  </footer>
+  </footer> -->
+
+  <footer class="nagano-produtos-footer">
+
+    <div class="container-xxl nagano-produtos-footer-container">
+
+        <div class="nagano-produtos-footer-logo">
+
+    <img src="imagens/LOGO PNG Branco 1.png" alt="">
+
+    <p>
+        Soluções completas em comunicação Visual
+        com qualidade, agilidade e compromisso
+        com o seu sucesso!
+    </p>
+
+    <div class="nagano-produtos-social">
+
+        <a onclick="enviarWhatsAppIcone()"><i class="bi bi-whatsapp fs-3" id="whatsapp-footer"></i></a>
+        <a href="https://www.instagram.com/grafica4k.cv/"><i class="bi bi-instagram fs-3" id="instagram-footer"></i></a>
+        <a href="https://www.facebook.com/grafica4k21/"><img src="imagens/Facebook.svg" id="facebook-footer"></a>
+
+    </div>
+
+</div>
+
+        <div>
+            <h3>NAVEGAÇÃO</h3>
+
+            <a href="index.html">Início</a>
+            <a href="Quem-somos.html">Quem Somos</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="orcamento personalizado.html">Orçamento Personalizado</a>
+            <a href="mailto:exemplo@email.com?subject=Assunto%20do%20E-mail&body=Olá,%20gostaria%20de%20mais%20informações.">Trabalhe Conosco</a>
+            <a href="contato.html">Contato</a>
+        </div>
+
+        <div>
+            <h3>INSTITUCIONAL</h3>
+
+            <a href="Politicas-de-devolucao.html">Política de Devolução</a>
+            <a href="Privacidade.html">Política de Privacidade</a>
+            <a href="#">Termos de Uso</a>
+            <a href="Duvidas Frequentes.html">FAQ Perguntas Frequentes</a>
+        </div>
+
+        <div>
+
+    <h3>ONDE ESTAMOS</h3>
+
+    <div class="nagano-produtos-mapa">
+
+        <iframe
+            src="https://www.google.com/maps?q=R.+Vinte+e+Quatro+de+Dezembro,+948,+Marilia,+SP&output=embed"
+            loading="lazy">
+        </iframe>
+
+    </div>
+
+    <div class="nagano-produtos-endereco">
+
+        R. Vinte e Quatro de Dezembro, 948<br>
+        Alto Cafezal - Marília/SP<br>
+        CEP: 17.504-010
+
+    </div>
+
+</div>
+
+    </div>
+
+</footer>
+
+<div class="nagano-produtos-copy">
+    Todos os direitos reservados © 2021 - Nagano Comunicação Visual | CNPJ: 42.915.741/0001-42
+</div>
+
+
   <script src="js/script.js"></script>
 </body>
 </html>
