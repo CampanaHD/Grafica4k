@@ -247,14 +247,223 @@ height: 15px;
     position: relative;
   }
 
-  #linksuteis{
+  /* #linksuteis{
     background: linear-gradient(to right, blue, #0035ff, #007fff, #e500b5, #f27100, #fff200);
     height: 48px;
     justify-content: center;
     align-content: center;
-    /* font-size: 15.7px; */
     font-size: 20px;
-  }
+  } */
+
+  /* ==========================================
+   BARRA DE PRODUTOS — ALINHAMENTO RESPONSIVO
+========================================== */
+
+#linksuteis {
+    width: 100%;
+    min-height: 48px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        to right,
+        blue,
+        #0035ff,
+        #007fff,
+        #e500b5,
+        #f27100,
+        #fff200
+    );
+}
+
+/* Aproveita toda a largura disponível do Bootstrap */
+/* #linksuteis > .container-xxl {
+    width: 100%;
+    max-width: 100%;
+    padding-left: clamp(12px, 2vw, 32px);
+    padding-right: clamp(12px, 2vw, 32px);
+} */
+
+/* Distribui os itens automaticamente */
+#containerItens {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(10px, 1.5vw, 28px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Cada LI mantém seu tamanho conforme o conteúdo */
+#containerItens > li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+    white-space: nowrap;
+}
+
+/* Primeiro item */
+/* #containerItens > li:first-child {
+    margin-right: auto;
+} */
+
+/* Links */
+#containerItens > li > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: clamp(12px, 0.95vw, 20px);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Separadores */
+#containerItens #bagulinho {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    line-height: 1;
+    opacity: 0.7;
+}
+
+/* Botão Todos os Produtos */
+#todosprodutos {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    background: transparent;
+    border: 0;
+    font-size: clamp(12px, 0.95vw, 20px);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Orçamento personalizado */
+#containerItens #orcamento {
+    margin: 0;
+    color: #000;
+    font-size: clamp(12px, 0.95vw, 20px);
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+/* ==========================================
+   MENU SUSPENSO
+========================================== */
+
+/* #containerItens .dropdown {
+    position: relative;
+}
+
+#containerItens .dropdown-content {
+    top: calc(100% + 12px);
+    left: 0;
+    z-index: 1050;
+} */
+
+/* Evita que o menu fique cortado pelo container */
+#linksuteis,
+#linksuteis > .container-xxl {
+    overflow: visible;
+}
+
+/* ==========================================
+   TELAS MENORES
+========================================== */
+
+@media (max-width: 999px) {
+    #linksuteis {
+        justify-content: flex-start;
+        overflow-x: auto;
+        overflow-y: visible;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #linksuteis > .container-xxl {
+        width: max-content;
+        min-width: 100%;
+        max-width: none;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    #containerItens {
+        width: max-content;
+        min-width: 100%;
+        justify-content: flex-start;
+        gap: 16px;
+        flex-wrap: nowrap;
+        padding: 0;
+    }
+
+    #containerItens > li {
+        flex: 0 0 auto;
+    }
+
+    #containerItens > li:first-child {
+        margin-right: 0;
+    }
+
+    #containerItens > li > a,
+    #todosprodutos {
+        font-size: 13px;
+    }
+
+    #containerItens #bagulinho {
+        display: none;
+    }
+
+    #containerItens #orcamento {
+        font-size: 13px;
+    }
+
+    #containerItens .dropdown-content {
+        position: absolute !important;
+        top: calc(100% + 12px);
+        left: 0;
+        width: min(90vw, 700px);
+        min-width: 0;
+        max-height: 70vh;
+        overflow-y: auto;
+        background: #fff;
+    }
+
+    #containerItens .submenu-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    #containerItens {
+        gap: 14px;
+    }
+
+    #containerItens > li > a,
+    #todosprodutos,
+    #containerItens #orcamento {
+        font-size: 12px;
+    }
+
+    #containerItens .submenu-container {
+        grid-template-columns: 1fr;
+    }
+}
   #containerItens{
     margin: 0;
   }
@@ -887,14 +1096,14 @@ footer h6{
 }
 
 
-#todosprodutos {
+/* #todosprodutos {
   background-color: transparent;
   color: white;
   font-size: 14.9px;
   font-weight: 500;
   border: none;
-  position: relative; /* Garante que o botão esteja no mesmo contexto de posicionamento */
-}
+  position: relative; 
+} */
 
 .dropdown {
   position: relative;
