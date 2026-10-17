@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Nagano — mesma aba do WhatsApp",
+  "version": "1.2.0",
+  "description": "Abre as mensagens preparadas pela Nagano na aba existente do WhatsApp Web. O envio é confirmado por você.",
+  "host_permissions": [
+    "https://web.whatsapp.com/*"
+  ],
+  "permissions": [
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://localhost/*",
+        "http://127.0.0.1/*"
+      ],
+      "js": [
+        "bridge.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "minimum_chrome_version": "110"
+}

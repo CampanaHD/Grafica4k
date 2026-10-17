@@ -1,0 +1,8 @@
+allowBuilds:
+  '@google/genai': set this to true or false
+  esbuild: set this to true or false
+  protobufjs: set this to true or false
+
+# Correcao de seguranca GHSA-68fv-2mgg-jv7q, compativel com Vite/Tailwind.
+overrides:
+  source-map-js: ^1.2.2

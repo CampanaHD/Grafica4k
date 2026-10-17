@@ -1,0 +1,6 @@
+{
+  "name": "Nagano Comunicação Visual — Gestão",
+  "description": "Sistema completo de gestão para gráfica rápida e comunicação visual com cálculo de bobinas, orçamentos, OS, recibos, Kanban de produção, financeiro, Notion e WhatsApp API.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

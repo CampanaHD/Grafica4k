@@ -1,0 +1,4 @@
+{$NAGANO_DOMAIN} {
+ reverse_proxy nagano:3000
+ encode zstd gzip
+}

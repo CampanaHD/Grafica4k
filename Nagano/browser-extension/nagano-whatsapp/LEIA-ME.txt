@@ -1,0 +1,107 @@
+NAGANO COMUNICAÇÃO VISUAL — WHATSAPP SEM RECARREGAR — VERSÃO 1.2.0
+
+1. Extraia este ZIP para uma pasta fixa. Não apague nem mova essa pasta após instalar.
+2. No Brave do computador, abra brave://extensions.
+3. Ative o Modo do desenvolvedor.
+4. Clique em Carregar sem compactação.
+5. Selecione a pasta que contém manifest.json, bridge.js, worker.js, tabRouter.js, chatComposer.js, pageReadiness.js, flowWait.js, flowProtocol.js, whatsappContentSource.js e whatsappContent.js.
+6. Recarregue o sistema Nagano aberto em http://localhost:3000 ou http://127.0.0.1:3000.
+7. Em Configurações > Mensagens do WhatsApp, clique em Verificar conexão.
+
+Use o sistema e o WhatsApp Web no mesmo perfil normal do Brave. A extensão funciona
+com outras portas locais também. Ela não atende endereços de rede ou sites públicos.
+
+COMO FUNCIONA
+Clique no botão de mensagem do cliente, orçamento ou retirada. A extensão procura
+uma aba do WhatsApp Web neste perfil, usa a busca de contatos dentro dela, confere
+o número da conversa e coloca o texto preparado. Não navega novamente pelo endereço
+da conversa e não recarrega uma aba que já está aberta.
+Se não existir uma aba, ela abre uma. Se houver várias, usa a mais recentemente
+acessada e continua reutilizando essa aba enquanto ela existir.
+
+VOCÊ CONFIRMA O ENVIO
+A extensão não clica em Enviar, não envia em lote e não anexa PDF. Não coleta nem
+exporta conversas. Ela usa apenas os controles locais de contatos e do rascunho.
+Depois de conferir o número, a mensagem preparada substitui o rascunho da conversa
+do cliente. Confira o texto e aperte Enviar no WhatsApp. Uma solicitação sem texto,
+usada apenas para abrir o contato, mantém o rascunho existente.
+Uma nova aba precisa carregar normalmente na primeira abertura. Se estiver
+desconectado, faça login. Isso não provoca recarregamentos a cada novo cliente.
+
+Se a extensão estiver ausente ou desativada, o sistema mantém a mensagem para copiar
+e explica como conectar. Ele não abre novas abas como alternativa automática.
+
+ACESSO
+A extensão só recebe solicitações de páginas locais (localhost e 127.0.0.1) e só
+procura/usa abas de https://web.whatsapp.com. Não precisa de token da Meta.
+Ela não coleta histórico de navegação, mensagens ou senhas e não possui servidor externo.
+
+Para atualizar a extensão 1.0, substitua TODOS os arquivos na pasta fixa e clique
+em Recarregar na página brave://extensions. Confira a versão 1.2.0. O Brave pode
+pedir a permissão para a extensão preencher a interface de web.whatsapp.com.
+Recarregue a página do sistema Nagano uma vez após a atualização. Atualize também
+o programa com o pacote desta versão para aguardar a busca de contatos corretamente.
+
+Essa preparação depende dos controles visíveis do WhatsApp Web. Se a interface
+mudar ou se o número não puder ser confirmado, a extensão informa o motivo e não
+preenche outra conversa nem recarrega a aba como alternativa.
+
+CORREÇÃO 1.1.1
+Corrigida a seleção quando o cliente aparece na busca, mas o botão do contato
+está dentro de uma linha ou não possui os marcadores antigos de lista. A extensão
+aciona o contato encontrado e aguarda a conversa antes de preencher a mensagem.
+Também reconhece quando a busca continua visível após selecionar o contato.
+
+CORREÇÃO 1.1.2
+Reconhece a busca da tela Nova conversa quando ela já está aberta e reaproveita
+o mesmo campo. Aceita o rótulo simples Pesquisar, campos sem rótulo dentro dessa
+tela e os editores plaintext-only. Mantém a conferência do número e os rascunhos.
+Para quem já usa o programa com a extensão 1.1.1, basta atualizar a extensão.
+
+ATUALIZAÇÃO 1.1.3
+A mensagem completa é oferecida ao editor como uma única colagem, preservando
+parágrafos, emojis e marcadores de destaque. Se o editor não tratar a colagem,
+a extensão preenche o campo e verifica o texto completo. Não usa HTML da mensagem
+nem altera a área de transferência do computador.
+Conforme solicitado, o rascunho da conversa verificada é substituído pelo texto
+preparado. Esta regra substitui a preservação de rascunhos das versões anteriores.
+Nenhum envio é feito automaticamente. Para os novos modelos com títulos e
+destaques, atualize também o programa com o pacote Mensagens Formatadas.
+
+CORREÇÃO 1.1.4
+A substituição ocorre em duas etapas: apagar por eventos de edição e confirmar
+que o campo ficou vazio; depois colar a mensagem completa. Isso sincroniza a
+seleção do editor e evita acrescentar a mensagem ao fim do rascunho anterior.
+Se a limpeza não for confirmada, o novo texto não é colado.
+O programa desta versão libera a preparação manual sem bloqueio pelas antigas
+preferências de autorização. O envio continua sendo confirmado por você no WhatsApp.
+
+CORREÇÃO 1.1.5 — ABERTURA COM A ABA FECHADA
+Ao abrir uma nova aba, a extensão aguarda os controles do WhatsApp ficarem
+disponíveis por até 65 segundos antes de buscar o contato. O carregamento do
+documento sozinho não inicia a preparação. Número, texto e formatação permanecem
+na solicitação durante essa espera. Abas já abertas continuam sendo reutilizadas.
+Se aparecer o QR Code, conecte sua conta e clique novamente no botão do sistema.
+Se o carregamento ultrapassar o prazo, aguarde a lista de conversas e tente
+novamente; a aba existente será reutilizada. Nenhuma mensagem é enviada sozinha.
+Atualize TAMBÉM o programa: ele precisa aguardar a resposta por até 100 segundos.
+
+
+CORREÇÃO 1.2.0 — SEQUÊNCIA CONFIRMADA ENTRE OS SCRIPTS
+A abertura aguarda o documento, instala o script no documento correto e espera a
+confirmação CONTENT_SCRIPT_READY. A pesquisa só é liberada após a interface READY.
+A conversa, o número e o campo da mensagem são confirmados antes da colagem.
+A busca e a conversa podem aguardar até 10 segundos por etapa. A inicialização
+inteira tem limite de 65 segundos e a preparação na página, de 60 segundos.
+O programa mostra cada etapa e permite cancelar. Cliques simultâneos são bloqueados;
+um início repetido com o mesmo identificador não executa a preparação duas vezes.
+A tela de QR Code/login é informada como autenticação necessária. Contato não
+encontrado só é informado após a pesquisa completa com a interface pronta.
+Os registros de depuração contêm apenas etapas, sem telefone, mensagem ou senha.
+Atualize TAMBÉM o programa, recarregue a extensão no Brave e a página do sistema.
+Nenhum envio é feito automaticamente. O texto continua sendo conferido e enviado por você.
+
+PARA DESENVOLVIMENTO
+whatsappContent.js é gerado localmente de whatsappContentSource.js e dos módulos
+existentes. Execute npm run build:whatsapp ao editar esses arquivos; npm run build
+também gera esse script. Não remova arquivos do pacote da extensão.

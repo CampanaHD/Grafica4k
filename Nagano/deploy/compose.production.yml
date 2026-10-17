@@ -1,0 +1,56 @@
+services:
+  nagano:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    env_file: ../.env.production
+    environment:
+      NODE_ENV: production
+      APP_ENV: production
+      HOST: 0.0.0.0
+      PRINTSHOP_DATA_DIR: /var/lib/nagano/data
+      BACKUP_DIR: /var/lib/nagano/backups
+      BACKUP_KEY_FILE: /var/lib/nagano/keys/backup.key
+      TRUSTED_PROXY_IPS: 172.29.4.2/32
+    volumes:
+      - nagano_data:/var/lib/nagano/data
+      - nagano_backups:/var/lib/nagano/backups
+      - nagano_keys:/var/lib/nagano/keys
+    restart: unless-stopped
+    networks:
+      nagano_net:
+        ipv4_address: 172.29.4.3
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/api/health',{redirect:'manual'}).then(r=>{if(![200,308].includes(r.status))process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+  caddy:
+    image: caddy:2
+    environment:
+      NAGANO_DOMAIN: ${NAGANO_DOMAIN:?Informe o domínio no ambiente do compose}
+    ports:
+      - '80:80'
+      - '443:443'
+      - '443:443/udp'
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - nagano
+    restart: unless-stopped
+    networks:
+      nagano_net:
+        ipv4_address: 172.29.4.2
+networks:
+  nagano_net:
+    ipam:
+      config:
+        - subnet: 172.29.4.0/24
+volumes:
+  nagano_data:
+  nagano_backups:
+  nagano_keys:
+  caddy_data:
+  caddy_config:

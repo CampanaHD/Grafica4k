@@ -21,84 +21,135 @@
 </head>
 <body class="text-white">
   <!-- <li style="background-color: yellow;" ><h3 style="color: black; font-weight: bolder; height: 60px; font-size: 48px;">SITE EM MANUTENÇÃO</h3></li> -->
-    <header class="nagano-header">
-    
-        <div class="container-xxl">
-    
-            <div class="nagano-header-wrapper">
-    
-                <!-- LOGO -->
-                <a href="index.html" class="nagano-header-logo">
-                    <img src="imagens/LOGO PNG Branco 1.png" alt="Nagano">
-                </a>
-    
-                <!-- LADO DIREITO -->
-                <div class="nagano-header-right">
-    
-                    <!-- TOPO -->
-                    <div class="nagano-header-links">
-    
-                        <!-- <span class="nagano-header-4k">
-                            Sua <strong>Experiência em 4K!</strong>
-                        </span> -->
-                        <p id="xp">Sua Experiência em 4K</p>
-    
-                        <span class="nagano-separator">|</span>
-    
-                        <a href="Quem-somos.html">
-                            Quem Somos!
-                        </a>
-    
-                        <span class="nagano-separator">|</span>
-    
-                        <a href="Duvidas Frequentes.html">
-                            Dúvidas Frequentes
-                        </a>
-    
-                        <a onclick="enviarWhatsAppIcone()">
-                            <i class="bi bi-whatsapp"></i>
-                        </a>
-    
-                        <a href="https://www.instagram.com/grafica4k.cv/">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-    
-                        <a href="https://www.facebook.com/grafica4k21/">
-                            <img src="imagens/Facebook.svg" alt="">
-                        </a>
-    
-                    </div>
-    
-                    <!-- BUSCA -->
-                    <div id="search">
-                        <input class="form-control" list="datalistOptions" id="exampleDataList"
-                            placeholder="O que você procura?" oninput="atualizarSugestoes()" onkeyup="pesquisarProdutos()">
-                        <i class="bi bi-search search-icon fs-3" onclick="buscar()"></i>
-                        <span class="separator"></span>
-                        <datalist id="datalistOptions">
+
+  <div class="container-xxl" style="padding:20px 0;">
+  
+    <div class="nagano-header-wrapper">
+  
+      <!-- LOGO -->
+      <a href="index.html" class="nagano-header-logo">
+        <img src="imagens/LOGO PNG Branco 1.png" alt="Nagano">
+      </a>
+  
+      <!-- LADO DIREITO -->
+      <div class="nagano-header-right">
+  
+        <!-- TOPO -->
+        <div class="nagano-header-links">
+  
+          <!-- <span class="nagano-header-4k">
+                              Sua <strong>Experiência em 4K!</strong>
+                          </span> -->
+          <p id="xp">Sua Experiência em 4K</p>
+  
+          <span class="nagano-separator">|</span>
+  
+          <a href="Quem-somos.html">
+            Quem Somos!
+          </a>
+  
+          <span class="nagano-separator">|</span>
+  
+          <a href="Duvidas Frequentes.html">
+            Dúvidas Frequentes
+          </a>
+  
+          <a onclick="enviarWhatsAppIcone()">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+  
+          <a href="https://www.instagram.com/grafica4k.cv/">
+            <i class="bi bi-instagram"></i>
+          </a>
+  
+          <a href="https://www.facebook.com/grafica4k21/">
+            <!-- <img src="imagens/Facebook.svg" alt=""> -->
+            <i class="bi bi-facebook"></i>
+
+          </a>
+  
+        </div>
+  
+        <!-- BUSCA -->
+        <div id="search">
+          <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="O que você procura?"
+            oninput="atualizarSugestoes()" onkeyup="pesquisarProdutos()">
+          <i class="bi bi-search search-icon fs-3" onclick="buscar()"></i>
+          <span class="separator"></span>
+          <datalist id="datalistOptions">
+            <option value="Adesivos">
+            <option value="Banners">
+            <option value="Blocos e Talões">
+            <option value="Cartões de Visita">
+            <option value="Envelopes">
+          </datalist>
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </div>
+
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+        <div class="container-xxl text-center d-flex" id="containernav">
+            <a class="navbar-brand" href="index.html">
+                <img src="imagens/LOGO PNG Branco 1.png" class="rounded float-start" id="logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar1 d-flex text-nowrap">
+                    <li id="graficaLi"><p id="grafica">GRÁFICA & COMUNICAÇÃO VISUAL</p></li>
+                    <li id="xpLi"><p id="xp">Sua Experiência em 4K</p></li>
+                    <li id="bagulinhoLi"><p>|</p></li>
+                    <li id="quemsomosLi"><a href="Quem-somos.html"><p>Quem Somos!</p></a></li>
+                    <li id="bagulinhoLi"><p>|</p></li>
+                    <li id="duvidasfrequentesLi"><a href="Duvidas Frequentes.html"><p>Dúvidas frequentes</p></a></li>
+                    <li>
+                        <div id="icons">
+                            <a onclick="enviarWhatsAppIcone()"><i class="bi bi-whatsapp fs-3" id="whatsapp"></i></a>
+                            <a href="https://www.instagram.com/grafica4k.cv/"><i class="bi bi-instagram fs-3" id="instagram"></i></a>
+                            <a href="https://www.facebook.com/grafica4k21/"><img src="imagens/Facebook.svg" id="facebook"></a>
+
+                        </div>
+                    </li>
+                </ul>
+                Barra de pesquisa abaixo dos links
+                <div id="search">
+                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="O que você procura?" oninput="atualizarSugestoes()" onkeyup="pesquisarProdutos()">
+                    <i class="bi bi-search search-icon fs-3" onclick="buscar()"></i>
+                    <span class="separator"></span>
+                    <datalist id="datalistOptions">
                             <option value="Adesivos">
                             <option value="Banners">
                             <option value="Blocos e Talões">
                             <option value="Cartões de Visita">
                             <option value="Envelopes">
-                        </datalist>
-                    </div>
-    
+                    </datalist>
                 </div>
-    
-            </div>
-    
-        </div>
-    
-    </header>
 
+
+
+
+
+
+            </div>    
+        </div>    
+    </nav> -->
 
     <div id="linksuteis">
         <div class="container-xxl">
             <ul class="links d-flex text-nowrap" id="containerItens">
+              
               <li>
                 <div class="dropdown">
-                    <button id="todosprodutos"><i class="bi bi-list" id="hamburger"></i>Todos os Produtos</button>
+                <button id="todosprodutos"><i class="bi bi-list" id="hamburger"></i>Todos os Produtos</button>
+                    
                     <div class="dropdown-content">
                         <div class="submenu-container">
                             <div class="submenu">
@@ -147,7 +198,7 @@
 
 
 
-
+                
                 <li><p id="bagulinho">|</p></li>
                 <li><a href="orcamento personalizado.html?titulo=Cartões de Visita">Cartões de Visita</a></li>
                 <li><p id="bagulinho">|</p></li>
@@ -158,6 +209,7 @@
                 <li><a href="orcamento personalizado.html?titulo=Banners, Faixas e Lonas">Banners, Faixas e Lonas</a></li>
                 <li><p id="bagulinho">|</p></li>
                 <li><a href="orcamento personalizado.html?titulo=Orçamento Personalizado"><p id="orcamento">Orçamento Personalizado</p></a></li>
+                
             </ul>
         </div>
     </div>

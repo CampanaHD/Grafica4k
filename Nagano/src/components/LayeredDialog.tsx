@@ -1,0 +1,10 @@
+import React,{useEffect,useRef} from 'react';
+import {createPortal} from 'react-dom';
+import type {LucideIcon} from 'lucide-react';
+import {DialogHeader} from './DialogHeader';
+export function LayeredDialog({title,subtitle,icon,onClose,children,compact=false,suspended=false,front=false}:{title:string;subtitle?:string;icon?:LucideIcon;onClose:()=>void;children:React.ReactNode;compact?:boolean;suspended?:boolean;front?:boolean}){
+  const container=useRef<HTMLDivElement>(null),close=useRef(onClose),paused=useRef(suspended);close.current=onClose;paused.current=suspended;
+  useEffect(()=>{const previous=document.activeElement as HTMLElement|null;container.current?.focus();const key=(event:KeyboardEvent)=>{if(paused.current)return;if(event.key==='Escape'){event.preventDefault();event.stopImmediatePropagation();close.current();}if(event.key==='Tab'){const controls=[...(container.current?.querySelectorAll<HTMLElement>('button:not(:disabled),input:not(:disabled),textarea:not(:disabled),select:not(:disabled),a[href]')||[])].filter(el=>el.offsetParent!==null),first=controls[0],last=controls[controls.length-1];if(event.shiftKey&&(document.activeElement===first||document.activeElement===container.current)){event.preventDefault();last?.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus();}}};document.addEventListener('keydown',key);return()=>{document.removeEventListener('keydown',key);previous?.focus();};},[]);
+  return createPortal(<div inert={suspended} aria-hidden={suspended||undefined} className="nagano-overlay fixed inset-0 bg-slate-900/60 backdrop-blur-xs grid place-items-center p-4" style={{zIndex:front?95:80}}><div ref={container} tabIndex={-1} role="dialog" aria-modal="true" aria-label={title} className={`bg-white rounded-2xl shadow-xl w-full max-h-[92dvh] overflow-y-auto outline-none ${compact?'max-w-lg':'max-w-4xl'}`}><DialogHeader title={title} subtitle={subtitle} icon={icon} onClose={onClose}/>{children}</div></div>,document.body);
+}
+

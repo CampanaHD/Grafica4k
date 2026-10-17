@@ -1,0 +1,20 @@
+import React,{useEffect,useState} from 'react';
+import type {OutsourcedService,ThirdParty} from '../types/team';
+import {teamApi} from '../services/teamApi';
+import {formatCurrency} from '../utils/formatters';
+import {outsourcedSaleTotal,outsourcedValue,outsourcedServicesList} from '../utils/outsourcing';
+export function OutsourcedQuoteFields({rows,onChange}:{rows:OutsourcedService[];onChange:(rows:OutsourcedService[])=>void}){
+  const [partners,setPartners]=useState<ThirdParty[]>([]),[error,setError]=useState('');
+  useEffect(()=>{teamApi.thirdParties().then(setPartners).catch(e=>setError(e.message));},[]);
+  const update=(index:number,values:Partial<OutsourcedService>)=>onChange(rows.map((row,i)=>i===index?{id:row.id,thirdPartyId:row.thirdPartyId,thirdPartyName:row.thirdPartyName,services:outsourcedServicesList(row),value:outsourcedValue(row),...values}:row));
+  return <section className="border border-slate-200 rounded-xl bg-white p-5 space-y-4">
+    <div className="flex flex-wrap gap-3 justify-between items-center"><div><h3 className="font-bold text-sm text-slate-900">Serviços de terceiros</h3><p className="text-xs text-slate-500 mt-1">Selecione o prestador, marque os serviços e informe o valor combinado.</p></div><button type="button" className="nagano-button secondary" disabled={!partners.some(p=>p.active)} onClick={()=>{const p=partners.find(p=>p.active)!;onChange([...rows,{id:crypto.randomUUID(),thirdPartyId:p.id,thirdPartyName:p.name,services:[],value:0}]);}}>Selecionar terceiro</button></div>
+    {error&&<p className="text-sm text-rose-700">{error}</p>}{!partners.some(p=>p.active)&&!error&&<p className="text-xs text-slate-500">Cadastre os prestadores e seus serviços na aba Terceiros.</p>}
+    {rows.map((row,index)=>{const partner=partners.find(p=>p.id===row.thirdPartyId),selected=outsourcedServicesList(row);return <div key={row.id} className="rounded-xl border border-slate-200 p-4 bg-slate-50 space-y-4">
+      <div className="grid md:grid-cols-[1fr_180px] gap-4"><label className="text-xs font-semibold">Nome do terceiro<select aria-label={`Terceiro ${index+1}`} value={row.thirdPartyId} onChange={e=>{const p=partners.find(p=>p.id===e.target.value)!;update(index,{thirdPartyId:p.id,thirdPartyName:p.name,services:[],value:0});}} className="w-full block p-3 border rounded-xl bg-white mt-1">{partners.filter(p=>p.active||p.id===row.thirdPartyId).map(p=><option key={p.id} value={p.id}>{p.name}{p.active?'':' (inativo)'}</option>)}</select></label><label className="text-xs font-semibold">Valor combinado (R$)<input aria-label={`Valor do terceiro ${index+1}`} type="number" required min="0" max="10000000" step="0.01" value={outsourcedValue(row)} onChange={e=>update(index,{value:Number(e.target.value)})} className="block w-full p-3 border rounded-xl mt-1 bg-white"/></label></div>
+      <fieldset><legend className="text-xs font-semibold mb-2">Serviços que serão realizados</legend><div className="flex flex-wrap gap-2">{[...new Set([...(partner?.services||[]),...selected])].map(service=><label key={service} className={`flex items-center gap-2 text-sm px-3 py-2 rounded-lg border cursor-pointer ${selected.includes(service)?'border-indigo-200 bg-indigo-50 text-indigo-800':'border-slate-200 bg-white text-slate-600'}`}><input type="checkbox" checked={selected.includes(service)} onChange={e=>update(index,{services:e.target.checked?[...selected,service]:selected.filter(s=>s!==service)})}/>{service}</label>)}</div>{!selected.length&&<p className="text-xs text-slate-500 mt-2">Marque pelo menos um serviço.</p>}</fieldset>
+      <div className="flex justify-between text-xs items-center border-t border-slate-200 pt-3"><p>Valor registrado no histórico: <strong>{formatCurrency(outsourcedValue(row))}</strong></p><button type="button" className="text-rose-700" onClick={()=>onChange(rows.filter((_,i)=>i!==index))}>Remover</button></div>
+    </div>;})}{rows.length>0&&<p className="text-right text-sm font-bold text-indigo-700">Total dos terceiros: {formatCurrency(outsourcedSaleTotal(rows))}</p>}
+  </section>;
+}
+

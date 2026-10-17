@@ -1,0 +1,38 @@
+import {DatabaseSync} from 'node:sqlite';
+import fs from 'node:fs';
+import path from 'node:path';
+import {randomUUID} from 'node:crypto';
+export const fail=(message:string,status=400):never=>{throw Object.assign(new Error(message),{status});};
+export const numeric=(value:unknown,label:string,min=0,max=1e9)=>{if(typeof value!=='number'||!Number.isFinite(value)||value<min||value>max)fail(`Informe ${label} válido.`);return value as number;};
+export const text=(value:unknown,label:string,max=300,required=false)=>{if(value===undefined||value===null)value='';if(typeof value!=='string'||value.length>max||required&&!value.trim())fail(`Informe ${label} válido.`);return (value as string).trim();};
+export const cents=(n:unknown)=>Math.round(numeric(n,'valor')*100);
+export const today=()=>new Intl.DateTimeFormat('sv-SE',{timeZone:'America/Sao_Paulo'}).format(new Date());
+export const validDate=(value:unknown)=>{const date=text(value,'data',10,true);if(!/^\d{4}-\d{2}-\d{2}$/.test(date)||new Date(date+'T12:00:00Z').toISOString().slice(0,10)!==date)fail('Informe uma data válida.');return date;};
+const tables=['stock_items','roll_lots','suppliers','compositions','purchases','payables','clients','receipts','payments','settings','job_plans','attachments','legacy_records','consumption_details'] as const;
+export type ErpTable=typeof tables[number];
+export function createErpStore(dataDir:string){
+  fs.mkdirSync(dataDir,{recursive:true});const db=new DatabaseSync(path.join(dataDir,'operations.sqlite'));db.exec('PRAGMA journal_mode=WAL;PRAGMA foreign_keys=ON;PRAGMA busy_timeout=5000;');
+  for(const table of tables)db.exec(`CREATE TABLE IF NOT EXISTS erp_${table}(id TEXT PRIMARY KEY,payload TEXT NOT NULL,revision INTEGER NOT NULL DEFAULT 1)`);
+  db.exec(`CREATE TABLE IF NOT EXISTS work_orders(id TEXT PRIMARY KEY,payload TEXT NOT NULL,revision INTEGER NOT NULL);
+    CREATE TABLE IF NOT EXISTS erp_movements(id TEXT PRIMARY KEY,item_id TEXT NOT NULL,order_id TEXT,created_at TEXT NOT NULL,payload TEXT NOT NULL);
+    CREATE INDEX IF NOT EXISTS erp_movement_item ON erp_movements(item_id,created_at);
+    CREATE INDEX IF NOT EXISTS erp_movement_order ON erp_movements(order_id);
+    CREATE TABLE IF NOT EXISTS erp_allocations(id TEXT PRIMARY KEY,order_id TEXT NOT NULL,item_id TEXT NOT NULL,lot_id TEXT,quantity REAL NOT NULL,unit_cost REAL NOT NULL,state TEXT NOT NULL,version INTEGER NOT NULL);
+    CREATE INDEX IF NOT EXISTS erp_allocation_order ON erp_allocations(order_id,state);
+    CREATE TABLE IF NOT EXISTS erp_audit(id INTEGER PRIMARY KEY AUTOINCREMENT,created_at TEXT NOT NULL,actor TEXT NOT NULL,action TEXT NOT NULL,entity TEXT NOT NULL,entity_id TEXT NOT NULL,details TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS erp_idempotency(key TEXT PRIMARY KEY,entity TEXT NOT NULL,result TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS erp_migrations(id TEXT PRIMARY KEY,created_at TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS erp_cost_history(id TEXT PRIMARY KEY,item_id TEXT NOT NULL,created_at TEXT NOT NULL,payload TEXT NOT NULL);
+    CREATE INDEX IF NOT EXISTS erp_cost_item ON erp_cost_history(item_id,created_at);`);
+  db.exec("CREATE INDEX IF NOT EXISTS erp_consumption_order ON erp_consumption_details(json_extract(payload,'$.orderId'))");
+  const get=(table:ErpTable,id:string):any=>{const row=db.prepare(`SELECT payload,revision FROM erp_${table} WHERE id=?`).get(id);return row?{...JSON.parse(String(row.payload)),revision:Number(row.revision)}:undefined;};
+  const list=(table:ErpTable):any[]=>db.prepare(`SELECT payload,revision FROM erp_${table} ORDER BY rowid DESC`).all().map(row=>({...JSON.parse(String(row.payload)),revision:Number(row.revision)}));
+  const put=(table:ErpTable,data:any)=>{const saved={...data,revision:(get(table,data.id)?.revision||0)+1};db.prepare(`INSERT INTO erp_${table} VALUES(?,?,?) ON CONFLICT(id) DO UPDATE SET payload=excluded.payload,revision=excluded.revision`).run(saved.id,JSON.stringify(saved),saved.revision);return saved;};
+  const revision=(table:ErpTable,body:any)=>{const previous=get(table,body.id);if(previous&&previous.revision!==body.revision)fail('Este registro foi alterado em outra sessão. Atualize antes de salvar.',409);return previous;};
+  let depth=0;
+  const transaction=<T>(action:()=>T):T=>{if(depth)return action();depth++;db.exec('BEGIN IMMEDIATE');try{const value=action();db.exec('COMMIT');return value;}catch(error){db.exec('ROLLBACK');throw error;}finally{depth--;}};
+  const audit=(actor:any,action:string,entity:string,id:string,details:string)=>db.prepare('INSERT INTO erp_audit(created_at,actor,action,entity,entity_id,details) VALUES(?,?,?,?,?,?)').run(new Date().toISOString(),JSON.stringify(actor),action,entity,id,details);
+  const id=()=>randomUUID();
+  return {db,dataDir,get,list,put,revision,transaction,audit,id};
+}
+export type ErpStore=ReturnType<typeof createErpStore>;

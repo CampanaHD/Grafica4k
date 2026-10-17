@@ -1,0 +1,5 @@
+import type {TeamProfile} from '../types/team';
+import {canViewCosts} from './profileAccess';
+const privateFields=new Set(['lastPurchase','rollCostReference','rollCostInput','internalCost','profitMarginPct','internalCosts','internalCostSnapshot','itemCosts','unitCost','unit_cost','unitCostSnapshot','averageCost','unitCostBase','referenceCost','costPerSqm','costPerLinm','materialCost','finishingCost','installationCost','designCost','deliveryCostSnapshot','totalBaseCost','totalCost','cost','margin','marginPct','grossMargin','netResult','stockValue']);
+export function redactCosts(value:any):any{if(Array.isArray(value))return value.map(redactCosts);if(value&&typeof value==='object'){const commercial=typeof value.totalAmount==='number'&&Array.isArray(value.items);return Object.fromEntries(Object.entries(value).filter(([key])=>!privateFields.has(key)||commercial&&['designCost','installationCost'].includes(key)).map(([key,v])=>[key,redactCosts(v)]));}return value;}
+export const costsForProfile=(value:any,profile:TeamProfile)=>canViewCosts(profile)?value:redactCosts(value);
